@@ -1,0 +1,86 @@
+.main h1,
+.main h2 {
+    position: relative;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 500;
+    padding-left: 0.75rem;       /* 12px */
+}
+
+.main h1 {
+    font-size: 2.5rem;           /* 40px */
+    margin-bottom: 1rem;         /* 16px, tighter spacing before paragraphs */
+}
+
+.main h2 {
+    font-size: 2rem;             /* 32px, slightly smaller than h1 */
+    margin-bottom: 0.75rem;      /* slightly tighter than h1 */
+}
+
+.main h1::before,
+.main h2::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.25rem;              /* 4px */
+    height: 100%;
+    border-radius: 0.125rem;     /* 2px */
+    content: '';
+}
+
+/* Umbrella heading: About Sesame Legal - blue accent */
+.main h1:first-of-type::before {
+    background-color: #1e88e5;
+}
+
+/* IVO Tips section - gray accent */
+.main h2:nth-of-type(1)::before {
+    background-color: #999;
+}
+
+/* Sesame Blog section - red accent */
+.main h2:nth-of-type(2)::before {
+    background-color: #E53935;
+}
+
+.main p {
+    color: #222;
+    font-size: 1rem;             /* 16px */
+    line-height: 1.5rem;         /* 24px */
+    margin-bottom: 1.25rem;      /* 20px */
+}
+
+.paragraphs-highlight {
+    padding: 1rem;               /* 16px */
+    box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 5%);
+    background-color: #e0f0ff;
+    border-radius: 0.5rem;       /* 8px */
+    margin-bottom: 2rem;         /* spacing between sections */
+}
+
+.paragraphs-highlight p:last-child {
+    margin-bottom: 0;
+}
+
+.main h1 + .paragraphs-highlight,
+.main h2 + .paragraphs-highlight {
+    margin-top: 0.5rem;          /* small gap between heading and highlight */
+}
+
+.main h1:first-of-type {
+    margin-top: 1rem;            /* top margin for first section */
+}
+
+/* ----------------- MEDIA QUERIES ----------------- */
+@media (max-width: 48rem) {      /* 768px */
+    .main h1 {
+        font-size: 2rem;         /* 32px */
+    }
+
+    .main h2 {
+        font-size: 1.75rem;      /* 28px */
+    }
+
+    .paragraphs-highlight {
+        margin-bottom: 1.5rem;   /* tighter spacing on mobile */
+    }
+}

@@ -1,0 +1,31 @@
+.back {
+  margin-bottom: 1rem;       /* 16px */
+}
+
+.link {
+  display: inline-block;      /* better for both <a> and <button> */
+  padding: 0;
+  color: #0070f3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;       /* ensures same font as page text */
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;           /* keeps link/button aligned like text */
+  text-decoration: none;
+}
+
+.link:active,
+.link:focus {
+  color: #0051a3;
+  text-decoration: underline;
+}
+
+/* Hover (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: #0051a3;
+    text-decoration: underline;
+  }
+}

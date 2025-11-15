@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500&family=Inter:wght@400;500;600&display=swap");
+
+::selection {
+  color: #000;
+  background-color: #99e600;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 3rem;     /* 48px */
+  --space-7: 3.75rem;  /* 60px */
+}
+
+html {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem; /* 16px base font size for rem scaling */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* scroll-behavior: smooth; */
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0; 
+  background-color: #fff; /* global page background */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer sticks at bottom */
+}
+
+.page-container main {
+  margin: 0 auto;
+  padding: calc(var(--space-7) + 3.5rem) var(--space-3) var(--space-7); /* 3.75rem = 60px, 3.5rem = 56px, 1.5rem = 24px */
+  flex: 1; /* grows to fill space above footer */
+  max-width: 55rem; /* 880px → 55rem */
+}
+
+:focus-visible {
+  outline: 0.125rem solid #000;   /* 2px → 0.125rem */
+  outline-offset: 0.125rem;       /* 2px → 0.125rem */
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (max-width: 48rem) { /* 48rem = 768px */
+  .page-container main {
+    padding: calc(var(--space-5) + 3.5rem) var(--space-2) var(--space-5); /* 2.5rem = 40px, 3.5rem = 56px, 1rem = 16px */
+  }
+}

@@ -1,0 +1,15 @@
+/* TipPageWrapper.module.css */
+.tip-page-bg {
+  display: flex;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: #f0f9ff;
+  border-radius: 1.5rem;
+  flex-direction: column;
+}
+
+@media (max-width: 48rem) {
+  .tip-page-bg {
+    padding: 1.5rem 0.5rem;
+  }
+}

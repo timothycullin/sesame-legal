@@ -1,0 +1,96 @@
+/* ----------------- AUTHOR HEADER ----------------- */
+.author-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;          /* 24px */
+  margin-bottom: 2rem;  /* 32px */
+}
+
+.author-image {
+  position: relative;
+  display: flex;
+  width: 7.5rem;        /* 120px */
+  height: 7.5rem;       /* 120px */
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.author-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-page-title {
+  font-size: 1.75rem;    /* 28px */
+  font-weight: 600;
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+/* ----------------- AUTHOR BIO ----------------- */
+.author-bio-text {
+  color: #555;
+  font-size: 1rem;       /* 16px */
+  line-height: 1.5;
+  margin-bottom: 2rem;    /* 32px */
+  margin-top: 0;
+  max-width: 37.5rem;    /* 600px */
+}
+
+.author-bio-text p {
+  margin: 0 0 0.5em;
+}
+
+.author-bio-text a {
+  color: #1E88E5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.author-bio-text a:hover,
+.author-bio-text a:active,
+.author-bio-text a:focus {
+  color: #1565C0;
+}
+
+/* ----------------- MEDIA QUERIES ----------------- */
+@media (max-width: 48rem) { /* 768px */
+  .author-header {
+    flex-direction: column;
+    gap: 0.75rem;         /* 12px */
+    margin-bottom: 1rem;  /* 16px */
+  }
+
+  .author-image {
+    width: 5.5rem;        /* 88px */
+    height: 5.5rem;       /* 88px */
+    margin-bottom: 0.25rem; /* 4px */
+  }
+
+  .author-page-title {
+    font-size: 1.5rem;    /* 24px */
+    margin-bottom: 0.25rem; /* 4px */
+  }
+
+  .author-bio-text {
+    line-height: 1.4;
+    margin-bottom: 1.5rem; /* 24px */
+  }
+
+  .author-bio-text p {
+    margin-bottom: 0.4em;
+  }
+}

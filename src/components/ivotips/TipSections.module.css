@@ -1,0 +1,70 @@
+/* ---------------- TIPS CONTAINER ---------------- */
+.tips-container {
+  display: flex;
+  margin: 2rem auto;          /* 32px top/bottom, center horizontally */
+  padding: 0 1rem;            /* 16px horizontal padding */
+  background-color: #fff0f6;
+  border-radius: 1.5rem;      /* 24px rounded corners */
+  flex-direction: column;
+  gap: 2rem;                  /* 32px spacing between sections */
+  max-width: 50rem;           /* 800px max width */
+}
+
+/* ---------------- TIP SECTION / LINK ---------------- */
+.tip-section {
+  display: block;             /* ensures whole section is clickable */
+  padding: 2rem;              /* 32px */
+  color: inherit;             /* inherit text color */
+  border: 0.0625rem solid #f3dce3; /* 1px equivalent in rem */
+  background-color: #fff;
+  border-radius: 1.5rem;      /* 24px rounded corners */
+  cursor: pointer;            /* pointer on hover */
+  text-decoration: none;      /* remove default link underline */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover only on devices that support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .tip-section:hover {
+    background-color: #fff1f3;
+    border-color: #d9aeb8;
+  }
+}
+
+/* Active and focus for all devices */
+.tip-section:active,
+.tip-section:focus {
+  background-color: #fff1f3;
+  border-color: #d9aeb8;
+}
+
+/* ---------------- TIP CONTENT ---------------- */
+.tip-section h2 {
+  font-size: 1.75rem;         /* 28px equivalent */
+  font-weight: 600;
+  margin-bottom: 1rem;        /* 16px spacing under heading */
+}
+
+.tip-section p {
+  color: #333;
+  font-size: 1rem;            /* 16px equivalent */
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (max-width: 48rem) {   /* 768px */
+  .tips-container {
+    margin: 1.5rem auto;      /* 24px */
+    padding: 0 0.5rem;        /* 8px horizontal padding */
+    gap: 1.5rem;              /* 24px spacing between sections */
+  }
+
+  .tip-section {
+    padding: 1.5rem;          /* 24px */
+  }
+
+  .tip-section h2 {
+    font-size: 1.5rem;        /* 24px equivalent */
+  }
+}

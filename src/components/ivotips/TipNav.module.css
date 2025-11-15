@@ -1,0 +1,51 @@
+/* ---------------- OTHER TIPS NAV ---------------- */
+.tip-nav {
+  margin-bottom: 2rem;        /* 32px */
+}
+
+.tip-nav-title {
+  color: #0d0d0d;
+  font-size: 1.25rem;         /* 20px */
+  font-weight: 600;
+  margin-bottom: 0.75rem;     /* 12px */
+}
+
+.tip-nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 0.5rem;                /* 8px */
+  list-style: none;
+}
+
+.tip-nav-link {
+  color: #0070f3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.tip-nav-link:active,
+.tip-nav-link:focus {
+  color: #0051a3;
+  text-decoration: underline;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 48rem) {  /* 768px */
+  .tip-nav-title {
+    font-size: 1.125rem;    /* 18px equivalent */
+  }
+
+  .tip-nav-list {
+    gap: 0.4rem;            /* ~6.4px equivalent */
+  }
+}
+
+/* ---------------- HOVER (Desktop Only) ---------------- */
+@media (hover: hover) and (pointer: fine) {
+  .tip-nav-link:hover {
+    color: #0051a3;
+    text-decoration: underline;
+  }
+}

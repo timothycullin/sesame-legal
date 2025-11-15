@@ -1,0 +1,77 @@
+/* ---------------- CARDS CONTAINER ---------------- */
+.portal-cards {
+  display: flex;
+  padding: 2rem 1rem;        /* top/bottom: 32px, sides: 16px */
+  background-color: #f9f9f9;
+  border-radius: 1.5rem;          /* 24px */
+  flex-wrap: wrap;
+  gap: 2rem;                      /* 32px */
+  justify-content: center;
+  margin-top: 0;                   /* 0 */
+}
+
+/* ---------------- CARD ---------------- */
+.card {
+  width: 17.5rem;                       /* 280px */
+  color: inherit;
+  border: 0.0625rem solid #e0e0e0;      /* 1px */
+  background-color: #fff;
+  border-radius: 1rem;                  /* 16px */
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;               /* smooth shadow transition */
+}
+
+/* Hover only on devices that support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    box-shadow: 0 0.375rem 1.125rem rgb(0 0 0 / 8%); /* 6px 18px in rem */
+    border-color: #c0c0c0;
+    cursor: pointer;
+  }
+}
+
+/* Active and focus for all devices */
+.card:active,
+.card:focus {
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 8%);     /* 4px 12px in rem */
+  border-color: #c0c0c0;
+}
+
+/* ---------------- CARD CONTENT ---------------- */
+.card-content {
+  padding: 2rem;                  /* 32px */
+  text-align: center;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;              /* 24px */
+  font-weight: 600;
+  margin-bottom: 1rem;            /* 16px */
+}
+
+.card-content p {
+  font-size: 1rem;                /* 16px */
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ---------------- ICON ---------------- */
+.card-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;            /* 16px */
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (max-width: 48rem) {       /* 768px */
+  .card {
+    max-width: 17.5rem;           /* 280px */
+  }
+
+  .portal-cards {
+    padding: 1.5rem 1rem;  /* top/bottom: 24px, sides: 16px */
+    gap: 1.5rem;                  /* 24px */
+  }
+}

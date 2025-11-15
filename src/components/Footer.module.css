@@ -1,0 +1,33 @@
+.footer {
+  padding: 3rem 1.5rem;       /* 48px 24px */
+  color: #333;
+  background-color: #fff;
+  border-top: 0.0625rem solid #e0e0e0; /* 1px */
+  flex-shrink: 0;
+  font-size: 0.875rem;        /* 14px */
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 0.75rem;        /* 12px */
+}
+
+.footer-links a {
+  margin: 0 1rem;             /* 0 16px */
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:active,
+.footer-links a:focus {
+  color: #E53935;
+}
+
+.footer-acknowledgment {
+  color: #777;
+  font-size: 0.75rem;         /* 12px */
+  line-height: 1.6;
+  margin-top: 1rem;           /* 16px */
+}

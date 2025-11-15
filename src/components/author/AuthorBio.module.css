@@ -1,0 +1,35 @@
+.author-bio-text {
+  color: #555;
+  font-size: 1rem;      /* 16px */
+  line-height: 1.5;     /* slightly tighter text */
+  margin-bottom: 2rem;   /* add space below bio for post list */
+  margin-top: 0;         /* ensure no extra spacing above bio */
+  max-width: 37.5rem;   /* 600px */
+}
+
+.author-bio-text p {
+  margin: 0 0 0.5em;  
+}
+
+.author-bio-text a {
+  color: #1E88E5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.author-bio-text a:hover,
+.author-bio-text a:active,
+.author-bio-text a:focus {
+  color: #1565C0;
+}
+
+@media (max-width: 48rem) {
+  .author-bio-text {
+    line-height: 1.4;     
+    margin-bottom: 1.5rem; /* slightly less on mobile */
+  }
+
+  .author-bio-text p {
+    margin-bottom: 0.4em;  
+  }
+}

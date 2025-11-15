@@ -1,0 +1,16 @@
+.post-excerpt-highlight {
+  padding: 1rem;                 /* 16px */
+  color: #000;           
+  background-color: #e6f7b0;
+  border-radius: 0.5rem;         /* 8px */
+  font-size: 1rem;               /* 16px */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;         /* 24px */
+}
+
+.post-content p {
+  color: #222;
+  font-size: 1rem;               /* 16px */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;         /* 24px */
+}
