@@ -128,7 +128,7 @@ const tips = [
     <li>Provide advice or represent you in court if appropriate.</li>
   </ul>
   <p>Even if you are not formally eligible for full representation, it is still recommended to speak with a duty lawyer. They may be able to provide guidance or information relevant to your matter.</p>
-  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <strong>1300 792 387</strong> or ask court staff at the registry when you arrive.</p>
+  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <strong>1300 792 387</strong> or ask court staff at the registry in advance or when you arrive.</p>
 
   <h2>Other Support People</h2>
   <p>You are allowed to bring a support person to court, such as a family member, friend, or any other community support. They can:</p>

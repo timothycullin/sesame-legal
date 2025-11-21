@@ -26,7 +26,7 @@ export default function AuthorPage({ authorPosts, authorName, authorBio, authorI
 
             <main>
                 {/* Back button */}
-                <BackButton>← Back</BackButton>
+                <BackButton href={router.query.from || '/blog'}>← Back</BackButton>
 
                 {/* Author info */}
                 <AuthorHeader name={authorName} image={authorImage} />

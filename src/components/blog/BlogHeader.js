@@ -16,7 +16,16 @@ export default function BlogHeader({ title, author, date, imageUrl }) {
                 <h1>{title}</h1>
                 <p className={styles['post-date']}>{date}</p>
                 <p className={styles['post-author']}>
-                    By <Link href={`/author/${authorSlug}`}>{author}</Link>
+                    By{' '}
+                    <Link
+                        href={{
+                            pathname: `/author/${authorSlug}`,
+                            query: { from: typeof window !== 'undefined' ? window.location.pathname : '' }
+                        }}
+                    >
+                        {author}
+                    </Link>
+
                 </p>
             </div>
         </div>
