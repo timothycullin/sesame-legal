@@ -66,7 +66,7 @@ const tips = [
     <li>The applicant receives a copy outlining protections; the court will notify the respondent.</li>
   </ul>
 
-  <h2>2. First Court Mention</h2>
+  <h2>2. First Mention</h2>
   <ul>
     <li>The first scheduled court appearance. Attend on the date provided.</li>
     <li>The respondent or their lawyer indicates whether they oppose the application.</li>
@@ -76,7 +76,7 @@ const tips = [
     <li>An application can be withdrawn before the first hearing by contacting the court registry.</li>
   </ul>
 
-  <h2>3. Contested / Final Hearing (Only if Needed)</h2>
+  <h2>3. Contested Hearing (Only if Needed)</h2>
   <ul>
     <li>Occurs only if the respondent opposes the application.</li>
     <li>Give your evidence calmly and factually. You can call witnesses who can support your case.</li>
@@ -108,7 +108,7 @@ const tips = [
     slug: "court-support",
     description: "Overview of support available in court.",
     content: `
-  <p>Going to court for an Intervention Order can feel overwhelming, but there are several support options available to help you through the process.</p>
+  <p>Going to court for an Intervention Order (IVO) can feel overwhelming, but there are several support options available to help you through the process.</p>
 
   <h2>Court Network Volunteers</h2>
   <p>Trained volunteers from the Court Network are available at most Magistrates’ Courts. They can:</p>
@@ -118,7 +118,7 @@ const tips = [
     <li>Help you understand any documents or orders.</li>
     <li>Assist with practical matters, such as locating safe waiting areas.</li>
   </ul>
-  <p>You can contact the Court Network over the phone for support or to arrange in-court assistance on <strong>1800 571 239</strong>.</p>
+  <p>You can contact the Court Network over the phone for support or to arrange in-court assistance on <strong>1800 571 239</strong>.</p>
 
   <h2>Duty Lawyers</h2>
   <p>Duty lawyers are available at many Magistrates’ Courts to provide free legal advice or representation for eligible clients. They can:</p>
@@ -128,7 +128,11 @@ const tips = [
     <li>Provide advice or represent you in court if appropriate.</li>
   </ul>
   <p>Even if you are not formally eligible for full representation, it is still recommended to speak with a duty lawyer. They may be able to provide guidance or information relevant to your matter.</p>
-  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <strong>1300 792 387</strong> or ask court staff at the registry in advance or when you arrive.</p>
+  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <strong>1300 792 387</strong> or ask court staff at the registry in advance or when you arrive.</p>
+
+  <h2>Police‑initiated IVO applications</h2>
+  <p>In some cases, police may apply for an IVO on your behalf, for example if you requested their assistance or if they believe there is a risk to your safety. When police make the application, the police will present the case in court and represent the application.</p>
+  <p>It’s important to note that police only make the application in these circumstances; if you lodge the application yourself, the case is your responsibility and police do not automatically represent you.</p>
 
   <h2>Other Support People</h2>
   <p>You are allowed to bring a support person to court, such as a family member, friend, or any other community support. They can:</p>
@@ -138,7 +142,7 @@ const tips = [
     <li>Assist you in understanding what is happening during the process.</li>
   </ul>
 
-  <p>Remember, you are not alone — support services, including duty lawyers and Court Network volunteers, are available to help you feel supported and prepared during your court appearance.</p>
+  <p>Remember, you are not alone — support services, including duty lawyers, Court Network volunteers, police (if they are the applicant), and your chosen support people are available to help you feel supported and prepared during your court appearance.</p>
   `
   }
 
@@ -162,10 +166,10 @@ const tips = [
 
   <h2>Family Violence and Support Services</h2>
   <p>If you are experiencing family violence or harassment, support services can help with safety planning, counselling, and connecting you to practical resources.</p>
-  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <strong>1800 015 188</strong> (24/7) for assistance.</p>
+  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <strong>1800 015 188</strong> (24/7) for assistance.</p>
 
   <h2>Police and Emergency Services</h2>
-  <p>If you feel threatened or the IVO is breached, contact Victoria Police: <strong>000</strong> for emergencies or <strong>131 444</strong> for non‑urgent assistance.</p>
+  <p>If you feel threatened or the IVO is breached, contact Victoria Police: <strong>000</strong> for emergencies or <strong>131 444</strong> for non‑urgent assistance.</p>
   `
   }
 
