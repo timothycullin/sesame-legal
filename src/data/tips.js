@@ -118,7 +118,7 @@ const tips = [
     <li>Help you understand any documents or orders.</li>
     <li>Assist with practical matters, such as locating safe waiting areas.</li>
   </ul>
-  <p>You can contact the Court Network over the phone for support or to arrange in-court assistance on <strong>1800 571 239</strong>.</p>
+  <p>You can contact the Court Network over the phone for support or to arrange in-court assistance on <a href="tel:1800571239"><strong>1800 571 239</strong></a>.</p>
 
   <h2>Duty Lawyers</h2>
   <p>Duty lawyers are available at many Magistrates’ Courts to provide free legal advice or representation for eligible clients. They can:</p>
@@ -128,7 +128,7 @@ const tips = [
     <li>Provide advice or represent you in court if appropriate.</li>
   </ul>
   <p>Even if you are not formally eligible for full representation, it is still recommended to speak with a duty lawyer. They may be able to provide guidance or information relevant to your matter.</p>
-  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <strong>1300 792 387</strong> or ask court staff at the registry in advance or when you arrive.</p>
+  <p>To check your eligibility for a duty lawyer or obtain advice on accessing legal support, phone VLA on <a href="tel:1300792387"><strong>1300 792 387</strong></a> or ask court staff at the registry in advance or when you arrive.</p>
 
   <h2>Police‑initiated IVO applications</h2>
   <p>In some cases, police may apply for an IVO on your behalf, for example if you requested their assistance or if they believe there is a risk to your safety. When police make the application, the police will present the case in court and represent the application.</p>
@@ -166,10 +166,10 @@ const tips = [
 
   <h2>Family Violence and Support Services</h2>
   <p>If you are experiencing family violence or harassment, support services can help with safety planning, counselling, and connecting you to practical resources.</p>
-  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <strong>1800 015 188</strong> (24/7) for assistance.</p>
+  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <a href="tel:1800015188"><strong>1800 015 188</strong></a> (24/7) for assistance.</p>
 
   <h2>Police and Emergency Services</h2>
-  <p>If you feel threatened or the IVO is breached, contact Victoria Police: <strong>000</strong> for emergencies or <strong>131 444</strong> for non‑urgent assistance.</p>
+  <p>If you feel threatened or the IVO is breached, contact Victoria Police: <a href="tel:000"><strong>000</strong></a> for emergencies or <a href="tel:131444"><strong>131 444</strong></a> for non‑urgent assistance.</p>
   `
   }
 
