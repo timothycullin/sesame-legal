@@ -41,7 +41,7 @@ const tips = [
 
     <h2>6. Attend your court hearing</h2>
     <p>You’ll be given a date to attend court. This is when the magistrate considers your application. You can have support people or a lawyer with you.</p>
-    <p>If you feel unsafe seeing the respondent, let court staff know — they can arrange a safe waiting area.</p>
+    <p>If you feel unsafe seeing the respondent, let the court registry know in advance so they can arrange a safe waiting area.</p>
 
     <h2>7. After the order is made</h2>
     <p>If an order is granted, make sure you understand it and keep a copy. If the respondent breaches the order, contact the police immediately.</p>
@@ -166,7 +166,7 @@ const tips = [
 
   <h2>Family Violence and Support Services</h2>
   <p>If you are experiencing family violence or harassment, support services can help with safety planning, counselling, and connecting you to practical resources.</p>
-  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <a href="tel:1800015188"><strong>1800 015 188</strong></a> (24/7) for assistance.</p>
+  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <a href="tel:1800015188"><strong>1800 015 188</strong></a> (24/7) for immediate crisis support, or <strong>Orange Door</strong> on <a href="tel:1800 319 354"><strong>1800 319 354</strong></a> for ongoing support, safety planning, and connection to services.</p>
 
   <h2>Police and Emergency Services</h2>
   <p>If you feel threatened or the IVO is breached, contact Victoria Police: <a href="tel:000"><strong>000</strong></a> for emergencies or <a href="tel:131444"><strong>131 444</strong></a> for non‑urgent assistance.</p>
@@ -219,7 +219,7 @@ const tips = [
 
   <h2>Safety and support</h2>
   <ul>
-    <li>Ask staff about safe waiting areas if you do not want to see the other party.</li>
+    <li>Let the court registry know in advance if you do not want to see the other party — they can arrange a safe waiting area.</li>
     <li>Court Network volunteers are often available — you can request assistance at the registry.</li>
   </ul>
 
