@@ -3,51 +3,49 @@ const tips = [
     title: "How do I make an application?",
     slug: "how-to-apply",
     description: "Step-by-step instructions on applying for an Intervention Order in Victoria.",
-    content: `
-    <p>If you or someone you care about needs protection from family violence, stalking, or other harmful behaviour, you can apply for an Intervention Order (IVO) at the Magistrates’ Court of Victoria.</p>
+    content: `<p>If you or someone you care about needs protection from family violence, stalking, or other harmful behaviour, you can apply for an Intervention Order (IVO) at the Magistrates’ Court of Victoria.</p>
 
-    <h2>1. Decide which type of order to apply for</h2>
-    <p>There are two main types of intervention orders in Victoria:</p>
-    <ul>
-      <li><strong>Family Violence Intervention Order (FVIO)</strong> – protects a person from a family member who is violent or threatening.</li>
-      <li><strong>Personal Safety Intervention Order (PSIO)</strong> – protects a person from someone who is not a family member (for example, a neighbour, co-worker, or acquaintance).</li>
-    </ul>
+  <h2>1. Decide which type of order to apply for</h2>
+  <p>There are two main types of intervention orders in Victoria:</p>
+  <ul>
+    <li><strong>Family Violence Intervention Order (FVIO)</strong> – protects a person from a family member who is violent or threatening.</li>
+    <li><strong>Personal Safety Intervention Order (PSIO)</strong> – protects a person from someone who is not a family member (for example, a neighbour, co-worker, or acquaintance).</li>
+  </ul>
 
-    <h2>2. Gather key information</h2>
-    <p>Before applying, collect details such as:</p>
-    <ul>
-      <li>Your contact details and safe address (if different from your home).</li>
-      <li>Information about the person you want protection from (the ‘respondent’).</li>
-      <li>Dates or examples of incidents, threats, or concerning behaviour.</li>
-      <li>Any existing court orders or police involvement.</li>
-    </ul>
+  <h2>2. Gather key information</h2>
+  <p>Before applying, collect details such as:</p>
+  <ul>
+    <li>Your contact details and safe address (if different from your home).</li>
+    <li>Information about the person you want protection from (the ‘respondent’).</li>
+    <li>Dates or examples of incidents, threats, or concerning behaviour.</li>
+    <li>Any existing court orders or police involvement.</li>
+  </ul>
 
-    <h2>3. Choose how to apply</h2>
-    <ul>
-      <li><strong>Online (FVIOs only):</strong> Apply for a Family Violence Intervention Order online using the Magistrates’ Court of Victoria portal. Complete and submit your application from home or with a support service.
-        <br><a href="https://fvio.mcv.vic.gov.au/" target="_blank">Apply online for an FVIO</a>
-      </li>
-      <li><strong>In person or by email (PSIOs):</strong> Applications must be made at your nearest Magistrates’ Court or submitted by email. There is no online option for PSIOs.
-        <br><a href="https://www.mcv.vic.gov.au/intervention-orders/personal-safety-intervention-orders/applying-intervention-order" target="_blank">Learn how to apply for a PSIO</a>
-      </li>
-    </ul>
+  <h2>3. Choose how to apply</h2>
+  <ul>
+    <li><strong>Online (FVIOs only):</strong> Apply for a Family Violence Intervention Order online using the Magistrates’ Court of Victoria portal. Complete and submit your application from home or with a support service.
+      <br><a href="https://fvio.mcv.vic.gov.au/" target="_blank">Apply online for an FVIO</a>
+    </li>
+    <li><strong>In person or by email (PSIOs):</strong> Applications must be made at your nearest Magistrates’ Court or submitted by email. There is no online option for PSIOs.
+      <br><a href="https://www.mcv.vic.gov.au/intervention-orders/personal-safety-intervention-orders/applying-intervention-order" target="_blank">Learn how to apply for a PSIO</a>
+    </li>
+  </ul>
 
-    <h2>4. Fill out the application form</h2>
-    <p>Provide details of what happened and why you need protection. Be as specific as possible about any threats, violence, or stalking.</p>
+  <h2>4. Fill out the application form</h2>
+  <p>Provide details of what happened and why you need protection. Be as specific as possible about any threats, violence, or stalking.</p>
 
-    <h2>5. Submit your application</h2>
-    <p>After submitting, a <strong>court registrar will contact you</strong> to confirm receipt and explain the next steps. This may include an appointment to review your application or discuss additional information.</p>
-    <p>The court may grant an <strong>interim order</strong> (temporary protection) until your first court date. You can request an interim order in your application or ask the registrar when they contact you.</p>
+  <h2>5. Submit your application</h2>
+  <p>After submitting, a <strong>court registrar will contact you</strong> to confirm receipt and explain the next steps. This may include an appointment to review your application or discuss additional information.</p>
+  <p>The court may grant an <strong>interim order</strong> (temporary protection) until your first court date. You can request an interim order in your application or ask the registrar when they contact you.</p>
 
-    <h2>6. Attend your court hearing</h2>
-    <p>You’ll be given a date to attend court. This is when the magistrate considers your application. You can have support people or a lawyer with you.</p>
-    <p>If you feel unsafe seeing the respondent, let the court registry know in advance so they can arrange a safe waiting area.</p>
+  <h2>6. Attend your court hearing</h2>
+  <p>You’ll be given a date to attend court. This is when the magistrate considers your application. You can have support people or a lawyer with you.</p>
+  <p>If you feel unsafe seeing the respondent, let the court registry know in advance so they can arrange a safe waiting area.</p>
 
-    <h2>7. After the order is made</h2>
-    <p>If an order is granted, make sure you understand it and keep a copy. If the respondent breaches the order, contact the police immediately.</p>
+  <h2>7. After the order is made</h2>
+  <p>If an order is granted, make sure you understand it and keep a copy. If the respondent breaches the order, contact the police immediately.</p>
 
-    <p>For more detailed guidance, visit the <a href="https://www.mcv.vic.gov.au/intervention-orders" target="_blank">Magistrates’ Court of Victoria – Intervention Orders</a> website or speak with a community legal service.</p>
-  `
+  <p>For more detailed guidance, visit the <a href="https://www.mcv.vic.gov.au/intervention-orders" target="_blank">Magistrates’ Court of Victoria – Intervention Orders</a> website or speak with a community legal service.</p>`
   }
 
   ,
@@ -56,8 +54,7 @@ const tips = [
     title: "What will the process be?",
     slug: "process-overview",
     description: "Overview of the legal process, timelines, and key considerations for applicants.",
-    content: `
-  <p>This guide provides a simplified overview of the Intervention Order (IVO) process in Victoria, focusing on court steps. The information is for guidance only — seek legal advice for your situation.</p>
+    content: `<p>This guide provides a simplified overview of the Intervention Order (IVO) process in Victoria, focusing on court steps. The information is for guidance only — seek legal advice for your situation.</p>
 
   <h2>1. Interim Order (If Applicable)</h2>
   <ul>
@@ -97,8 +94,7 @@ const tips = [
     <li>Bring all relevant evidence to court, organised and labelled.</li>
     <li>Seek support from Court Network volunteers or a lawyer if needed.</li>
     <li>Follow court instructions carefully and stay calm, sticking to the facts.</li>
-  </ul>
-  `
+  </ul>`
   }
 
   ,
@@ -107,8 +103,7 @@ const tips = [
     title: "How will I be supported in court?",
     slug: "court-support",
     description: "Overview of support available in court.",
-    content: `
-  <p>Going to court for an Intervention Order (IVO) can feel overwhelming, but there are several support options available to help you through the process.</p>
+    content: `<p>Going to court for an Intervention Order (IVO) can feel overwhelming, but there are several support options available to help you through the process.</p>
 
   <h2>Court Network Volunteers</h2>
   <p>Trained volunteers from the Court Network are available at most Magistrates’ Courts. They can:</p>
@@ -142,8 +137,7 @@ const tips = [
     <li>Assist you in understanding what is happening during the process.</li>
   </ul>
 
-  <p>Remember, you are not alone — support services, including duty lawyers, Court Network volunteers, police (if they are the applicant), and your chosen support people are available to help you feel supported and prepared during your court appearance.</p>
-  `
+  <p>Remember, you are not alone — support services, including duty lawyers, Court Network volunteers, police (if they are the applicant), and your chosen support people are available to help you feel supported and prepared during your court appearance.</p>`
   }
 
   ,
@@ -152,8 +146,7 @@ const tips = [
     title: "How will I be supported in the community?",
     slug: "community-support",
     description: "Resources and support networks available for individuals navigating IVOs.",
-    content: `
-  <p>Support is available in the community before, during, and after an Intervention Order (IVO) matter. These services can help you feel safe, informed, and connected.</p>
+    content: `<p>Support is available in the community before, during, and after an Intervention Order (IVO) matter. These services can help you feel safe, informed, and connected.</p>
 
   <h2>Community Legal Services</h2>
   <p>Community legal centres provide free advice and assistance for IVO matters. They can:</p>
@@ -162,15 +155,28 @@ const tips = [
     <li>Help complete forms and prepare evidence.</li>
     <li>Provide guidance on what to expect in court.</li>
   </ul>
-  <p>Find your nearest service at <a href="https://clcs.org.au/legal-help/" target="_blank">Community Legal Centres Australia – Find Legal Help</a>.</p>
+  <p>Find your nearest service at <a href="https://clcs.org.au/legal-help/" target="_blank">Community Legal Centres Australia – Find Legal Help</a>.</p>
 
   <h2>Family Violence and Support Services</h2>
   <p>If you are experiencing family violence or harassment, support services can help with safety planning, counselling, and connecting you to practical resources.</p>
-  <p>Contact <strong>Safe Steps – Family Violence Response</strong> on <a href="tel:1800015188"><strong>1800 015 188</strong></a> (24/7) for immediate crisis support, or <strong>Orange Door</strong> on <a href="tel:1800 319 354"><strong>1800 319 354</strong></a> for ongoing support, safety planning, and connection to services.</p>
+  <ul>
+    <li>
+      <strong>Safe Steps – Family Violence Response:</strong>
+      24/7 crisis support and immediate safety assistance.
+      Call <a href="tel:1800015188"><strong>1800 015 188</strong></a>.
+    </li>
+    <li>
+      <strong>The Orange Door:</strong>
+      Ongoing support, safety planning, and connection to family violence services.
+      Call <a href="tel:1800319354"><strong>1800 319 354</strong></a>.
+    </li>
+  </ul>
 
   <h2>Police and Emergency Services</h2>
-  <p>If you feel threatened or the IVO is breached, contact Victoria Police: <a href="tel:000"><strong>000</strong></a> for emergencies or <a href="tel:131444"><strong>131 444</strong></a> for non‑urgent assistance.</p>
-  `
+  <p>If you feel threatened or the IVO is breached, contact Victoria Police:
+    <a href="tel:000"><strong>000</strong></a> for emergencies or
+    <a href="tel:131444"><strong>131 444</strong></a> for non-urgent assistance.
+  </p>`
   }
 
   ,
@@ -179,8 +185,7 @@ const tips = [
     title: "Court etiquette tips",
     slug: "court-etiquette",
     description: "Practical tips on conduct, dress, and preparation for attending court.",
-    content: `
-  <p>Attending the Magistrates’ Court for an intervention order matter can feel daunting, but knowing the expected etiquette helps.</p>
+    content: `<p>Attending the Magistrates’ Court for an intervention order matter can feel daunting, but knowing the expected etiquette helps.</p>
 
   <h2>Before you go</h2>
   <ul>
@@ -223,8 +228,7 @@ const tips = [
     <li>Court Network volunteers are often available — you can request assistance at the registry.</li>
   </ul>
 
-  <p>Overall, be respectful, stay calm, and focus on the facts. Good courtroom etiquette can make the process smoother and show the magistrate that you are taking the matter seriously.</p>
-  `
+  <p>Overall, be respectful, stay calm, and focus on the facts. Good courtroom etiquette can make the process smoother and show the magistrate that you are taking the matter seriously.</p>`
   }
 
 ];
