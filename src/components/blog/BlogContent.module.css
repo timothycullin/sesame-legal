@@ -1,3 +1,4 @@
+/* Excerpt highlight */
 .post-excerpt-highlight {
   padding: 1rem;                 /* 16px */
   color: #000;           
@@ -8,9 +9,28 @@
   margin-bottom: 1.5rem;         /* 24px */
 }
 
+/* Body paragraphs */
 .post-content p {
   color: #222;
   font-size: 1rem;               /* 16px */
   line-height: 1.8;
   margin-bottom: 1.5rem;         /* 24px */
+}
+
+/* Main section headings */
+.post-content h2 {
+  margin: 2rem 0 1rem;           /* spacing before and after */
+  color: #111;
+  font-size: 1.25rem;            /* 20px, slightly larger than body text */
+  font-weight: 600;
+  line-height: 1.4;              /* tighter than paragraphs for visual hierarchy */
+}
+
+/* Subheadings under main sections */
+.post-content h3 {
+  margin: 1.5rem 0 0.75rem;      /* slightly smaller spacing than h2 */
+  color: #222;
+  font-size: 1.125rem;           /* 18px, slightly smaller than h2 */
+  font-weight: 600;               /* updated from 500 to match paragraph bolds */
+  line-height: 1.4;
 }
