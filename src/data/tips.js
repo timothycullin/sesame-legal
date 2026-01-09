@@ -63,7 +63,7 @@ const tips = [
     <li>The applicant receives a copy outlining protections; the court will notify the respondent.</li>
   </ul>
 
-  <h2>2. First Mention</h2>
+  <h2>2. Mention Hearing</h2>
   <ul>
     <li>The first scheduled court appearance. Attend on the date provided.</li>
     <li>The respondent or their lawyer indicates whether they oppose the application.</li>
