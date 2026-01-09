@@ -56,7 +56,7 @@ const tips = [
     description: "Overview of the legal process, timelines, and key considerations for applicants.",
     content: `<p>This guide provides a simplified overview of the Intervention Order (IVO) process in Victoria, focusing on court steps. The information is for guidance only — seek legal advice for your situation.</p>
 
-  <h2>1. Interim Order (If Applicable)</h2>
+  <h2>1. Interim Order (if applicable)</h2>
   <ul>
     <li>A temporary, short-term order providing immediate protection before the first court hearing.</li>
     <li>Can be issued without the respondent present.</li>
@@ -73,7 +73,7 @@ const tips = [
     <li>An application can be withdrawn before the first hearing by contacting the court registry.</li>
   </ul>
 
-  <h2>3. Contested Hearing (Only if Needed)</h2>
+  <h2>3. Contested Hearing (only if needed)</h2>
   <ul>
     <li>Occurs only if the respondent opposes the application.</li>
     <li>Give your evidence calmly and factually. You can call witnesses who can support your case.</li>

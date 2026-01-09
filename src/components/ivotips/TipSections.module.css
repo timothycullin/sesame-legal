@@ -1,7 +1,7 @@
 /* ---------------- TIPS CONTAINER ---------------- */
 .tips-container {
   display: flex;
-  margin: 2rem auto;          /* 32px top/bottom, center horizontally */
+  margin: 2rem auto;          /* 32px top/bottom, centered horizontally */
   padding: 0 1rem;            /* 16px horizontal padding */
   background-color: #fff0f6;
   border-radius: 1.5rem;      /* 24px rounded corners */
@@ -12,30 +12,31 @@
 
 /* ---------------- TIP SECTION / LINK ---------------- */
 .tip-section {
-  display: block;             /* ensures whole section is clickable */
-  padding: 2rem;              /* 32px */
-  color: inherit;             /* inherit text color */
-  border: 0.0625rem solid #f3dce3; /* 1px equivalent in rem */
+  display: block;                     /* ensures whole section is clickable */
+  padding: 2rem;                      /* 32px */
+  color: inherit;                     /* inherit text color */
+  border: 0.125rem solid #f3dce3;    /* 2px border, matches cards */
   background-color: #fff;
-  border-radius: 1.5rem;      /* 24px rounded corners */
-  cursor: pointer;            /* pointer on hover */
-  text-decoration: none;      /* remove default link underline */
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border-radius: 1.5rem;              /* 24px rounded corners */
+  cursor: pointer;                    /* pointer on hover */
+  text-decoration: none;              /* remove default link underline */
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; /* include box-shadow */
 }
 
-/* Hover only on devices that support hover (desktop) */
 @media (hover: hover) and (pointer: fine) {
   .tip-section:hover {
-    background-color: #fff1f3;
-    border-color: #d9aeb8;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);    /* 8px vertical, 16px blur, subtle lift */
+    background-color: #fff1f3;                     /* light hover background */
+    border-color: #d9aeb8;                         /* darker border on hover */
   }
 }
 
-/* Active and focus for all devices */
 .tip-section:active,
 .tip-section:focus {
-  background-color: #fff1f3;
-  border-color: #d9aeb8;
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);  /* 4px vertical, 8px blur for click/focus */
+  background-color: #fff1f3;                       /* keep hover bg */
+  border-color: #d9aeb8;                           /* keep hover border */
+  outline: none;                                   /* remove default outline */
 }
 
 /* ---------------- TIP CONTENT ---------------- */
