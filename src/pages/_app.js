@@ -24,6 +24,8 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:image" content="/social-preview-1200x630.png" />
 
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://www.sesamelegal.com/" />
             </Head>
 
             <header>

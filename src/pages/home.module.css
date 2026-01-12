@@ -24,7 +24,7 @@
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);  /* 8px vertical, 16px blur */
-    background-color: #f9f9f9;                  /* subtle hover effect */
+    background-color: #fff;                  /* subtle hover effect */
     border-color: #333;                          /* softer than black for modern consistency */
     cursor: pointer;
   }
@@ -33,7 +33,7 @@
 .card:active,
 .card:focus {
   box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* 4px vertical, 8px blur */
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-color: #333;
   outline: none;
 }
