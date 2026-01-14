@@ -19,19 +19,19 @@ export default function BlogPost({ post }) {
         year: 'numeric',
     });
 
-    const postUrl = `https://sesameblog.vercel.app/blog/${post.slug}`;
+    // ✅ Updated domain (replaced vercel.app)
+    const postUrl = `https://sesamelegal.com/blog/${post.slug}`;
 
     return (
         <div className="page-container">
             <SEO
                 title={`${post.title} | Sesame Blog`}
                 description={post.excerpt || "Read this blog post on human rights on Sesame Blog"}
-                image={post.imageUrl ? `https://sesameblog.vercel.app${post.imageUrl}` : null}
+                image={post.imageUrl ? `https://sesamelegal.com${post.imageUrl}` : null}
                 url={postUrl}
             />
 
             <main>
-                {/* Back to blog list using reusable component */}
                 <BackButton href="/blog">← Back to Blog</BackButton>
 
                 <BlogHeader
