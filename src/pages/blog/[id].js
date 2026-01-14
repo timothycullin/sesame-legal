@@ -19,16 +19,22 @@ export default function BlogPost({ post }) {
         year: 'numeric',
     });
 
-    // ✅ Updated domain (replaced vercel.app)
-    const postUrl = `https://sesamelegal.com/blog/${post.slug}`;
+    // ✅ Updated domain to use www for canonical and sharing
+    const postUrl = `https://www.sesamelegal.com/blog/${post.slug}`;
+
+    // ✅ Fallback image if post.imageUrl is missing
+    const seoImage = post.imageUrl
+        ? `https://www.sesamelegal.com${post.imageUrl}`
+        : 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     return (
         <div className="page-container">
             <SEO
                 title={`${post.title} | Sesame Blog`}
                 description={post.excerpt || "Read this blog post on human rights on Sesame Blog"}
-                image={post.imageUrl ? `https://sesamelegal.com${post.imageUrl}` : null}
+                image={seoImage}
                 url={postUrl}
+                canonical={postUrl} // explicitly set canonical
             />
 
             <main>
