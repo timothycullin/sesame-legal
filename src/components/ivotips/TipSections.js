@@ -5,7 +5,7 @@ const tips = [
     {
         title: "How do I make an application?",
         slug: "how-to-apply",
-        description: "Step-by-step guidance on applying for an Intervention Order in Victoria."
+        description: "Step-by-step guidance on applying for an Intervention Order (IVO) in Victoria."
     },
     {
         title: "What will the process be?",
@@ -15,7 +15,7 @@ const tips = [
     {
         title: "How will I be supported in court?",
         slug: "court-support",
-        description: "Support options available in court, including volunteers, duty lawyers, and personal support."
+        description: "Support options available in court during an IVO, including volunteers, duty lawyers, and personal support."
     },
     {
         title: "How will I be supported in the community?",
@@ -25,7 +25,7 @@ const tips = [
     {
         title: "Court etiquette tips",
         slug: "court-etiquette",
-        description: "Practical tips on conduct, dress, and preparation for attending court hearings."
+        description: "Practical tips on conduct, dress, and preparation for attending IVO hearings."
     }
 ];
 

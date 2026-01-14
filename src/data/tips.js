@@ -185,7 +185,7 @@ const tips = [
     title: "Court etiquette tips",
     slug: "court-etiquette",
     description: "Practical tips on conduct, dress, and preparation for attending court.",
-    content: `<p>Attending the Magistrates’ Court for an intervention order matter can feel daunting, but knowing the expected etiquette helps.</p>
+    content: `<p>Attending the Magistrates’ Court for an Intervention Order (IVO) matter can feel daunting, but knowing the expected etiquette helps.</p>
 
   <h2>Before you go</h2>
   <ul>
