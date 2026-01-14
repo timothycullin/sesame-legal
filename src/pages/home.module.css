@@ -12,30 +12,34 @@
 
 /* ---------------- CARD ---------------- */
 .card {
+  display: block;                          /* ensures entire card is clickable */
   width: 17.5rem;                        /* 280px */
   color: inherit;
   border: 0.125rem solid #e0e0e0;        /* 2px border */
   background-color: #fff;
   border-radius: 1.5rem;                  /* 24px rounded corners */
+  cursor: pointer;
   text-decoration: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: 
+    background-color 0.2s ease, 
+    border-color 0.2s ease, 
+    box-shadow 0.2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);  /* 8px vertical, 16px blur */
-    background-color: #fff;                  /* subtle hover effect */
-    border-color: #333;                          /* softer than black for modern consistency */
-    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);  /* subtle lift */
+    background-color: #fff;                     /* stays white or add tint if desired */
+    border-color: #333;                         /* subtle border darkening */
   }
 }
 
 .card:active,
 .card:focus {
-  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* 4px vertical, 8px blur */
-  background-color: #fff;
-  border-color: #333;
-  outline: none;
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* pressed / focused effect */
+  background-color: #fff;                        /* same bg for stability */
+  border-color: #333;                             /* keep border consistent */
+  outline: none;                                  /* remove default outline */
 }
 
 /* ---------------- CARD CONTENT ---------------- */
