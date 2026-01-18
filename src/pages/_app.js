@@ -30,9 +30,7 @@ export default function MyApp({ Component, pageProps }) {
                 <Navbar />
             </header>
 
-            <main>
-                <Component {...pageProps} />
-            </main>
+            <Component {...pageProps} />
         </>
     );
 }
