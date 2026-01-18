@@ -1,16 +1,20 @@
 // pages/about.js
-import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import styles from './about.module.css';
+import Head from 'next/head';
 
 export default function About() {
     return (
         <div className="page-container">
-            {/* SEO meta tags */}
-            <SEO
-                title="About Sesame Legal, IVO Tips & Sesame Blog"
-                description="Sesame Legal is your trusted legal resource hub in Australia, providing guidance on Intervention Orders via IVO Tips, and insights on human rights through Sesame Blog."
-            />
+            {/* Minimal self-contained SEO */}
+            <Head>
+                <title>About Sesame Legal | IVO Tips & Blog</title>
+                <meta
+                    name="description"
+                    content="Sesame Legal is your trusted legal resource hub in Australia, providing guidance on Intervention Orders via IVO Tips, and insights on human rights through Sesame Blog."
+                />
+                <link rel="canonical" href="https://www.sesamelegal.com/about" />
+            </Head>
 
             <main className={styles.main}>
                 {/* Umbrella Section */}

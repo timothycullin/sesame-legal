@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
@@ -9,10 +9,15 @@ import IVOTipsIcon from '../components/IvoTipsIcon';
 export default function Home() {
     return (
         <div className="page-container">
-            <SEO
-                title="Sesame Legal – IVO Tips & Sesame Blog"
-                description="Sesame Legal is your trusted hub for practical guidance on Intervention Orders and human rights insights through Sesame Blog."
-            />
+            {/* Minimal self-contained SEO */}
+            <Head>
+                <title>Sesame Legal – IVO Tips & Blog</title>
+                <meta
+                    name="description"
+                    content="Sesame Legal is your trusted hub for practical guidance on Intervention Orders and human rights insights through Sesame Blog."
+                />
+                <link rel="canonical" href="https://www.sesamelegal.com/" />
+            </Head>
 
             <main>
                 <Header

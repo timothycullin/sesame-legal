@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { useState } from 'react';
 import Footer from '../components/Footer';
 import styles from './contact.module.css';
@@ -45,10 +45,15 @@ export default function Contact() {
 
     return (
         <div className="page-container">
-            <SEO
-                title="Contact - Sesame Legal"
-                description="Get in touch with Sesame Legal for guidance on IVO Tips, human rights, and related resources."
-            />
+            {/* Minimal self-contained SEO */}
+            <Head>
+                <title>Contact Sesame Legal | IVO Tips & Blog</title>
+                <meta
+                    name="description"
+                    content="Get in touch with Sesame Legal for guidance on Intervention Orders, human rights, and related resources."
+                />
+                <link rel="canonical" href="https://www.sesamelegal.com/contact" />
+            </Head>
 
             <main className={styles['contact-container']}>
                 <h1>Get in touch</h1>

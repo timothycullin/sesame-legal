@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import Footer from '../../components/Footer';
-import SEO from '../../components/SEO';
-import { posts } from '../../data/posts';
 import BlogHeader from '../../components/blog/BlogHeader';
 import BlogContent from '../../components/blog/BlogContent';
 import ShareButtons from '../../components/blog/ShareButtons';
 import BackButton from '../../components/BackButton';
+import Head from 'next/head';
+import { posts } from '../../data/posts';
 
 export default function BlogPost({ post }) {
     const router = useRouter();
@@ -19,23 +19,30 @@ export default function BlogPost({ post }) {
         year: 'numeric',
     });
 
-    // ✅ Updated domain to use www for canonical and sharing
     const postUrl = `https://www.sesamelegal.com/blog/${post.slug}`;
-
-    // ✅ Fallback image if post.imageUrl is missing
     const seoImage = post.imageUrl
         ? `https://www.sesamelegal.com${post.imageUrl}`
         : 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     return (
         <div className="page-container">
-            <SEO
-                title={`${post.title} | Sesame Blog`}
-                description={post.excerpt || "Read this blog post on human rights on Sesame Blog"}
-                image={seoImage}
-                url={postUrl}
-                canonical={postUrl} // explicitly set canonical
-            />
+            {/* Minimal self-contained SEO */}
+            <Head>
+                <title>{post.title} | Sesame Blog</title>
+                <meta
+                    name="description"
+                    content={post.excerpt || "Read this blog post on human rights on Sesame Blog"}
+                />
+                <link rel="canonical" href={postUrl} />
+                <meta property="og:title" content={`${post.title} | Sesame Blog`} />
+                <meta property="og:description" content={post.excerpt || "Read this blog post on human rights on Sesame Blog"} />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content={seoImage} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${post.title} | Sesame Blog`} />
+                <meta name="twitter:description" content={post.excerpt || "Read this blog post on human rights on Sesame Blog"} />
+                <meta name="twitter:image" content={seoImage} />
+            </Head>
 
             <main>
                 <BackButton href="/blog">← Back to Blog</BackButton>
