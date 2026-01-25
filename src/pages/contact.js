@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import Head from 'next/head';
 import { useState } from 'react';
 import Footer from '../components/Footer';
@@ -21,12 +22,12 @@ export default function Contact() {
         const newErrors = {};
         let firstInvalidField = null;
 
-        // Loop through inputs and textareas
+        // Loop through inputs and textareas for validation
         Array.from(form.elements).forEach((el) => {
             if ((el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') && !firstInvalidField) {
                 if (!el.checkValidity()) {
-                    newErrors[el.id] = el.validationMessage; // show browser message
-                    firstInvalidField = el; // mark first invalid field
+                    newErrors[el.id] = el.validationMessage;
+                    firstInvalidField = el;
                 }
             }
         });
@@ -34,12 +35,25 @@ export default function Contact() {
         setErrors(newErrors);
 
         if (firstInvalidField) {
-            firstInvalidField.focus(); // scroll & open keyboard on mobile
+            firstInvalidField.focus();
         } else {
-            console.log('Form submitted:', values);
-            setValues({ name: '', email: '', message: '' });
-            setErrors({ name: '', email: '', message: '' });
-            setFormSubmitted(true); // show success message
+            // ✅ Send email via EmailJS
+            emailjs.send(
+                'service_5dcycdp',       // Your Service ID
+                'template_nfn1fxf',      // Your Template ID
+                values,                  // Form values: { name, email, message }
+                'u0Z_56VLO3UwzMrIs'  // ✅ Correct Public Key
+            )
+                .then((response) => {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    setValues({ name: '', email: '', message: '' });
+                    setErrors({ name: '', email: '', message: '' });
+                    setFormSubmitted(true); // show success message
+                })
+                .catch((err) => {
+                    console.error('EmailJS error:', err);
+                    // Optional: display a failure message to the user
+                });
         }
     };
 
