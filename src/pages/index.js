@@ -1,14 +1,21 @@
+// External / framework imports
 import Head from 'next/head';
+import Link from 'next/link';
+
+// Internal components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
-import styles from './home.module.css';
 import BlogIcon from '../components/BlogIcon';
 import IVOTipsIcon from '../components/IvoTipsIcon';
 
+// Local styles
+import styles from './home.module.css';
+
 export default function Home() {
     return (
+
         <div className="page-container">
+
             {/* Minimal self-contained SEO */}
             <Head>
                 <title>Sesame Legal – IVO Tips & Blog</title>
@@ -28,7 +35,7 @@ export default function Home() {
 
                 <section className={styles['portal-cards']} aria-label="Legal Resources Portals">
                     {/* IVO Tips Portal */}
-                    <Link href="/ivotips" className={styles.card} role="link">
+                    <Link href="/ivotips" className={styles.card}>
                         <div className={styles['card-content']}>
                             <div className={styles['card-icon']}>
                                 <IVOTipsIcon width={64} height={64} aria-hidden="true" />
@@ -39,7 +46,7 @@ export default function Home() {
                     </Link>
 
                     {/* Blog Portal */}
-                    <Link href="/blog" className={styles.card} role="link">
+                    <Link href="/blog" className={styles.card}>
                         <div className={styles['card-content']}>
                             <div className={styles['card-icon']}>
                                 <BlogIcon width={64} height={64} aria-hidden="true" />
