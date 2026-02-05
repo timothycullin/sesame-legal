@@ -8,12 +8,14 @@ export default function Contact() {
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
     const [values, setValues] = useState({ name: '', email: '', message: '' });
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formFailed, setFormFailed] = useState(false); // 🔹 NEW: state for failure message
 
     const handleChange = (e) => {
         const { id, value } = e.target;
         setValues({ ...values, [id]: value });
         setErrors({ ...errors, [id]: '' }); // clear tooltip while typing
         setFormSubmitted(false); // hide success message while typing
+        setFormFailed(false); // 🔹 NEW: hide failure message while typing
     };
 
     const handleSubmit = (e) => {
@@ -49,10 +51,12 @@ export default function Contact() {
                     setValues({ name: '', email: '', message: '' });
                     setErrors({ name: '', email: '', message: '' });
                     setFormSubmitted(true); // show success message
+                    setFormFailed(false); // 🔹 NEW: hide failure message on success
                 })
                 .catch((err) => {
                     console.error('EmailJS error:', err);
-                    // Optional: display a failure message to the user
+                    setFormFailed(true); // 🔹 NEW: show failure message
+                    setFormSubmitted(false); // 🔹 NEW: hide success if previously showing
                 });
         }
     };
@@ -119,8 +123,14 @@ export default function Contact() {
                         ))}
 
                         {formSubmitted && (
-                            <div className={styles['success-message']}>
+                            <div className={styles['success-message']} aria-live="polite" role="status">
                                 Thanks! Your message has been sent.
+                            </div>
+                        )}
+
+                        {formFailed && ( // 🔹 NEW: failure message
+                            <div className={styles['error-message']} aria-live="polite" role="status">
+                                Sorry, your message could not be sent. Please try again later.
                             </div>
                         )}
 

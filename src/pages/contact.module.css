@@ -114,16 +114,29 @@
   white-space: normal;
 }
 
-.success-message {
+.success-message,
+.error-message {
   padding: 0.75rem 1rem;                        /* top/bottom 12px, sides 16px */
-  color: #2a7f4f;
-  border: 0.0625rem solid #a3f3b7;             /* 1px */
+  border: 0.0625rem solid;                      /* 1px border, color set per type */
   box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 10%); /* 2px 6px subtle lift */
-  background-color: #e6ffed;
   border-radius: 0.375rem;                      /* 6px */
   font-weight: 500;
   margin-bottom: 1rem;                          /* 16px */
   text-align: center;
+}
+
+/* Success-specific colors */
+.success-message {
+  color: #2a7f4f;                               /* green text */
+  background-color: #e6ffed;                    /* soft green background */
+  border-color: #a3f3b7;                        /* light green border */
+}
+
+/* Error-specific colors */
+.error-message {
+  color: #b71c1c;                               /* dark red text */
+  background-color: #ffe6e6;                     /* soft red background */
+  border-color: #f5a9a9;                        /* light red border */
 }
 
 /* ----------------- MEDIA QUERIES ----------------- */
