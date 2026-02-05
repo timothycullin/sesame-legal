@@ -27,19 +27,14 @@
     content: '';
 }
 
-/* Umbrella heading: About Sesame Legal - blue accent */
+/* Blue accent for main umbrella heading */
 .main h1:first-of-type::before {
     background-color: #1e88e5;
 }
 
-/* IVO Tips section - gray accent */
-.main h2:nth-of-type(1)::before {
-    background-color: #999;
-}
-
-/* Sesame Blog section - red accent */
-.main h2:nth-of-type(2)::before {
-    background-color: #E53935;
+/* Gray accent for all secondary sections */
+.main h2::before {
+    background-color: #d32f2f;
 }
 
 .main p {

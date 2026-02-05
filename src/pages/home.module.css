@@ -30,7 +30,7 @@
   .card:hover {
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);  /* subtle lift */
     background-color: #fff;                     /* stays white or add tint if desired */
-    border-color: #333;                         /* subtle border darkening */
+    border-color: #FF2D95;                         /* subtle border darkening */
   }
 }
 
@@ -38,7 +38,7 @@
 .card:focus {
   box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* pressed / focused effect */
   background-color: #fff;                        /* same bg for stability */
-  border-color: #333;                             /* keep border consistent */
+  border-color: #FF2D95;                             /* keep border consistent */
   outline: none;                                  /* remove default outline */
 }
 
