@@ -22,6 +22,31 @@ export default function MyApp({ Component, pageProps }) {
 
                 {/* Default Twitter card type */}
                 <meta name="twitter:card" content="summary_large_image" />
+
+                {/* --- ADDED FOR SEO / GOOGLE BRAND NAME --- */}
+
+                {/* Default site title */}
+                <title>Sesame Legal – Expert Legal Services</title>
+
+                {/* Default meta description */}
+                <meta
+                    name="description"
+                    content="Sesame Legal provides expert legal services."
+                />
+
+                {/* JSON-LD structured data telling Google your website name */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebSite",
+                            "name": "Sesame Legal", // Your brand name
+                            "url": "https://www.sesamelegal.com/" // Your website URL
+                        })
+                    }}
+                />
+                {/* --- END ADDED FOR SEO --- */}
             </Head>
 
             <header>
