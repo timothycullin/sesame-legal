@@ -1,3 +1,4 @@
+// components/Navbar.js
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -11,9 +12,15 @@ export default function Navbar() {
     const toggleMenu = () => setMenuOpen((prev) => !prev);
     const isActive = (path) => router.pathname === path;
 
+    // Top-level nav items, Resources has children
     const navLinks = [
-        { href: "/ivotips", label: "IVO Tips" },
-        { href: "/blog", label: "Sesame Blog" },
+        {
+            label: "Resources",
+            children: [
+                { href: "/ivotips", label: "IVO Tips" },
+                { href: "/blog", label: "Sesame Blog" },
+            ]
+        },
         { href: "/about", label: "About" },
         { href: "/contact", label: "Contact" },
     ];
@@ -53,15 +60,52 @@ export default function Navbar() {
 
                     {/* Desktop nav */}
                     <nav className={`${styles['nav-right']} ${styles['desktop-menu']}`}>
-                        {navLinks.map(({ href, label }) => (
-                            <Link
-                                key={href}
-                                href={href}
-                                className={styles['nav-link']}
-                                aria-current={isActive(href) ? "page" : undefined}
-                            >
-                                {label}
-                            </Link>
+                        {navLinks.map((link) => (
+                            <div key={link.label} className={styles['nav-item']}>
+                                {!link.children ? (
+                                    <Link
+                                        href={link.href}
+                                        className={styles['nav-link']}
+                                        aria-current={isActive(link.href) ? "page" : undefined}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ) : (
+                                    <div className={styles['dropdown']}>
+                                        <span className={styles['nav-link']}>
+                                            {link.label}{" "}
+                                            <svg
+                                                className={styles['dropdown-chevron']}
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="miter"
+                                            >
+                                                <polyline points="6 9 12 15 18 9" />
+                                            </svg>
+
+                                        </span>
+
+                                        <ul className={styles['dropdown-menu']}>
+                                            {link.children.map((child) => (
+                                                <li key={child.href}>
+                                                    <Link
+                                                        href={child.href}
+                                                        className={styles['nav-link']}
+                                                        aria-current={isActive(child.href) ? "page" : undefined}
+                                                    >
+                                                        {child.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </nav>
 
@@ -113,17 +157,31 @@ export default function Navbar() {
 
             {/* Mobile dropdown menu */}
             <nav className={`${styles['mobile-menu']} ${menuOpen ? styles.open : ""}`}>
-                {navLinks.map(({ href, label }) => (
-                    <Link
-                        key={href}
-                        href={href}
-                        className={styles['nav-link']}
-                        aria-current={isActive(href) ? "page" : undefined}
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        {label}
-                    </Link>
-                ))}
+                {navLinks.map(({ href, label, children }) =>
+                    !children ? (
+                        <Link
+                            key={href}
+                            href={href}
+                            className={styles['nav-link']}
+                            aria-current={isActive(href) ? "page" : undefined}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {label}
+                        </Link>
+                    ) : (
+                        children.map((child) => (
+                            <Link
+                                key={child.href}
+                                href={child.href}
+                                className={styles['nav-link']}
+                                aria-current={isActive(child.href) ? "page" : undefined}
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                {child.label}
+                            </Link>
+                        ))
+                    )
+                )}
             </nav>
         </>
     );
