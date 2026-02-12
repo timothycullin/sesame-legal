@@ -1,8 +1,13 @@
 // pages/ivotips/index.js
+
+// External imports
 import Head from 'next/head';
+
+// Local components
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import TipSections from '../../components/ivotips/TipSections';
+
 
 export default function IvoTipLanding() {
     const pageUrl = 'https://www.sesamelegal.com/ivotips';

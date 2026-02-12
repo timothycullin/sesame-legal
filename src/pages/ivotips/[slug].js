@@ -1,10 +1,16 @@
 // pages/ivotips/[slug].js
+
+// External imports
 import Head from 'next/head';
+
+// Local components
 import Footer from '../../components/Footer';
 import BackButton from '../../components/BackButton';
 import TipPageWrapper from '../../components/ivotips/TipPageWrapper';
 import TipArticle from '../../components/ivotips/TipArticle';
 import TipNav from '../../components/ivotips/TipNav';
+
+// Local data
 import tips from '../../data/tips';
 
 export async function getStaticPaths() {
