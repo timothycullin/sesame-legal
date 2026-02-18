@@ -9,6 +9,7 @@ import SvgLogoComponent from "./SvgLogoComponent";
 // Styles
 import styles from "./Navbar.module.css";
 
+
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
@@ -37,7 +38,10 @@ export default function Navbar() {
 
     const toggleMenu = () => setMenuOpen((prev) => {
         const newState = !prev;
-        if (!newState) setMobileDropdownOpen(closeDropdownIfInactive);
+
+        // Reset mobile dropdown every time menu opens or closes
+        setMobileDropdownOpen(null);
+
         return newState;
     });
 
@@ -45,8 +49,6 @@ export default function Navbar() {
         setMobileDropdownOpen((prev) => (prev === label ? null : label));
 
     useEffect(() => {
-        const activeDropdown = navLinks.find((link) => link.children && isDropdownActive(link));
-        if (activeDropdown) setMobileDropdownOpen(activeDropdown.label);
 
         const handleResize = () => {
             if (window.innerWidth > 768) {
@@ -68,6 +70,7 @@ export default function Navbar() {
             router.events.off("routeChangeStart", handleRouteChange);
         };
     }, [router.events, router.pathname]);
+
 
     return (
         <>
