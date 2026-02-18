@@ -1,16 +1,18 @@
-// components/Navbar.js
+// React + Next
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import Link from "next/link";
+
+// Components
 import SvgLogoComponent from "./SvgLogoComponent";
-import styles from './Navbar.module.css';
+
+// Styles
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
     const router = useRouter();
-
-    const isActive = (path) => router.pathname === path;
 
     const navLinks = [
         {
@@ -24,78 +26,48 @@ export default function Navbar() {
         { href: "/contact", label: "Contact" },
     ];
 
-    // Helper: check if a dropdown has an active child
-    const isDropdownActive = (dropdown) =>
-        dropdown.children?.some((child) => isActive(child.href));
+    const isActive = (path) => router.pathname === path;
+    const isDropdownActive = (dropdown) => dropdown.children?.some((child) => isActive(child.href));
 
-    // Toggle mobile menu
-    const toggleMenu = () => {
-        setMenuOpen((prev) => {
-            const newState = !prev;
-
-            if (!newState) {
-                // Closing menu → only reset dropdown if it does NOT contain active link
-                setMobileDropdownOpen((prevDropdown) => {
-                    if (!prevDropdown) return null;
-
-                    const dropdown = navLinks.find(
-                        (link) => link.label === prevDropdown && link.children
-                    );
-
-                    if (dropdown && isDropdownActive(dropdown)) return prevDropdown;
-                    return null;
-                });
-            }
-
-            return newState;
-        });
+    const closeDropdownIfInactive = (dropdownLabel) => {
+        if (!dropdownLabel) return null;
+        const dropdown = navLinks.find((link) => link.label === dropdownLabel && link.children);
+        return dropdown && isDropdownActive(dropdown) ? dropdownLabel : null;
     };
 
-    // Toggle individual mobile dropdowns
+    const toggleMenu = () => setMenuOpen((prev) => {
+        const newState = !prev;
+        if (!newState) setMobileDropdownOpen(closeDropdownIfInactive);
+        return newState;
+    });
+
     const toggleMobileDropdown = (label) =>
         setMobileDropdownOpen((prev) => (prev === label ? null : label));
 
-    // Auto-open dropdowns if sub-link is active (on page load / refresh)
     useEffect(() => {
-        const activeDropdown = navLinks.find(
-            (link) => link.children && isDropdownActive(link)
-        );
-        if (activeDropdown) {
-            setMobileDropdownOpen(activeDropdown.label);
-        }
-    }, [router.pathname]);
+        const activeDropdown = navLinks.find((link) => link.children && isDropdownActive(link));
+        if (activeDropdown) setMobileDropdownOpen(activeDropdown.label);
 
-    // Close mobile menu and dropdowns on resize > 768px
-    useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 768 && menuOpen) {
+            if (window.innerWidth > 768) {
                 setMenuOpen(false);
-                setMobileDropdownOpen(null);
+                setMobileDropdownOpen(closeDropdownIfInactive);
             }
         };
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [menuOpen]);
 
-    // Close menu on route change (but keep dropdown open if active)
-    useEffect(() => {
         const handleRouteChange = () => {
             setMenuOpen(false);
-            setMobileDropdownOpen((prevDropdown) => {
-                if (!prevDropdown) return null;
-
-                const dropdown = navLinks.find(
-                    (link) => link.label === prevDropdown && link.children
-                );
-
-                if (dropdown && isDropdownActive(dropdown)) return prevDropdown;
-                return null;
-            });
+            setMobileDropdownOpen(closeDropdownIfInactive);
         };
-        router.events.on("routeChangeStart", handleRouteChange);
-        return () => router.events.off("routeChangeStart", handleRouteChange);
-    }, [router.events]);
 
+        window.addEventListener("resize", handleResize);
+        router.events.on("routeChangeStart", handleRouteChange);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            router.events.off("routeChangeStart", handleRouteChange);
+        };
+    }, [router.events, router.pathname]);
 
     return (
         <>
