@@ -4,7 +4,7 @@ export const nzyqHumanRightsCase = {
   author: 'Tim Cullin',
   authorSlug: 'tim-cullin',
   excerpt: "An analysis of the <em>NZYQ</em> decision and its connection to <em>Al-Kateb v Godwin</em>, exploring whether human rights or constitutional principles drove the outcome.",
-  imageUrl: '/test-image2.jpg',
+  imageUrl: '/blog-image1.jpg',
   content: `
     <p>The case that was overturned by <em>NZYQ</em> was <em>Al-Kateb v Godwin</em> [2004] HCA 37, in which the High Court held that the mandatory detention of a stateless person under the <em>Migration Act 1958</em> (Cth) was lawful — even if it meant detention on an indefinite basis. Justice Kirby, in dissent, argued that indefinite detention raised serious human rights concerns and urged the Court to interpret the law consistently with fundamental rights principles (<em>NZYQ v Minister for Immigration, Citizenship and Multicultural Affairs & Anor</em> [2023] HCA 37).</p>
 
