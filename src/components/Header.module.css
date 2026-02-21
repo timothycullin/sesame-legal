@@ -2,43 +2,31 @@
   margin: 0 auto;
   padding: 0 1.5rem 3.75rem;   /* 0 24px 60px */
   color: #000;
-  animation-delay: 0.1s;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-  animation-name: fade-in;
-  animation-timing-function: ease-out;
   background-color: #fff;
-  max-width: 50rem;           /* 800px */
-  opacity: 0;
+  max-width: 50rem;            /* 800px */
   text-align: center;
-  will-change: opacity;
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .page-title {
   font-family: "League Spartan", sans-serif;
-  font-size: 4.5rem;          /* 72px */
+  font-size: 4.5rem;           /* 72px */
   font-weight: 500;
   line-height: 1.1;
-  margin-bottom: 0.5rem;      /* 8px */
+  margin-bottom: 0.5rem;       /* 8px */
 }
 
 .page-label {
   color: #555;
-  font-size: 1rem;            /* 16px */
+  font-size: 1rem;             /* 16px */
   font-weight: 400;
   letter-spacing: 0.05em;
-  margin-bottom: 2rem;        /* 32px */
+  margin-bottom: 2rem;         /* 32px */
 }
 
 .page-description {
   margin: 0 auto;
   color: #222;
-  font-size: 1.125rem;        /* 18px */
+  font-size: 1.125rem;         /* 18px */
   font-weight: 400;
   line-height: 1.5;
   max-width: 100%;
@@ -46,9 +34,9 @@
 
 .visually-hidden {
   position: absolute;
-  width: 0.0625rem;           /* 1px */
-  height: 0.0625rem;          /* 1px */
-  margin: -0.0625rem;         /* -1px */
+  width: 0.0625rem;            /* 1px */
+  height: 0.0625rem;           /* 1px */
+  margin: -0.0625rem;          /* -1px */
   padding: 0;
   border: 0;
   clip-path: rect(0 0 0 0);
@@ -57,23 +45,23 @@
 }
 
 /* ----------------- MEDIA QUERIES ----------------- */
-@media (max-width: 48rem) {   /* 768px */
+@media (max-width: 48rem) {    /* 768px */
   .page-header {
-    padding: 0 1rem 2.5rem;   /* 0 16px 40px */
+    padding: 0 1rem 2.5rem;    /* 0 16px 40px */
     max-width: 100%;
   }
 
   .page-title {
-    font-size: 3rem;          /* 48px */
+    font-size: 3rem;           /* 48px */
   }
 
   .page-label {
-    font-size: 0.875rem;      /* 14px */
-    margin-bottom: 1.5rem;    /* 24px */
+    font-size: 0.875rem;       /* 14px */
+    margin-bottom: 1.5rem;     /* 24px */
   }
 
   .page-description {
-    font-size: 1rem;          /* 16px */
+    font-size: 1rem;           /* 16px */
     max-width: 100%;
   }
 }
