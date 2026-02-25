@@ -79,7 +79,7 @@ export default function Navbar() {
                     <div className={styles['nav-left']}>
                         <Link
                             href="/"
-                            aria-label="Sesame Logo"
+                            aria-label="Home"                   // minimal accessibility: describes the link for screen readers
                             className={styles['logo-link']}
                             onClick={() => setMenuOpen(false)}
                         >
@@ -95,13 +95,18 @@ export default function Navbar() {
                                     <Link
                                         href={link.href}
                                         className={styles['nav-link']}
-                                        aria-current={isActive(link.href) ? "page" : undefined}
+                                        aria-current={isActive(link.href) ? "page" : undefined} // minimal accessibility: marks current page
                                     >
                                         {link.label}
                                     </Link>
                                 ) : (
                                     <div className={styles.dropdown}>
-                                        <span className={styles['nav-link']}>
+                                        {/* Parent link is focusable, but no JS toggle needed */}
+                                        <Link
+                                            href="#"
+                                            className={styles['nav-link']}
+                                            aria-haspopup="true" // minimal accessibility: indicates dropdown presence
+                                        >
                                             {link.label}{" "}
                                             <svg
                                                 className={styles['dropdown-chevron']}
@@ -113,20 +118,20 @@ export default function Navbar() {
                                                 strokeWidth="3"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="miter"
+                                                aria-hidden="true" // minimal accessibility: decorative icon hidden from screen readers
                                             >
                                                 <polyline points="6 9 12 15 18 9" />
                                             </svg>
-                                        </span>
+                                        </Link>
 
+                                        {/* Dropdown menu */}
                                         <ul className={styles['dropdown-menu']}>
                                             {link.children.map((child) => (
                                                 <li key={child.href}>
                                                     <Link
                                                         href={child.href}
                                                         className={styles['nav-link']}
-                                                        aria-current={
-                                                            isActive(child.href) ? "page" : undefined
-                                                        }
+                                                        aria-current={isActive(child.href) ? "page" : undefined} // minimal accessibility: marks current page
                                                     >
                                                         {child.label}
                                                     </Link>
@@ -141,8 +146,8 @@ export default function Navbar() {
 
                     {/* Menu toggle button */}
                     <button
-                        aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        aria-expanded={menuOpen}
+                        aria-label={menuOpen ? "Close menu" : "Open menu"}       // minimal accessibility: describes the button state for screen readers
+                        aria-expanded={menuOpen}                                  // minimal accessibility: indicates if the menu is open or closed
                         onClick={toggleMenu}
                         className={`${styles['menu-toggle-btn']} ${menuOpen ? styles.open : ""}`}
                         type="button"
@@ -158,7 +163,7 @@ export default function Navbar() {
                                 strokeWidth="2.5"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                aria-hidden="true"
+                                aria-hidden="true"                               // minimal accessibility: hides decorative icon from screen readers
                             >
                                 <path d="M6 18L18 6" />
                                 <path d="M6 6l12 12" />
@@ -174,7 +179,7 @@ export default function Navbar() {
                                 stroke="currentColor"
                                 strokeWidth="2.5"
                                 strokeLinecap="round"
-                                aria-hidden="true"
+                                aria-hidden="true"                               // minimal accessibility: hides decorative icon from screen readers
                             >
                                 <path d="M3 6h18" />
                                 <path d="M3 12h18" />
@@ -182,18 +187,21 @@ export default function Navbar() {
                             </svg>
                         )}
                     </button>
+
                 </div>
-            </header>
+            </header >
 
             {/* Mobile dropdown menu */}
-            <nav className={`${styles['mobile-menu']} ${menuOpen ? styles.open : ""}`}>
+            <nav
+                className={`${styles['mobile-menu']} ${menuOpen ? styles.open : ""}`}
+            >
                 {navLinks.map((link) =>
                     !link.children ? (
                         <Link
                             key={link.href}
                             href={link.href}
                             className={styles['nav-link']}
-                            aria-current={isActive(link.href) ? "page" : undefined}
+                            aria-current={isActive(link.href) ? "page" : undefined} // minimal accessibility: marks current page
                             onClick={() => {
                                 setMenuOpen(false);
                                 setMobileDropdownOpen(null);
@@ -205,9 +213,11 @@ export default function Navbar() {
                         <div key={link.label} className={styles['mobile-dropdown']}>
                             <button
                                 type="button"
-                                className={`${styles['nav-link']} ${styles['dropdown-link']} ${mobileDropdownOpen === link.label ? styles['open-dropdown'] : ""}`}
+                                className={`${styles['nav-link']} ${styles['dropdown-link']} ${mobileDropdownOpen === link.label ? styles['open-dropdown'] : ""
+                                    }`}
                                 onClick={() => toggleMobileDropdown(link.label)}
-                                aria-expanded={mobileDropdownOpen === link.label}
+                                aria-expanded={mobileDropdownOpen === link.label} // minimal accessibility: indicates dropdown open/closed state
+                                aria-haspopup="true" // minimal accessibility: indicates this button controls a submenu
                             >
                                 {link.label}
                                 <svg
@@ -220,6 +230,7 @@ export default function Navbar() {
                                     strokeWidth="3"
                                     strokeLinecap="round"
                                     strokeLinejoin="miter"
+                                    aria-hidden="true" // minimal accessibility: decorative icon hidden from screen readers
                                 >
                                     <polyline points="6 9 12 15 18 9" />
                                 </svg>
@@ -233,7 +244,7 @@ export default function Navbar() {
                                             key={child.href}
                                             href={child.href}
                                             className={styles['nav-link']}
-                                            aria-current={isActive(child.href) ? "page" : undefined}
+                                            aria-current={isActive(child.href) ? "page" : undefined} // minimal accessibility: marks current page
                                             onClick={() => {
                                                 setMenuOpen(false);
                                                 setMobileDropdownOpen(null);
@@ -252,7 +263,8 @@ export default function Navbar() {
             {/* Overlay */}
             <div
                 className={`${styles['mobile-overlay']} ${menuOpen ? styles['open'] : ""}`}
-                onClick={toggleMenu} // centralizes closing + dropdown reset
+                onClick={toggleMenu} // clarity: centralizes closing + dropdown reset
+                aria-hidden="true"   // minimal accessibility: decorative overlay hidden from screen readers
             />
 
         </>
