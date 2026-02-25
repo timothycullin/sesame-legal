@@ -59,6 +59,7 @@
   top: 1rem;                   /* 16px */
   left: 0.75rem;               /* 12px */
   color: #888;
+  font-family: Inter, system-ui, sans-serif;
   font-size: 1rem;             /* 16px */
   pointer-events: none;
   transition: all 0.2s ease;
