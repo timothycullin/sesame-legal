@@ -21,7 +21,7 @@ export default function Home() {
                 <title>Sesame Legal – IVO Tips & Blog</title>
                 <meta
                     name="description"
-                    content="Sesame Legal is your trusted hub for practical guidance on Intervention Orders and human rights insights through Sesame Blog."
+                    content="Sesame Legal is your trusted hub for practical guidance on Intervention Orders and human rights insights through Blog."
                 />
                 <link rel="canonical" href="https://www.sesamelegal.com/" />
             </Head>
@@ -30,7 +30,7 @@ export default function Home() {
                 <Header
                     title="Sesame Legal"
                     label="Legal Resources"
-                    description="Your portal to IVO Tips and Sesame Blog — providing practical guidance and insights on human rights in Australia."
+                    description="Your portal to IVO Tips and Blog — providing practical guidance and insights on human rights in Australia."
                 />
 
                 <section className={styles['portal-cards']} aria-label="Legal Resources Portals">
@@ -51,7 +51,7 @@ export default function Home() {
                             <div className={styles['card-icon']}>
                                 <BlogIcon width={64} height={64} aria-hidden="true" />
                             </div>
-                            <h2>Sesame Blog</h2>
+                            <h2>Blog</h2>
                             <p>Insights and analysis on human rights issues in Australia and around the world.</p>
                         </div>
                     </Link>

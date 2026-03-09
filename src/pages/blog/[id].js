@@ -1,13 +1,21 @@
+// Framework
+import Head from 'next/head';
 import { useRouter } from 'next/router';
+
+// Shared components
 import Footer from '../../components/Footer';
+import BackButton from '../../components/BackButton';
+
+// Blog components
 import BlogHeader from '../../components/blog/BlogHeader';
 import BlogContent from '../../components/blog/BlogContent';
 import ShareButtons from '../../components/blog/ShareButtons';
-import BackButton from '../../components/BackButton';
-import Head from 'next/head';
+
+// Data
 import { posts } from '../../data/posts';
 
 export default function BlogPost({ post }) {
+    // Logic
     const router = useRouter();
 
     if (router.isFallback) return <div>Loading post...</div>;
@@ -24,23 +32,28 @@ export default function BlogPost({ post }) {
         ? `https://www.sesamelegal.com${post.imageUrl}`
         : 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
+    const seoDescription =
+        post.excerpt || 'Read this blog post on human rights on Blog';
+
+    // Markup
     return (
         <div className="page-container">
-            {/* Minimal self-contained SEO */}
             <Head>
-                <title>{post.title} | Sesame Blog</title>
-                <meta
-                    name="description"
-                    content={post.excerpt || "Read this blog post on human rights on Sesame Blog"}
-                />
+                {/* Primary */}
+                <title>{post.title} | Blog</title>
+                <meta name="description" content={seoDescription} />
                 <link rel="canonical" href={postUrl} />
-                <meta property="og:title" content={`${post.title} | Sesame Blog`} />
-                <meta property="og:description" content={post.excerpt || "Read this blog post on human rights on Sesame Blog"} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={`${post.title} | Blog`} />
+                <meta property="og:description" content={seoDescription} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content={seoImage} />
+
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} | Sesame Blog`} />
-                <meta name="twitter:description" content={post.excerpt || "Read this blog post on human rights on Sesame Blog"} />
+                <meta name="twitter:title" content={`${post.title} | Blog`} />
+                <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content={seoImage} />
             </Head>
 
@@ -53,7 +66,9 @@ export default function BlogPost({ post }) {
                     date={formattedDate}
                     imageUrl={post.imageUrl}
                 />
+
                 <BlogContent excerpt={post.excerpt} content={post.content} />
+
                 <ShareButtons postUrl={postUrl} postTitle={post.title} />
             </main>
 
@@ -62,8 +77,7 @@ export default function BlogPost({ post }) {
     );
 }
 
-// -------------------- Static Generation -------------------- //
-
+// Static generation
 export async function getStaticPaths() {
     const paths = posts.map((post) => ({
         params: { id: post.slug },

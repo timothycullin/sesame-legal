@@ -20,7 +20,7 @@ export default function Navbar() {
             label: "Resources",
             children: [
                 { href: "/ivotips", label: "IVO Tips" },
-                { href: "/blog", label: "Sesame Blog" },
+                { href: "/blog", label: "Blog" },
             ],
         },
         { href: "/about", label: "About" },

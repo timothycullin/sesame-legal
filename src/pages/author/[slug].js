@@ -17,10 +17,10 @@ export default function AuthorPage({ authorPosts, authorName, authorBio, authorI
         <div className="page-container">
             {/* Minimal self-contained SEO */}
             <Head>
-                <title>{authorName} | Sesame Blog</title>
+                <title>{authorName} | Blog</title>
                 <meta
                     name="description"
-                    content={`Read articles by ${authorName} on human rights on Sesame Blog.`}
+                    content={`Read articles by ${authorName} on human rights on Blog.`}
                 />
                 <link
                     rel="canonical"

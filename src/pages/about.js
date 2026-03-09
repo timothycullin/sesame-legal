@@ -15,7 +15,7 @@ export default function About() {
                 <title>About Sesame Legal | IVO Tips & Blog</title>
                 <meta
                     name="description"
-                    content="Sesame Legal is your trusted legal resource hub in Australia, providing guidance on Intervention Orders via IVO Tips, and insights on human rights through Sesame Blog."
+                    content="Sesame Legal is your trusted legal resource hub in Australia, providing guidance on Intervention Orders via IVO Tips, and insights on human rights through Blog."
                 />
                 <link rel="canonical" href="https://www.sesamelegal.com/about" />
             </Head>
@@ -29,7 +29,7 @@ export default function About() {
                             Sesame Legal is your trusted legal resource hub in Australia. We provide practical guidance, clear explanations, and insightful analysis for those navigating legal processes or seeking to understand human rights law.
                         </p>
                         <p>
-                            Our platform includes <strong>IVO Tips</strong>, helping individuals navigate Intervention Orders in Victoria, and the <strong>Sesame Blog</strong>, offering commentary, updates, and analysis on human rights topics.
+                            Our platform includes <strong>IVO Tips</strong>, helping individuals navigate Intervention Orders in Victoria, and the <strong>Blog</strong>, offering commentary, updates, and analysis on human rights topics.
                         </p>
                     </div>
                 </section>
@@ -47,12 +47,12 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* Sesame Blog Section */}
+                {/* Blog Section */}
                 <section aria-labelledby="about-sesame-blog">
-                    <h2 id="about-sesame-blog">About Sesame Blog</h2>
+                    <h2 id="about-sesame-blog">About Blog</h2>
                     <div className={styles['paragraphs-highlight']}>
                         <p>
-                            Sesame Blog is dedicated to providing insights, updates, and analysis on human rights matters.
+                            Blog is dedicated to providing insights, updates, and analysis on human rights matters.
                         </p>
                         <p>
                             Our goal is to help practitioners, students, and interested readers stay informed and engaged with developments in human rights.
