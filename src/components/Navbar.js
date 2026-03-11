@@ -9,10 +9,11 @@ import SvgLogoComponent from "./SvgLogoComponent";
 // Styles
 import styles from "./Navbar.module.css";
 
-
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
+    const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null);
+
     const router = useRouter();
 
     const navLinks = [
@@ -28,38 +29,28 @@ export default function Navbar() {
     ];
 
     const isActive = (path) => router.pathname === path;
-    const isDropdownActive = (dropdown) => dropdown.children?.some((child) => isActive(child.href));
 
-    const closeDropdownIfInactive = (dropdownLabel) => {
-        if (!dropdownLabel) return null;
-        const dropdown = navLinks.find((link) => link.label === dropdownLabel && link.children);
-        return dropdown && isDropdownActive(dropdown) ? dropdownLabel : null;
-    };
-
-    const toggleMenu = () => setMenuOpen((prev) => {
-        const newState = !prev;
-
-        // Reset mobile dropdown every time menu opens or closes
-        setMobileDropdownOpen(null);
-
-        return newState;
-    });
+    const toggleMenu = () =>
+        setMenuOpen((prev) => {
+            setMobileDropdownOpen(null);
+            return !prev;
+        });
 
     const toggleMobileDropdown = (label) =>
         setMobileDropdownOpen((prev) => (prev === label ? null : label));
 
     useEffect(() => {
-
         const handleResize = () => {
             if (window.innerWidth > 768) {
                 setMenuOpen(false);
-                setMobileDropdownOpen(closeDropdownIfInactive);
+                setMobileDropdownOpen(null);
             }
         };
 
         const handleRouteChange = () => {
             setMenuOpen(false);
-            setMobileDropdownOpen(closeDropdownIfInactive);
+            setMobileDropdownOpen(null);
+            setDesktopDropdownOpen(null);
         };
 
         window.addEventListener("resize", handleResize);
@@ -69,17 +60,17 @@ export default function Navbar() {
             window.removeEventListener("resize", handleResize);
             router.events.off("routeChangeStart", handleRouteChange);
         };
-    }, [router.events, router.pathname]);
-
+    }, [router.events]);
 
     return (
         <>
             <header className={styles['top-nav']}>
                 <div className={styles['nav-container']}>
+
                     <div className={styles['nav-left']}>
                         <Link
                             href="/"
-                            aria-label="Home"                   // minimal accessibility: describes the link for screen readers
+                            aria-label="Home"
                             className={styles['logo-link']}
                             onClick={() => setMenuOpen(false)}
                         >
@@ -91,23 +82,32 @@ export default function Navbar() {
                     <nav className={`${styles['nav-right']} ${styles['desktop-menu']}`}>
                         {navLinks.map((link) => (
                             <div key={link.label} className={styles['nav-item']}>
+
                                 {!link.children ? (
+
                                     <Link
                                         href={link.href}
                                         className={styles['nav-link']}
-                                        aria-current={isActive(link.href) ? "page" : undefined} // minimal accessibility: marks current page
+                                        aria-current={isActive(link.href) ? "page" : undefined}
                                     >
                                         {link.label}
                                     </Link>
+
                                 ) : (
-                                    <div className={styles.dropdown}>
-                                        {/* Parent link is focusable, but no JS toggle needed */}
-                                        <Link
-                                            href="#"
+
+                                    <div
+                                        className={`${styles.dropdown} ${desktopDropdownOpen === link.label ? styles.open : ""
+                                            }`}
+                                        onMouseEnter={() => setDesktopDropdownOpen(link.label)}
+                                        onMouseLeave={() => setDesktopDropdownOpen(null)}
+                                    >
+
+                                        <button
+                                            type="button"
                                             className={styles['nav-link']}
-                                            aria-haspopup="true" // minimal accessibility: indicates dropdown presence
+                                            aria-haspopup="true"
                                         >
-                                            {link.label}{" "}
+                                            {link.label}
                                             <svg
                                                 className={styles['dropdown-chevron']}
                                                 width="16"
@@ -118,41 +118,50 @@ export default function Navbar() {
                                                 strokeWidth="3"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="miter"
-                                                aria-hidden="true" // minimal accessibility: decorative icon hidden from screen readers
+                                                aria-hidden="true"
                                             >
                                                 <polyline points="6 9 12 15 18 9" />
                                             </svg>
-                                        </Link>
+                                        </button>
 
-                                        {/* Dropdown menu */}
-                                        <ul className={styles['dropdown-menu']}>
+                                        <ul
+                                            className={`${styles['dropdown-menu']} ${desktopDropdownOpen === link.label ? styles.open : ""
+                                                }`}
+                                        >
                                             {link.children.map((child) => (
                                                 <li key={child.href}>
                                                     <Link
                                                         href={child.href}
                                                         className={styles['nav-link']}
-                                                        aria-current={isActive(child.href) ? "page" : undefined} // minimal accessibility: marks current page
+                                                        aria-current={
+                                                            isActive(child.href) ? "page" : undefined
+                                                        }
                                                     >
                                                         {child.label}
                                                     </Link>
                                                 </li>
                                             ))}
                                         </ul>
+
                                     </div>
+
                                 )}
+
                             </div>
                         ))}
                     </nav>
 
                     {/* Menu toggle button */}
                     <button
-                        aria-label={menuOpen ? "Close menu" : "Open menu"}       // minimal accessibility: describes the button state for screen readers
-                        aria-expanded={menuOpen}                                  // minimal accessibility: indicates if the menu is open or closed
+                        aria-label={menuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={menuOpen}
                         onClick={toggleMenu}
                         className={`${styles['menu-toggle-btn']} ${menuOpen ? styles.open : ""}`}
                         type="button"
                     >
+
                         {menuOpen ? (
+
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -163,12 +172,14 @@ export default function Navbar() {
                                 strokeWidth="2.5"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                aria-hidden="true"                               // minimal accessibility: hides decorative icon from screen readers
+                                aria-hidden="true"
                             >
                                 <path d="M6 18L18 6" />
                                 <path d="M6 6l12 12" />
                             </svg>
+
                         ) : (
+
                             <svg
                                 className={styles.hamburger}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -179,29 +190,31 @@ export default function Navbar() {
                                 stroke="currentColor"
                                 strokeWidth="2.5"
                                 strokeLinecap="round"
-                                aria-hidden="true"                               // minimal accessibility: hides decorative icon from screen readers
+                                aria-hidden="true"
                             >
                                 <path d="M3 6h18" />
                                 <path d="M3 12h18" />
                                 <path d="M3 18h18" />
                             </svg>
+
                         )}
+
                     </button>
 
                 </div>
-            </header >
+            </header>
 
             {/* Mobile dropdown menu */}
-            <nav
-                className={`${styles['mobile-menu']} ${menuOpen ? styles.open : ""}`}
-            >
+            <nav className={`${styles['mobile-menu']} ${menuOpen ? styles.open : ""}`}>
+
                 {navLinks.map((link) =>
                     !link.children ? (
+
                         <Link
                             key={link.href}
                             href={link.href}
                             className={styles['nav-link']}
-                            aria-current={isActive(link.href) ? "page" : undefined} // minimal accessibility: marks current page
+                            aria-current={isActive(link.href) ? "page" : undefined}
                             onClick={() => {
                                 setMenuOpen(false);
                                 setMobileDropdownOpen(null);
@@ -209,33 +222,21 @@ export default function Navbar() {
                         >
                             {link.label}
                         </Link>
+
                     ) : (
+
                         <div key={link.label} className={styles['mobile-dropdown']}>
+
                             <button
                                 type="button"
                                 className={`${styles['nav-link']} ${styles['dropdown-link']} ${mobileDropdownOpen === link.label ? styles['open-dropdown'] : ""
                                     }`}
                                 onClick={() => toggleMobileDropdown(link.label)}
-                                aria-expanded={mobileDropdownOpen === link.label} // minimal accessibility: indicates dropdown open/closed state
-                                aria-haspopup="true" // minimal accessibility: indicates this button controls a submenu
+                                aria-expanded={mobileDropdownOpen === link.label}
+                                aria-haspopup="true"
                             >
                                 {link.label}
-                                <svg
-                                    className={styles['mobile-dropdown-chevron']}
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="miter"
-                                    aria-hidden="true" // minimal accessibility: decorative icon hidden from screen readers
-                                >
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
                             </button>
-
 
                             {mobileDropdownOpen === link.label && (
                                 <div className={styles['mobile-submenu']}>
@@ -244,7 +245,6 @@ export default function Navbar() {
                                             key={child.href}
                                             href={child.href}
                                             className={styles['nav-link']}
-                                            aria-current={isActive(child.href) ? "page" : undefined} // minimal accessibility: marks current page
                                             onClick={() => {
                                                 setMenuOpen(false);
                                                 setMobileDropdownOpen(null);
@@ -255,18 +255,19 @@ export default function Navbar() {
                                     ))}
                                 </div>
                             )}
+
                         </div>
+
                     )
                 )}
+
             </nav>
 
-            {/* Overlay */}
             <div
                 className={`${styles['mobile-overlay']} ${menuOpen ? styles['open'] : ""}`}
-                onClick={toggleMenu} // clarity: centralizes closing + dropdown reset
-                aria-hidden="true"   // minimal accessibility: decorative overlay hidden from screen readers
+                onClick={toggleMenu}
+                aria-hidden="true"
             />
-
         </>
     );
 }

@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { posts } from '../../data/posts';
 import PostList from '../../components/blog/PostList';
@@ -33,8 +32,6 @@ export default function AuthorPage({ authorPosts, authorName, authorBio, authorI
                     />
                 )}
             </Head>
-
-            <Navbar />
 
             <main>
                 {/* Back button */}
