@@ -13,7 +13,7 @@ export const ayatollahToll = {
 
     <p>But wars are not measured only in strategic victories. They are measured in bodies.</p>
 
-    <p>That same morning, missiles struck a girls’ elementary school in the southern Iranian city of Minab. Rescue workers dug through concrete and dust to find schoolbags, notebooks, and the bodies of children still in uniform. Reports suggested more than one hundred people — mostly young girls — were killed when the building collapsed.</p>
+    <p>That same morning, missiles struck a girls’ primary school in the southern Iranian city of Minab. Rescue workers dug through concrete and dust to find school bags, notebooks, and the bodies of children still in uniform. Reports suggested more than 100 people — mostly young girls — were killed when the building collapsed.</p>
 
     <p>The school sat near an Iranian military complex, and the strike appears to have been part of a broader attack on nearby targets. Investigations into responsibility continue, with evidence pointing toward a missile used in the wider campaign.</p>
 
