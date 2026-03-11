@@ -1,11 +1,11 @@
 export const restrictedProBono = {
-    title: "Rethinking Supervised Practice",
-    slug: 'restricted-pro-bono-new-lawyers',
-    author: 'Tim Cullin',
-    authorSlug: 'tim-cullin',
-    excerpt: "A case for allowing newly admitted lawyers to practise restricted pro bono work, empowering initiative and professional growth while maintaining client safeguards.",
-    imageUrl: '/blog-image3.jpg', // replace with your chosen image path
-    content: `
+  title: "Rethinking Supervised Practice",
+  slug: 'restricted-pro-bono-new-lawyers',
+  author: 'Tim Cullin',
+  authorSlug: 'tim-cullin',
+  excerpt: "A case for allowing newly admitted lawyers to practise restricted pro bono work, empowering initiative and professional growth while maintaining client safeguards.",
+  imageUrl: '/restricted-pro-bono-new-lawyers.jpg',
+  content: `
     <h2>Frustration in Early Legal Practice</h2>
 
     <p>For many newly admitted lawyers, the transition from law school to professional practice is frustratingly constrained. Strict supervised practice requirements often treat competent law graduates as incapable of contributing meaningfully without constant oversight. This paternalistic model — justified as client protection — can feel oppressive, stifling, and unresponsive to the initiative and skills of early-career lawyers.</p>
@@ -26,5 +26,5 @@ export const restrictedProBono = {
 
     <p>By embracing restricted pro bono practice, legal systems can strike a balance: honouring the competence of newly admitted lawyers, encouraging initiative, and improving access to justice. Completing law school and passing admission requirements signifies readiness to contribute meaningfully — not merely to follow instructions under an unresponsive supervisory framework.</p>
   `,
-    date: '2026-02-19',
+  date: '2026-02-19',
 };

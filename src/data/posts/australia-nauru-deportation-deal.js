@@ -4,7 +4,7 @@ export const nauruDeportationDeal = {
   author: 'Tim Cullin',
   authorSlug: 'tim-cullin',
   excerpt: "An examination of Australia’s multibillion-dollar resettlement arrangement with Nauru, analysing the risks of chain refoulement, concerns about offshore accountability, and the erosion of procedural fairness through recent legislative amendments.",
-  imageUrl: '/blog-image2.jpg',
+  imageUrl: '/australia-nauru-deportation-deal.jpg',
   content: `
     <h2>Billion Dollar Deal</h2>
 
