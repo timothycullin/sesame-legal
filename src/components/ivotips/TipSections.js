@@ -1,6 +1,10 @@
+// External imports
 import Link from 'next/link';
+
+// Styles
 import styles from './TipSections.module.css';
 
+// Tip content
 const tips = [
     {
         title: "How do I make an application?",
@@ -29,6 +33,7 @@ const tips = [
     }
 ];
 
+// Component
 export default function TipSections() {
     return (
         <div className={styles['tips-container']}>
@@ -37,8 +42,9 @@ export default function TipSections() {
                     key={tip.slug}
                     href={`/ivotips/${tip.slug}`}
                     className={styles['tip-section']}
+                    aria-labelledby={`tip-${tip.slug}`}
                 >
-                    <h2>{tip.title}</h2>
+                    <h2 id={`tip-${tip.slug}`}>{tip.title}</h2>
                     <p>{tip.description}</p>
                 </Link>
             ))}

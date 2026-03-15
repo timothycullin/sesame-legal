@@ -1,71 +1,65 @@
-/* ---------------- TIPS CONTAINER ---------------- */
 .tips-container {
   display: flex;
-  margin: 2rem auto;          /* 32px top/bottom, centered horizontally */
-  padding: 0 1rem;            /* 16px horizontal padding */
-  background-color: #fff0f6;
-  border-radius: 1.5rem;      /* 24px rounded corners */
+  margin: 2rem auto; /* 32px */
+  padding: 0 1rem; /* 16px */
   flex-direction: column;
-  gap: 2rem;                  /* 32px spacing between sections */
-  max-width: 50rem;           /* 800px max width */
+  gap: 2rem; /* 32px */
+  max-width: 50rem; /* 800px */
 }
 
-/* ---------------- TIP SECTION / LINK ---------------- */
 .tip-section {
-  display: block;                     /* ensures whole section is clickable */
-  padding: 2rem;                      /* 32px */
-  color: inherit;                     /* inherit text color */
-  border: 0.125rem solid #f3dce3;    /* 2px border, matches cards */
+  display: block;
+  padding: 2rem; /* 32px */
+  color: inherit;
+  border: 0.125rem solid #f3dce3; /* 2px */
   background-color: #fff;
-  border-radius: 1.5rem;              /* 24px rounded corners */
-  cursor: pointer;                    /* pointer on hover */
-  text-decoration: none;              /* remove default link underline */
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; /* include box-shadow */
+  border-radius: 1.5rem; /* 24px */
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .tip-section:hover {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);    /* 8px vertical, 16px blur, subtle lift */
-    background-color: #fff1f3;                     /* light hover background */
-    border-color: #d9aeb8;                         /* darker border on hover */
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%); /* 8px 16px */
+    background-color: #fff1f3;
+    border-color: #d9aeb8;
   }
 }
 
 .tip-section:active,
 .tip-section:focus {
-  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);  /* 4px vertical, 8px blur for click/focus */
-  background-color: #fff1f3;                       /* keep hover bg */
-  border-color: #d9aeb8;                           /* keep hover border */
-  outline: none;                                   /* remove default outline */
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* 4px 8px */
+  background-color: #fff1f3;
+  border-color: #d9aeb8;
+  outline: none;
 }
 
-/* ---------------- TIP CONTENT ---------------- */
 .tip-section h2 {
-  font-size: 1.75rem;         /* 28px equivalent */
+  font-size: 1.75rem; /* 28px */
   font-weight: 600;
-  margin-bottom: 1rem;        /* 16px spacing under heading */
+  margin-bottom: 1rem; /* 16px */
 }
 
 .tip-section p {
   color: #333;
-  font-size: 1rem;            /* 16px equivalent */
+  font-size: 1rem; /* 16px */
   font-weight: 400;
   line-height: 1.6;
 }
 
-/* ---------------- MEDIA QUERIES ---------------- */
-@media (max-width: 48rem) {   /* 768px */
+@media (max-width: 48rem) { /* 768px */
   .tips-container {
-    margin: 1.5rem auto;      /* 24px */
-    padding: 0 0.5rem;        /* 8px horizontal padding */
-    gap: 1.5rem;              /* 24px spacing between sections */
+    margin: 1.5rem auto; /* 24px */
+    padding: 0 0.5rem; /* 8px */
+    gap: 1.5rem; /* 24px */
   }
 
   .tip-section {
-    padding: 1.5rem;          /* 24px */
+    padding: 1.5rem; /* 24px */
   }
 
   .tip-section h2 {
-    font-size: 1.5rem;        /* 24px equivalent */
+    font-size: 1.5rem; /* 24px */
   }
 }

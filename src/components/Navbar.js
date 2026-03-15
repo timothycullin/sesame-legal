@@ -9,6 +9,7 @@ import SvgLogoComponent from "./SvgLogoComponent";
 // Styles
 import styles from "./Navbar.module.css";
 
+// Logic
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
@@ -21,9 +22,9 @@ export default function Navbar() {
             label: "Resources",
             children: [
                 { href: "/ivotips", label: "IVO Tips" },
-                { href: "/blog", label: "Blog" },
             ],
         },
+        { href: "/blog", label: "Blog" },
         { href: "/about", label: "About" },
         { href: "/contact", label: "Contact" },
     ];
@@ -62,12 +63,14 @@ export default function Navbar() {
         };
     }, [router.events]);
 
+    // Markup
     return (
         <>
             <header className={styles['top-nav']}>
                 <div className={styles['nav-container']}>
 
                     <div className={styles['nav-left']}>
+                        {/* Logo link: aria-label provides an accessible name because the SVG logo has no visible text */}
                         <Link
                             href="/"
                             aria-label="Home"
@@ -100,12 +103,20 @@ export default function Navbar() {
                                             }`}
                                         onMouseEnter={() => setDesktopDropdownOpen(link.label)}
                                         onMouseLeave={() => setDesktopDropdownOpen(null)}
+                                        /* Allows keyboard users to tab into the dropdown and keeps it open while focus remains inside */
+                                        onFocus={() => setDesktopDropdownOpen(link.label)}
+                                        onBlur={(e) => {
+                                            if (!e.currentTarget.contains(e.relatedTarget)) {
+                                                setDesktopDropdownOpen(null);
+                                            }
+                                        }}
                                     >
 
                                         <button
                                             type="button"
                                             className={styles['nav-link']}
                                             aria-haspopup="true"
+                                            aria-expanded={desktopDropdownOpen === link.label}
                                         >
                                             {link.label}
                                             <svg
@@ -245,6 +256,7 @@ export default function Navbar() {
                                             key={child.href}
                                             href={child.href}
                                             className={styles['nav-link']}
+                                            aria-current={isActive(child.href) ? "page" : undefined}
                                             onClick={() => {
                                                 setMenuOpen(false);
                                                 setMobileDropdownOpen(null);
