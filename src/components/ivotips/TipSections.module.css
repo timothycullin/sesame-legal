@@ -1,65 +1,97 @@
 .tips-container {
   display: flex;
-  margin: 2rem auto; /* 32px */
-  padding: 0 1rem; /* 16px */
+  margin: 2rem auto;
+  padding: 2rem 1.25rem;
+  background: linear-gradient(to bottom, #f5fbff 0%, #fff 100%);
+  border-radius: 1.5rem;
   flex-direction: column;
-  gap: 2rem; /* 32px */
-  max-width: 50rem; /* 800px */
+  gap: 2rem;
+  max-width: 50rem;
 }
 
 .tip-section {
   display: block;
-  padding: 2rem; /* 32px */
+  padding: 2rem;
   color: inherit;
-  border: 0.125rem solid #f3dce3; /* 2px */
-  background-color: #fff;
-  border-radius: 1.5rem; /* 24px */
+  border: 0.125rem solid #e3edf7;
+  background-color: #f9fcff;
+  border-left: 0.25rem solid transparent;
+  border-radius: 1.5rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-left-color 0.2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .tip-section:hover {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%); /* 8px 16px */
-    background-color: #fff1f3;
-    border-color: #d9aeb8;
+    box-shadow: 0 0.75rem 1.25rem rgb(0 0 0 / 10%);
+    background-color: #eef6ff;
+    border-color: #cfe0f2;
+    border-left-color: #0070f3;
+    transform: translateY(-0.125rem);
+  }
+
+  .tip-section:hover h3 {
+    color: #0070f3;
   }
 }
 
 .tip-section:active,
-.tip-section:focus {
-  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* 4px 8px */
-  background-color: #fff1f3;
-  border-color: #d9aeb8;
+.tip-section:focus-visible {
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
+  background-color: #eef6ff;
+  border-color: #cfe0f2;
+  border-left-color: #0070f3;
   outline: none;
 }
 
-.tip-section h2 {
-  font-size: 1.75rem; /* 28px */
+.tip-section h3 {
+  margin: 0 0 1rem;
+  color: #0d0d0d;
+  border-bottom: 1px solid #e6eef5;
+  font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 1rem; /* 16px */
+  padding-bottom: 0.5rem;
+  transition: color 0.2s ease;
 }
 
 .tip-section p {
+  margin: 0;
   color: #333;
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
-@media (max-width: 48rem) { /* 768px */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 48rem) {
   .tips-container {
-    margin: 1.5rem auto; /* 24px */
-    padding: 0 0.5rem; /* 8px */
-    gap: 1.5rem; /* 24px */
+    margin: 1.5rem auto;
+    padding: 1.5rem 0.75rem;
+    gap: 1.5rem;
   }
 
   .tip-section {
-    padding: 1.5rem; /* 24px */
+    padding: 1.5rem;
   }
 
-  .tip-section h2 {
-    font-size: 1.5rem; /* 24px */
+  .tip-section h3 {
+    font-size: 1.5rem;
   }
 }

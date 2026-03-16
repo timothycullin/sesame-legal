@@ -1,5 +1,7 @@
+// Imports
 import styles from './ResourcesHeader.module.css';
 
+// Markup
 export default function ResourcesHeader({
     eyebrow = 'Resources',
     title,

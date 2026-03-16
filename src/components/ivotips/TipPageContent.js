@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import styles from './TipPageContent.module.css';
 
-export default function TipPageContent({ title, content, tips, headingId }) {
+export default function TipPageContent({
+    title,
+    content,
+    tips = [],
+    headingId = 'tip-page-heading'
+}) {
     return (
         <div className={styles['tip-page-content']}>
             {tips.length > 0 && (
