@@ -1,80 +1,259 @@
-/* ---------------- CARDS CONTAINER ---------------- */
-.portal-cards {
-  display: flex;
-  padding: 2rem 1rem;        /* 32px top/bottom, 16px left/right */
-  background-color: #f9f9f9;
-  border-radius: 1.5rem;     /* 24px rounded corners */
-  flex-wrap: wrap;
-  gap: 2rem;                 /* 32px spacing between cards */
-  justify-content: center;
-  margin-top: 0;
+.home {
+  width: 100%;
 }
 
-/* ---------------- CARD ---------------- */
-.card {
-  display: block;                          /* ensures entire card is clickable */
-  width: 17.5rem;                        /* 280px */
+/* ---------------- HERO ---------------- */
+.hero {
+  margin: 0 auto 3rem;
+  max-width: 52rem;
+  padding-top: 0.25rem;
+}
+
+.title {
+  margin: 0;
+  color: #101114;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.intro {
+  margin: 1.5rem 0 0;
+  color: #4a4f57;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+  max-width: 38rem;
+}
+
+/* ---------------- SECTION HEADING ---------------- */
+.portal-section {
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+.section-heading {
+  margin: 0 0 1.5rem;
+}
+
+.section-title {
+  margin: 0;
+  color: #101114;
+  font-size: clamp(1.5rem, 4vw, 2.125rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+/* ---------------- PORTAL PANELS ---------------- */
+.portal-panels {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------------- PANEL ---------------- */
+.panel {
+  display: flex;
+  padding: 1.75rem;
   color: inherit;
-  border: 0.125rem solid #e0e0e0;        /* 2px border */
-  background-color: #fff;
-  border-radius: 1.5rem;                  /* 24px rounded corners */
-  cursor: pointer;
+  background: #fff;
+  border: 0.125rem solid #d9dee6;
+  border-radius: 1.25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 24rem;
   text-decoration: none;
-  transition: 
-    background-color 0.2s ease, 
-    border-color 0.2s ease, 
-    box-shadow 0.2s ease;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.16s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);  /* subtle lift */
-    background-color: #fff;                     /* stays white or add tint if desired */
-    border-color: #cfcfcf;                         /* subtle border darkening */
+  .panel:hover {
+    box-shadow: 0 1rem 2rem rgb(16 17 20 / 7%);
+    border-color: #c3cad4;
+    transform: translateY(-0.125rem);
+  }
+
+  .panel:active {
+    box-shadow: 0 0.5rem 1rem rgb(16 17 20 / 6%);
+    border-color: #c3cad4;
+    transform: translateY(-0.0625rem);
   }
 }
 
-.card:active,
-.card:focus {
-  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%); /* pressed / focused effect */
-  background-color: #fff;                        /* same bg for stability */
-  border-color: #bfbfbf;                             /* keep border consistent */
-  outline: none;                                  /* remove default outline */
+@media (hover: none), (pointer: coarse) {
+  .panel:active {
+    box-shadow: none;
+    border-color: #c3cad4;
+    transform: none;
+  }
 }
 
-/* ---------------- CARD CONTENT ---------------- */
-.card-content {
-  padding: 2rem;                  /* 32px */
-  text-align: center;
+.panel:focus {
+  outline: none;
 }
 
-.card-content h2 {
-  font-size: 1.5rem;              /* 24px */
-  font-weight: 600;
-  margin-bottom: 1rem;            /* 16px */
+.panel:focus-visible {
+  outline: 0.125rem solid #101114;
+  outline-offset: 0.1875rem;
 }
 
-.card-content p {
-  font-size: 1rem;                /* 16px */
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-/* ---------------- ICON ---------------- */
-.card-icon {
+/* ---------------- PANEL HEAD ---------------- */
+.panel-head {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;            /* 16px */
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
-/* ---------------- MEDIA QUERIES ---------------- */
-@media (max-width: 48rem) {       /* 768px */
-  .card {
-    max-width: 17.5rem;           /* 280px */
+.panel-icon {
+  display: flex;
+  color: #101114;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: flex-start;
+}
+
+.panel-tag {
+  display: inline-flex;
+  padding: 0.25rem 0.625rem;
+  color: #69707c;
+  border: 0.0625rem solid #d9dee6;
+  align-items: center;
+  border-radius: 999rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  min-height: 2rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------------- PANEL BODY ---------------- */
+.panel-body {
+  max-width: 28rem;
+}
+
+.panel-title {
+  margin: 0 0 1rem;
+  color: #101114;
+  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.panel-text {
+  margin: 0;
+  color: #454b54;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ---------------- PANEL LINK ---------------- */
+.panel-link {
+  color: #101114;
+  border-top: 0.0625rem solid #e6eaf0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+/* ---------------- TABLET ---------------- */
+@media (max-width: 64rem) {
+  .portal-panels {
+    gap: 0.875rem;
   }
 
-  .portal-cards {
-    padding: 1.5rem 1rem;  /* top/bottom: 24px, sides: 16px */
-    gap: 1.5rem;                  /* 24px */
+  .panel {
+    padding: 1.5rem;
+  }
+
+  .panel-head {
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 48rem) {
+  .hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1.125rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1rem;
+  }
+
+  .portal-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 1.25rem;
+    border-radius: 1rem;
+    min-height: auto;
+  }
+
+  .panel-head {
+    margin-bottom: 1.25rem;
+  }
+
+  .panel-title {
+    font-size: 1.5625rem;
+    line-height: 1;
+  }
+
+  .panel-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .panel-link {
+    font-size: 0.875rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+@media (max-width: 30rem) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .panel {
+    padding: 1.125rem;
+  }
+
+  .panel-title {
+    font-size: 1.375rem;
+  }
+}
+
+/* ---------------- REDUCED MOTION ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    transition: none;
   }
 }

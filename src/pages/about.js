@@ -1,64 +1,35 @@
-// External libraries
+// Imports
 import Head from 'next/head';
-
-// Internal components
 import Footer from '../components/Footer';
-
-// Local styles
 import styles from './about.module.css';
 
+// Logic
 export default function About() {
     return (
         <div className="page-container">
-            {/* Minimal self-contained SEO */}
             <Head>
-                <title>About Sesame Legal | IVO Tips & Blog</title>
+                <title>About Sesame Legal</title>
                 <meta
                     name="description"
-                    content="Sesame Legal is your trusted legal resource hub in Australia, providing guidance on Intervention Orders via IVO Tips, and insights on human rights through Blog."
+                    content="Sesame Legal provides clear, practical legal information and insights to help people understand legal processes and human rights in Australia."
                 />
                 <link rel="canonical" href="https://www.sesamelegal.com/about" />
             </Head>
 
+            {/* Markup */}
             <main className={styles.main}>
-                {/* Umbrella Section */}
-                <section aria-labelledby="about-sesame-legal">
-                    <h1 id="about-sesame-legal">About Sesame Legal</h1>
-                    <div className={styles['paragraphs-highlight']}>
-                        <p>
-                            Sesame Legal is your trusted legal resource hub in Australia. We provide practical guidance, clear explanations, and insightful analysis for those navigating legal processes or seeking to understand human rights law.
-                        </p>
-                        <p>
-                            Our platform includes <strong>IVO Tips</strong>, helping individuals navigate Intervention Orders in Victoria, and the <strong>Blog</strong>, offering commentary, updates, and analysis on human rights topics.
-                        </p>
-                    </div>
-                </section>
+                <section className={styles.hero} aria-labelledby="about-sesame-legal">
+                    <p className={styles.eyebrow}>About</p>
+                    <h1 id="about-sesame-legal" className={styles.title}>
+                        Sesame Legal
+                    </h1>
 
-                {/* IVO Tips Section */}
-                <section aria-labelledby="about-ivo-tips">
-                    <h2 id="about-ivo-tips">About IVO Tips</h2>
-                    <div className={styles['paragraphs-highlight']}>
+                    <div className={styles['content-card']}>
                         <p>
-                            IVO Tips is our dedicated resource for Intervention Orders in Victoria. We provide clear, step-by-step guidance to help individuals understand the process, know their rights, and feel supported while navigating court matters and community support services.
+                            Sesame Legal is an independent legal resource focused on making complex legal information clear and accessible.
                         </p>
                         <p>
-                            Our aim is to make legal information accessible, empowering people to approach Intervention Orders with confidence and clarity.
-                        </p>
-                    </div>
-                </section>
-
-                {/* Blog Section */}
-                <section aria-labelledby="about-sesame-blog">
-                    <h2 id="about-sesame-blog">About Blog</h2>
-                    <div className={styles['paragraphs-highlight']}>
-                        <p>
-                            Blog is dedicated to providing insights, updates, and analysis on human rights matters.
-                        </p>
-                        <p>
-                            Our goal is to help practitioners, students, and interested readers stay informed and engaged with developments in human rights.
-                        </p>
-                        <p>
-                            We strive to present content that is clear, accurate, and accessible, offering value to anyone seeking to understand complex human rights issues.
+                            We provide practical guidance and insights to help people better understand legal processes and human rights in Australia.
                         </p>
                     </div>
                 </section>

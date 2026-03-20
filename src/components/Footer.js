@@ -16,6 +16,5 @@ export default function Footer() {
                 Custodians of the lands where we live, learn, work and play.
             </p>
         </footer>
-
     );
 }

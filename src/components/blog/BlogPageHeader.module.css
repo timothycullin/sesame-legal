@@ -1,16 +1,7 @@
 .blog-page-header {
   margin: 0 0 1.75rem;
-  border-bottom: 0.0625rem solid #e6e6e6;
+  border-bottom: 0.0625rem solid #ededed;
   padding-bottom: 0.75rem;
-}
-
-.blog-page-label {
-  margin: 0 0 0.35rem;
-  color: #6b6b6b;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .blog-page-title {
@@ -18,11 +9,17 @@
   color: #000;
   font-size: 2.25rem;
   font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
-/* ---------- MOBILE ---------- */
+.blog-page-label {
+  margin: 0.35rem 0 0;
+  color: #6b6b6b;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
 
 @media (max-width: 48rem) {
   .blog-page-header {
@@ -32,5 +29,9 @@
 
   .blog-page-title {
     font-size: 1.85rem;
+  }
+
+  .blog-page-label {
+    font-size: 0.8rem;
   }
 }

@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // Internal components
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogIcon from '../components/BlogIcon';
 import IVOTipsIcon from '../components/IvoTipsIcon';
@@ -11,52 +10,93 @@ import IVOTipsIcon from '../components/IvoTipsIcon';
 // Local styles
 import styles from './home.module.css';
 
+// Logic
 export default function Home() {
+    // Markup
     return (
-
         <div className="page-container">
-
-            {/* Minimal self-contained SEO */}
             <Head>
-                <title>Sesame Legal – IVO Tips & Blog</title>
+                <title>Sesame Legal – Legal Guidance & Commentary</title>
                 <meta
                     name="description"
-                    content="Sesame Legal is your trusted hub for practical guidance on Intervention Orders and human rights insights through Blog."
+                    content="Sesame Legal provides clear legal guidance and commentary in a direct and accessible format."
                 />
                 <link rel="canonical" href="https://www.sesamelegal.com/" />
             </Head>
 
-            <main>
-                <Header
-                    title="Sesame Legal"
-                    label="Legal Resources"
-                    description="Your portal to IVO Tips and Blog — providing practical guidance and insights on human rights in Australia."
-                />
+            <main className={styles.home}>
+                <section className={styles.hero} aria-labelledby="home-title">
+                    <h1 id="home-title" className={styles.title}>
+                        Clear legal guidance,
+                        <br />
+                        kept direct.
+                    </h1>
 
-                <section className={styles['portal-cards']} aria-label="Legal Resources Portals">
-                    {/* IVO Tips Portal */}
-                    <Link href="/ivotips" className={styles.card}>
-                        <div className={styles['card-content']}>
-                            <div className={styles['card-icon']}>
-                                <IVOTipsIcon width={64} height={64} aria-hidden="true" />
-                            </div>
-                            <h2>IVO Tips</h2>
-                            <p>Step-by-step guidance and resources for navigating Intervention Orders in Victoria.</p>
-                        </div>
-                    </Link>
-
-                    {/* Blog Portal */}
-                    <Link href="/blog" className={styles.card}>
-                        <div className={styles['card-content']}>
-                            <div className={styles['card-icon']}>
-                                <BlogIcon width={64} height={64} aria-hidden="true" />
-                            </div>
-                            <h2>Blog</h2>
-                            <p>Insights and analysis on human rights issues in Australia and around the world.</p>
-                        </div>
-                    </Link>
+                    <p className={styles.intro}>
+                        Practical guidance and legal commentary, presented in a direct and accessible way.
+                    </p>
                 </section>
 
+                <section
+                    className={styles['portal-section']}
+                    aria-labelledby="portal-heading"
+                >
+                    <div className={styles['section-heading']}>
+                        <h2 id="portal-heading" className={styles['section-title']}>
+                            Choose a section
+                        </h2>
+                    </div>
+
+                    <div className={styles['portal-panels']}>
+                        <Link
+                            href="/ivotips"
+                            className={styles.panel}
+                            aria-label="IVO Tips for practical guidance on Intervention Orders in Victoria"
+                        >
+                            <div className={styles['panel-head']}>
+                                <div className={styles['panel-icon']}>
+                                    <IVOTipsIcon width={52} height={52} aria-hidden="true" />
+                                </div>
+                                <span className={styles['panel-tag']}>Guidance</span>
+                            </div>
+
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>IVO Tips</h3>
+
+                                <p className={styles['panel-text']}>
+                                    Step-by-step guidance and practical resources for navigating
+                                    Intervention Orders in Victoria.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>Explore IVO Tips</span>
+                        </Link>
+
+                        <Link
+                            href="/blog"
+                            className={styles.panel}
+                            aria-label="Blog for legal commentary and analysis"
+                        >
+                            <div className={styles['panel-head']}>
+                                <div className={styles['panel-icon']}>
+                                    <BlogIcon width={52} height={52} aria-hidden="true" />
+                                </div>
+                                <span className={styles['panel-tag']}>Commentary</span>
+                            </div>
+
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>Blog</h3>
+
+                                <p className={styles['panel-text']}>
+                                    Insights and analysis on law, rights, justice, and public issues in
+                                    Australia and beyond.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>Read the Blog</span>
+                        </Link>
+                    </div>
+                </section>
             </main>
 
             <Footer />

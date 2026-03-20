@@ -1,33 +1,51 @@
 .footer {
-  padding: 3rem 1.5rem;       /* 48px 24px */
-  color: #333;
+  padding: 3rem 1.5rem;
+  color: #2f3136;
   background-color: #fff;
-  border-top: 0.0625rem solid #e0e0e0; /* 1px */
+  border-top: 0.0625rem solid rgb(0 0 0 / 12%);
   flex-shrink: 0;
-  font-size: 0.875rem;        /* 14px */
+  font-size: 0.875rem;
   text-align: center;
 }
 
+/* ---------------- LINKS ---------------- */
 .footer-links {
-  margin-top: 0.75rem;        /* 12px */
+  margin-top: 0.75rem;
 }
 
 .footer-links a {
-  margin: 0 1rem;             /* 0 16px */
-  color: #333;
+  margin: 0 0.875rem; /* slightly tighter */
+  color: #1f2023;
+  opacity: 0.85;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: opacity 0.16s ease;
 }
 
-.footer-links a:hover,
-.footer-links a:active,
-.footer-links a:focus {
-  color: #E53935;
+/* desktop hover only */
+@media (hover: hover) and (pointer: fine) {
+  .footer-links a:hover {
+    opacity: 1;
+  }
 }
 
+/* touch feedback */
+.footer-links a:active {
+  opacity: 0.6;
+}
+
+/* accessibility */
+.footer-links a:focus-visible {
+  outline: 0.125rem solid #111;
+  outline-offset: 0.125rem;
+}
+
+/* ---------------- ACKNOWLEDGEMENT ---------------- */
 .footer-acknowledgment {
-  color: #777;
-  font-size: 0.75rem;         /* 12px */
+  color: #6b6f76;
+  font-size: 0.75rem;
   line-height: 1.6;
-  margin-top: 1rem;           /* 16px */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  max-width: 42rem;           /* prevents long line stretch */
 }
