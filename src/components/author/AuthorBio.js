@@ -1,4 +1,3 @@
-// components/author/AuthorBio.js
 import styles from './AuthorBio.module.css';
 
 export default function AuthorBio({ bio }) {

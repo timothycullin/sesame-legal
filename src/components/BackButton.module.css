@@ -1,31 +1,60 @@
 .back {
-  margin-bottom: 1rem;       /* 16px */
+  margin-bottom: 1.25rem;
 }
 
+/* Shared style for <a> and <button> */
 .link {
-  display: inline-block;      /* better for both <a> and <button> */
-  padding: 0;
-  color: #0070f3;
+  display: inline-flex;
+  padding: 0.25rem 0;
+  color: #5f6672;
   background: none;
   border: none;
+  align-items: center;
   cursor: pointer;
-  font-family: inherit;       /* ensures same font as page text */
-  font-size: 1rem;
+  font: inherit;
+  font-size: 0.9375rem;
   font-weight: 500;
-  text-align: left;           /* keeps link/button aligned like text */
+  gap: 0.25rem;
+  line-height: 1.4;
   text-decoration: none;
+  transition:
+    color 0.16s ease,
+    transform 0.16s ease;
 }
 
-.link:active,
-.link:focus {
-  color: #0051a3;
-  text-decoration: underline;
+/* subtle arrow spacing feel */
+.link::before {
+  display: inline-block;
+  content: '←';
+  transition: transform 0.16s ease;
 }
 
-/* Hover (desktop only) */
+/* desktop hover */
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
-    color: #0051a3;
-    text-decoration: underline;
+    color: #101114;
   }
+
+  .link:hover::before {
+    transform: translateX(-0.125rem);
+  }
+
+  .link:active {
+    color: #101114;
+    transform: translateY(0.0625rem);
+  }
+}
+
+/* mobile feedback */
+@media (hover: none), (pointer: coarse) {
+  .link:active {
+    color: #101114;
+  }
+}
+
+/* focus accessibility */
+.link:focus-visible {
+  border-radius: 0.25rem;
+  outline: 0.125rem solid #101114;
+  outline-offset: 0.125rem;
 }

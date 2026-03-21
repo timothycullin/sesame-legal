@@ -1,0 +1,65 @@
+.page {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4.5rem;
+  flex: 1;
+  max-width: 52rem;
+}
+
+.back-row {
+  margin-bottom: 1.5rem;
+}
+
+.article {
+  width: 100%;
+}
+
+.share-section {
+  border-top: 0.0625rem solid #e7eaf0;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+}
+
+.share-title {
+  margin: 0 0 0.875rem;
+  color: #101114;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.message {
+  margin: 0;
+  color: #454b54;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 48rem) {
+  .main {
+    padding: 2rem 1rem 3.5rem;
+  }
+
+  .back-row {
+    margin-bottom: 1.25rem;
+  }
+
+  .share-section {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main {
+    padding: 1.5rem 0.875rem 3rem;
+  }
+}

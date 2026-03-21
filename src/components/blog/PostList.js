@@ -26,13 +26,17 @@ export default function PostList({ posts }) {
     );
 
     return (
-        <section className={styles['posts-wrapper']}>
+        <section
+            className={styles['posts-wrapper']}
+            aria-label="Blog posts"
+        >
             <div className={styles['posts-list']}>
                 {sortedPosts.map(({ title, slug, imageUrl, date, author, excerpt }, index) => (
                     <Link
                         href={`/blog/${slug}`}
                         key={slug}
                         className={styles['post-link']}
+                        aria-label={`Read blog post: ${title}`}
                     >
                         <article className={styles.post}>
                             <div className={styles['post-content']}>
@@ -57,6 +61,10 @@ export default function PostList({ posts }) {
                                         {truncateWords(stripHtml(excerpt), 28)}
                                     </p>
                                 )}
+
+                                <span className={styles['post-link-text']}>
+                                    Read article →
+                                </span>
                             </div>
 
                             {imageUrl && (

@@ -26,6 +26,7 @@ export default function ShareButtons({ postUrl, postTitle }) {
             >
                 <FaTwitter className={styles['share-icon']} />
             </a>
+
             <a
                 href={getShareUrl('facebook')}
                 target="_blank"
@@ -35,6 +36,7 @@ export default function ShareButtons({ postUrl, postTitle }) {
             >
                 <FaFacebookF className={styles['share-icon']} />
             </a>
+
             <a
                 href={getShareUrl('linkedin')}
                 target="_blank"

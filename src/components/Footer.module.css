@@ -1,51 +1,93 @@
 .footer {
-  padding: 3rem 1.5rem;
-  color: #2f3136;
+  padding: 2.5rem 1.5rem 2rem;
   background-color: #fff;
-  border-top: 0.0625rem solid rgb(0 0 0 / 12%);
-  flex-shrink: 0;
-  font-size: 0.875rem;
+  border-top: 0.0625rem solid #e6eaf0;
+  margin-top: 4rem;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 46rem;
   text-align: center;
 }
 
+/* ---------------- TOP LINE ---------------- */
+.copyright {
+  margin: 0;
+  color: #69707c;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
 /* ---------------- LINKS ---------------- */
-.footer-links {
+.links {
+  display: inline-flex;
+  gap: 1.25rem;
   margin-top: 0.75rem;
 }
 
-.footer-links a {
-  margin: 0 0.875rem; /* slightly tighter */
-  color: #1f2023;
-  opacity: 0.85;
+.links a {
+  color: #4f5561;
+  font-size: 0.875rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: opacity 0.16s ease;
+  transition:
+    color 0.16s ease,
+    transform 0.16s ease;
 }
 
-/* desktop hover only */
+/* desktop */
 @media (hover: hover) and (pointer: fine) {
-  .footer-links a:hover {
-    opacity: 1;
+  .links a:hover {
+    color: #101114;
+  }
+
+  .links a:hover {
+    transform: translateY(-0.03125rem);
+  }
+
+  .links a:active {
+    transform: translateY(0);
   }
 }
 
-/* touch feedback */
-.footer-links a:active {
-  opacity: 0.6;
+/* mobile */
+@media (hover: none), (pointer: coarse) {
+  .links a:active {
+    color: #101114;
+  }
 }
 
 /* accessibility */
-.footer-links a:focus-visible {
-  outline: 0.125rem solid #111;
+.links a:focus-visible {
+  border-radius: 0.25rem;
+  outline: 0.125rem solid #101114;
   outline-offset: 0.125rem;
 }
 
 /* ---------------- ACKNOWLEDGEMENT ---------------- */
-.footer-acknowledgment {
-  color: #6b6f76;
+.acknowledgment {
+  margin: 1.25rem auto 0;
+  color: #8b919c;
   font-size: 0.75rem;
   line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-  max-width: 42rem;           /* prevents long line stretch */
+  max-width: 40rem;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 48rem) {
+  .footer {
+    padding: 2rem 1rem 1.75rem;
+    margin-top: 3rem;
+  }
+
+  .links {
+    gap: 1rem;
+  }
+
+  .acknowledgment {
+    font-size: 0.72rem;
+    line-height: 1.55;
+    margin-top: 1rem;
+  }
 }

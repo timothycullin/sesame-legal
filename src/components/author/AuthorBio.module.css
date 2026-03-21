@@ -1,35 +1,43 @@
 .author-bio-text {
-  color: #555;
-  font-size: 1rem;      /* 16px */
-  line-height: 1.5;     /* slightly tighter text */
-  margin-bottom: 2rem;   /* add space below bio for post list */
-  margin-top: 0;         /* ensure no extra spacing above bio */
-  max-width: 37.5rem;   /* 600px */
+  margin: 0;
+  color: #454b54;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 40rem;
 }
 
 .author-bio-text p {
-  margin: 0 0 0.5em;  
+  margin: 0 0 0.75rem;
+}
+
+.author-bio-text p:last-child {
+  margin-bottom: 0;
 }
 
 .author-bio-text a {
-  color: #1E88E5;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  color: #184fbf;
+  text-decoration-thickness: 0.0625rem;
+  text-underline-offset: 0.14em;
+  transition: color 0.16s ease;
 }
 
-.author-bio-text a:hover,
-.author-bio-text a:active,
-.author-bio-text a:focus {
-  color: #1565C0;
+.author-bio-text a:hover {
+  color: #123d95;
+}
+
+.author-bio-text a:focus-visible {
+  border-radius: 0.125rem;
+  outline: 0.125rem solid #101114;
+  outline-offset: 0.125rem;
 }
 
 @media (max-width: 48rem) {
   .author-bio-text {
-    line-height: 1.4;     
-    margin-bottom: 1.5rem; /* slightly less on mobile */
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .author-bio-text p {
-    margin-bottom: 0.4em;  
+    margin-bottom: 0.625rem;
   }
 }

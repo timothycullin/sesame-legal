@@ -1,6 +1,4 @@
-// pages/ivotips/index.js
-
-// External imports
+// Imports
 import Head from 'next/head';
 
 // Local components
@@ -8,13 +6,16 @@ import Footer from '../../components/Footer';
 import ResourcesHeader from '../../components/ResourcesHeader';
 import TipSections from '../../components/ivotips/TipSections';
 
+// Local styles
+import styles from './ivotips.module.css';
+
 // Logic
 export default function IvoTipLanding() {
     const pageUrl = 'https://www.sesamelegal.com/ivotips';
 
     // Markup
     return (
-        <div className="page-container">
+        <div className={styles.page}>
             <Head>
                 <title>IVO Tips - Guidance for Intervention Orders in Victoria | Sesame Legal</title>
                 <meta
@@ -23,19 +24,37 @@ export default function IvoTipLanding() {
                 />
                 <link rel="canonical" href={pageUrl} />
 
-                <meta property="og:title" content="IVO Tips - Guidance for Intervention Orders in Victoria | Sesame Legal" />
-                <meta property="og:description" content="Providing the community with practical tips and guidance for navigating Intervention Orders (IVO) in Victoria." />
+                <meta
+                    property="og:title"
+                    content="IVO Tips - Guidance for Intervention Orders in Victoria | Sesame Legal"
+                />
+                <meta
+                    property="og:description"
+                    content="Providing the community with practical tips and guidance for navigating Intervention Orders (IVO) in Victoria."
+                />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={pageUrl} />
-                <meta property="og:image" content="https://www.sesamelegal.com/social-preview-1200x630.png" />
+                <meta
+                    property="og:image"
+                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
+                />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="IVO Tips - Guidance for Intervention Orders in Victoria | Sesame Legal" />
-                <meta name="twitter:description" content="Providing the community with practical tips and guidance for navigating Intervention Orders (IVO) in Victoria." />
-                <meta name="twitter:image" content="https://www.sesamelegal.com/social-preview-1200x630.png" />
+                <meta
+                    name="twitter:title"
+                    content="IVO Tips - Guidance for Intervention Orders in Victoria | Sesame Legal"
+                />
+                <meta
+                    name="twitter:description"
+                    content="Providing the community with practical tips and guidance for navigating Intervention Orders (IVO) in Victoria."
+                />
+                <meta
+                    name="twitter:image"
+                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
+                />
             </Head>
 
-            <main aria-labelledby="ivo-tips-heading">
+            <main className={styles.main} aria-labelledby="ivo-tips-heading">
                 <ResourcesHeader
                     headingId="ivo-tips-heading"
                     eyebrow="Resources"

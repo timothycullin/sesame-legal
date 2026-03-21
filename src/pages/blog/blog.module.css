@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.75rem 1.5rem 4.5rem;
+  flex: 1;
+  max-width: 58rem;
+}
+
+@media (max-width: 48rem) {
+  .main {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main {
+    padding: 2rem 0.875rem 3rem;
+  }
+}

@@ -1,6 +1,4 @@
-// pages/ivotips/[slug].js
-
-// External imports
+// Imports
 import Head from 'next/head';
 
 // Local components
@@ -11,6 +9,10 @@ import TipPageContent from '../../components/ivotips/TipPageContent';
 // Local data
 import tips from '../../data/tips';
 
+// Local styles
+import styles from './tip-page.module.css';
+
+// Logic
 export async function getStaticPaths() {
     const paths = tips.map((tip) => ({ params: { slug: tip.slug } }));
     return { paths, fallback: false };
@@ -32,8 +34,9 @@ export default function TipPage({ tip }) {
     const description =
         tip.description || `Practical guidance on Intervention Orders in Victoria: ${tip.title}`;
 
+    // Markup
     return (
-        <div className="page-container">
+        <div className={styles.page}>
             <Head>
                 <title>{tip.title} - IVO Tips | Sesame Legal</title>
                 <meta name="description" content={description} />
@@ -43,16 +46,23 @@ export default function TipPage({ tip }) {
                 <meta property="og:description" content={description} />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={tipUrl} />
-                <meta property="og:image" content="https://www.sesamelegal.com/social-preview-1200x630.png" />
+                <meta
+                    property="og:image"
+                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
+                />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${tip.title} - IVO Tips | Sesame Legal`} />
                 <meta name="twitter:description" content={description} />
-                <meta name="twitter:image" content="https://www.sesamelegal.com/social-preview-1200x630.png" />
+                <meta
+                    name="twitter:image"
+                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
+                />
             </Head>
 
-            <main aria-labelledby="tip-title">
+            <main className={styles.main} aria-labelledby="tip-title">
                 <BackButton href="/ivotips">← Back to IVO Tips</BackButton>
+
                 <TipPageContent
                     title={tip.title}
                     content={tip.content}

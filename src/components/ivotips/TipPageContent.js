@@ -11,7 +11,8 @@ export default function TipPageContent({
         <div className={styles['tip-page-content']}>
             {tips.length > 0 && (
                 <nav className={styles['tip-nav']} aria-label="Other IVO tips">
-                    <h2 className={styles['tip-nav-title']}>Other Tips</h2>
+                    <h2 className={styles['tip-nav-title']}>Other tips</h2>
+
                     <ul className={styles['tip-nav-list']}>
                         {tips.map((tip) => (
                             <li key={tip.slug}>
@@ -31,6 +32,7 @@ export default function TipPageContent({
                 <h1 id={headingId} className={styles['tip-title']}>
                     {title}
                 </h1>
+
                 <div
                     className={styles['tip-full-content']}
                     dangerouslySetInnerHTML={{ __html: content }}

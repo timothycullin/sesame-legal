@@ -1,36 +1,95 @@
-/* Excerpt highlight */
+.post-content {
+  color: #1c1f24;
+}
+
 .post-excerpt-highlight {
-  padding: 1rem;                 /* 16px */
-  color: #000;           
-  background-color: #e6f7b0;
-  border-radius: 0.5rem;         /* 8px */
-  font-size: 1rem;               /* 16px */
-  line-height: 1.6;
-  margin-bottom: 1.5rem;         /* 24px */
+  padding: 1rem 1.125rem;
+  color: #101114;
+  border: 0.0625rem solid #dbe7b7;
+  background-color: #f3f8de;
+  border-left: 0.25rem solid #99b83c;
+  border-radius: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
-/* Body paragraphs */
-.post-content p {
-  color: #222;
-  font-size: 1rem;               /* 16px */
+.post-body p {
+  margin: 0 0 1.5rem;
+  color: #222831;
+  font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;         /* 24px */
 }
 
-/* Main section headings */
-.post-content h2 {
-  margin: 2rem 0 1rem;           /* spacing before and after */
-  color: #111;
-  font-size: 1.25rem;            /* 20px, slightly larger than body text */
-  font-weight: 600;
-  line-height: 1.4;              /* tighter than paragraphs for visual hierarchy */
+.post-body h2 {
+  margin: 2.5rem 0 1rem;
+  color: #101114;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
-/* Subheadings under main sections */
-.post-content h3 {
-  margin: 1.5rem 0 0.75rem;      /* slightly smaller spacing than h2 */
-  color: #222;
-  font-size: 1.125rem;           /* 18px, slightly smaller than h2 */
-  font-weight: 600;               /* updated from 500 to match paragraph bolds */
-  line-height: 1.4;
+.post-body h3 {
+  margin: 1.75rem 0 0.875rem;
+  color: #15181d;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.5rem 1.25rem;
+  color: #222831;
+}
+
+.post-body li {
+  line-height: 1.75;
+  margin-bottom: 0.625rem;
+}
+
+.post-body blockquote {
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  color: #303641;
+  border-left: 0.1875rem solid #d9dee6;
+}
+
+.post-body a {
+  color: #184fbf;
+  text-decoration-thickness: 0.0625rem;
+  text-underline-offset: 0.14em;
+}
+
+.post-body a:hover {
+  color: #123d95;
+}
+
+.post-body a:focus-visible {
+  border-radius: 0.125rem;
+  outline: 0.125rem solid #101114;
+  outline-offset: 0.125rem;
+}
+
+@media (max-width: 48rem) {
+  .post-excerpt-highlight {
+    padding: 0.9375rem 1rem;
+    border-radius: 0.875rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .post-body p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .post-body h2 {
+    font-size: 1.375rem;
+  }
+
+  .post-body h3 {
+    font-size: 1.125rem;
+  }
 }

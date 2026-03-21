@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './BackButton.module.css';
 
-export default function BackButton({ href, children }) {
+export default function BackButton({ href, children = '← Back' }) {
     const router = useRouter();
 
     if (href) {
@@ -18,7 +18,11 @@ export default function BackButton({ href, children }) {
 
     return (
         <div className={styles.back}>
-            <button onClick={() => router.back()} className={styles.link}>
+            <button
+                type="button"
+                onClick={() => router.back()}
+                className={styles.link}
+            >
                 {children}
             </button>
         </div>

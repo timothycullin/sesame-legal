@@ -14,12 +14,32 @@ import ShareButtons from '../../components/blog/ShareButtons';
 // Data
 import { posts } from '../../data/posts';
 
+// Local styles
+import styles from './BlogPostPage.module.css';
+
 export default function BlogPost({ post }) {
     // Logic
     const router = useRouter();
 
-    if (router.isFallback) return <div>Loading post...</div>;
-    if (!post) return <div>Post not found</div>;
+    if (router.isFallback) {
+        return (
+            <div className={styles.page}>
+                <main className={styles.main}>
+                    <p className={styles.message}>Loading post...</p>
+                </main>
+            </div>
+        );
+    }
+
+    if (!post) {
+        return (
+            <div className={styles.page}>
+                <main className={styles.main}>
+                    <p className={styles.message}>Post not found.</p>
+                </main>
+            </div>
+        );
+    }
 
     const formattedDate = new Date(post.date).toLocaleDateString('en-AU', {
         day: 'numeric',
@@ -33,43 +53,51 @@ export default function BlogPost({ post }) {
         : 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     const seoDescription =
-        post.excerpt || 'Read this blog post on human rights on Blog';
+        post.excerpt || 'Read this blog post on Sesame Legal.';
 
     // Markup
     return (
-        <div className="page-container">
+        <div className={styles.page}>
             <Head>
-                {/* Primary */}
-                <title>{post.title} | Blog</title>
+                <title>{post.title} | Blog | Sesame Legal</title>
                 <meta name="description" content={seoDescription} />
                 <link rel="canonical" href={postUrl} />
 
-                {/* Open Graph */}
-                <meta property="og:title" content={`${post.title} | Blog`} />
+                <meta property="og:title" content={`${post.title} | Blog | Sesame Legal`} />
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:type" content="article" />
+                <meta property="og:url" content={postUrl} />
                 <meta property="og:image" content={seoImage} />
 
-                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} | Blog`} />
+                <meta name="twitter:title" content={`${post.title} | Blog | Sesame Legal`} />
                 <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content={seoImage} />
             </Head>
 
-            <main>
-                <BackButton href="/blog">← Back to Blog</BackButton>
+            <main className={styles.main}>
+                <div className={styles['back-row']}>
+                    <BackButton href="/blog">← Back to Blog</BackButton>
+                </div>
 
-                <BlogHeader
-                    title={post.title}
-                    author={post.author}
-                    date={formattedDate}
-                    imageUrl={post.imageUrl}
-                />
+                <article className={styles.article}>
+                    <BlogHeader
+                        title={post.title}
+                        author={post.author}
+                        date={formattedDate}
+                        imageUrl={post.imageUrl}
+                    />
 
-                <BlogContent excerpt={post.excerpt} content={post.content} />
+                    <BlogContent excerpt={post.excerpt} content={post.content} />
 
-                <ShareButtons postUrl={postUrl} postTitle={post.title} />
+                    <section
+                        className={styles['share-section']}
+                        aria-label="Share this article"
+                    >
+                        <h2 className={styles['share-title']}>Share this article</h2>
+                        <ShareButtons postUrl={postUrl} postTitle={post.title} />
+                    </section>
+                </article>
             </main>
 
             <Footer />

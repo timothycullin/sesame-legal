@@ -47,9 +47,10 @@ export default function TipSections() {
                     href={`/ivotips/${tip.slug}`}
                     className={styles['tip-section']}
                     aria-labelledby={`tip-${tip.slug}`}
+                    aria-describedby={`tip-desc-${tip.slug}`}
                 >
                     <h3 id={`tip-${tip.slug}`}>{tip.title}</h3>
-                    <p>{tip.description}</p>
+                    <p id={`tip-desc-${tip.slug}`}>{tip.description}</p>
                 </Link>
             ))}
         </section>

@@ -9,7 +9,11 @@ export default function BlogContent({ excerpt, content }) {
                     dangerouslySetInnerHTML={{ __html: excerpt }}
                 />
             )}
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+
+            <div
+                className={styles['post-body']}
+                dangerouslySetInnerHTML={{ __html: content }}
+            />
         </article>
     );
 }

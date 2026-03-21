@@ -36,27 +36,3 @@ body {
   outline-offset: 0.125rem;
 }
 
-
-/* =========================
-   PAGE / LAYOUT STYLES (MOVE TO PAGES)
-   ========================= */
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.page-container main {
-  margin: 0 auto;
-  padding: calc(3.75rem + 3.5rem) 1.5rem 3.75rem;
-  flex: 1;
-  max-width: 55rem;
-}
-
-/* ---------------- MEDIA QUERIES ---------------- */
-@media (max-width: 48rem) {
-  .page-container main {
-    padding: calc(2.5rem + 3.5rem) 1rem 2.5rem;
-  }
-}
