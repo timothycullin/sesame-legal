@@ -36,11 +36,11 @@
   color: #101114;
   font-size: 3rem;
   font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 0.96;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
   max-width: 100%;
   overflow-wrap: break-word;
-  text-wrap: initial;
+  text-wrap: balance;
   word-break: normal;
 }
 
@@ -81,6 +81,8 @@
 @media (max-width: 70rem) {
   .post-title {
     font-size: 2.625rem;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
   }
 }
 
@@ -92,15 +94,16 @@
 
   .post-title {
     font-size: 2.25rem;
-    line-height: 0.98;
+    letter-spacing: -0.028em;
+    line-height: 1.04;
   }
 }
 
 @media (max-width: 52rem) {
   .post-title {
     font-size: 2rem;
-    letter-spacing: -0.045em;
-    line-height: 1;
+    letter-spacing: -0.024em;
+    line-height: 1.05;
   }
 }
 
@@ -123,7 +126,8 @@
 
   .post-title {
     font-size: 2rem;
-    line-height: 1;
+    letter-spacing: -0.024em;
+    line-height: 1.05;
     text-wrap: pretty;
   }
 
@@ -136,7 +140,7 @@
 @media (max-width: 30rem) {
   .post-title {
     font-size: 1.75rem;
-    letter-spacing: -0.04em;
-    line-height: 1.02;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
   }
 }
