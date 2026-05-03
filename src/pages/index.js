@@ -13,44 +13,42 @@ import styles from './home.module.css';
 // Logic
 export default function Home() {
     const pageUrl = 'https://www.sesamelegal.com/';
+    const pageTitle = 'Legal Services | Sesame Legal';
+    const pageDescription =
+        'Sesame Legal provides legal services and clear, practical guidance across a range of legal matters.';
+    const imageUrl = 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     // Markup
     return (
         <div className={styles.page}>
             <Head>
-                <title>Sesame Legal – Legal Guidance & Commentary</title>
-                <meta
-                    name="description"
-                    content="Sesame Legal provides clear legal guidance and commentary in a direct and accessible format."
-                />
+                <title>{pageTitle}</title>
+                <meta name="description" content={pageDescription} />
                 <link rel="canonical" href={pageUrl} />
 
-                <meta property="og:title" content="Sesame Legal – Legal Guidance & Commentary" />
-                <meta
-                    property="og:description"
-                    content="Sesame Legal provides clear legal guidance and commentary in a direct and accessible format."
-                />
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={pageUrl} />
+                <meta property="og:site_name" content="Sesame Legal" />
+                <meta property="og:image" content={imageUrl} />
 
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Sesame Legal – Legal Guidance & Commentary" />
-                <meta
-                    name="twitter:description"
-                    content="Sesame Legal provides clear legal guidance and commentary in a direct and accessible format."
-                />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageDescription} />
+                <meta name="twitter:image" content={imageUrl} />
             </Head>
 
-            <main className={styles.main}>
+            <div className={styles.main}>
                 <section className={styles.hero} aria-labelledby="home-title">
                     <h1 id="home-title" className={styles.title}>
-                        Clear legal guidance,
+                        Clear legal services,
                         <br />
                         kept direct.
                     </h1>
 
                     <p className={styles.intro}>
-                        Practical guidance and legal commentary, presented in a direct and accessible way.
+                        Legal services and practical guidance, delivered clearly and directly.
                     </p>
                 </section>
 
@@ -116,7 +114,7 @@ export default function Home() {
                         </Link>
                     </div>
                 </section>
-            </main>
+            </div>
 
             <Footer />
         </div>

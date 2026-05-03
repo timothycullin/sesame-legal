@@ -66,7 +66,7 @@
   display: flex;
   padding: 1.75rem;
   color: inherit;
-  border: 0.09375rem solid #d9dee6;
+  border: 0.0938rem solid #d9dee6;
   background-color: #fff;
   border-left: 0.25rem solid transparent;
   border-radius: 1.25rem;
@@ -74,6 +74,7 @@
   justify-content: space-between;
   min-height: 21.5rem;
   text-decoration: none;
+  transform: none;
   transition:
     background-color 0.18s ease,
     border-color 0.18s ease,
