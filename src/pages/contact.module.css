@@ -23,6 +23,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -75,8 +76,16 @@
 }
 
 .form-group textarea {
+  max-height: 18rem;
   min-height: 8rem;
   resize: vertical;
+}
+
+.form-group-error input,
+.form-group-error textarea {
+  box-shadow: 0 0 0 0.1875rem rgb(196 87 107 / 10%);
+  background-color: #fffafb;
+  border-color: #c4576b;
 }
 
 .form-group input:hover,
@@ -88,6 +97,14 @@
 .form-group textarea:focus {
   box-shadow: 0 0 0 0.1875rem rgb(16 17 20 / 8%);
   border-color: #101114;
+}
+
+.form-group-error input:hover,
+.form-group-error textarea:hover,
+.form-group-error input:focus,
+.form-group-error textarea:focus {
+  box-shadow: 0 0 0 0.1875rem rgb(196 87 107 / 14%);
+  border-color: #b5485d;
 }
 
 .form-group label {
@@ -107,6 +124,10 @@
     padding 0.18s ease;
 }
 
+.form-group-error label {
+  color: #8f3042;
+}
+
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
@@ -118,31 +139,19 @@
   font-size: 0.75rem;
 }
 
+.form-group-error input:focus + label,
+.form-group-error input:not(:placeholder-shown) + label,
+.form-group-error textarea:focus + label,
+.form-group-error textarea:not(:placeholder-shown) + label {
+  color: #8f3042;
+}
+
 .field-hint {
   color: #7b8390;
   font-size: 0.8125rem;
   line-height: 1.4;
   margin-top: 0.5rem;
   min-height: 1.25rem;
-}
-
-.form-group-error input,
-.form-group-error textarea {
-  box-shadow: 0 0 0 0.1875rem rgb(196 87 107 / 10%);
-  background-color: #fffafb;
-  border-color: #c4576b;
-}
-
-.form-group-error input:hover,
-.form-group-error textarea:hover,
-.form-group-error input:focus,
-.form-group-error textarea:focus {
-  box-shadow: 0 0 0 0.1875rem rgb(196 87 107 / 14%);
-  border-color: #b5485d;
-}
-
-.form-group-error label {
-  color: #8f3042;
 }
 
 .error-text {
@@ -283,6 +292,7 @@
 
   .title {
     font-size: 2.15rem;
+    line-height: 1;
   }
 }
 

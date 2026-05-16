@@ -6,6 +6,28 @@ import Footer from '../components/Footer';
 import styles from './contact.module.css';
 
 // Logic
+const pageUrl = 'https://www.sesamelegal.com/contact';
+
+const seo = {
+    title: 'Contact | Sesame Legal',
+    description:
+        'Contact Sesame Legal for general enquiries, feedback, or questions about our legal information and resources.',
+    image: 'https://www.sesamelegal.com/social-preview-1200x630.png',
+};
+
+const pageContent = {
+    eyebrow: 'Contact',
+    title: 'Get in touch',
+    intro:
+        'Use the form below for general enquiries, feedback, or questions about Sesame Legal.',
+    submitLabel: 'Send message',
+    successTitle: 'Message sent.',
+    successText:
+        'Thanks for reaching out. Your message has been sent successfully.',
+    errorTitle: 'Message not sent.',
+    errorText: 'Sorry, something went wrong. Please try again in a moment.',
+};
+
 export default function Contact() {
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
     const [values, setValues] = useState({ name: '', email: '', message: '' });
@@ -43,6 +65,7 @@ export default function Contact() {
 
         if (field === 'email') {
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
             if (!emailPattern.test(trimmedValue)) {
                 return 'Please enter a valid email address.';
             }
@@ -140,50 +163,32 @@ export default function Contact() {
     return (
         <div className={styles.page}>
             <Head>
-                <title>Contact | Sesame Legal</title>
-                <meta
-                    name="description"
-                    content="Contact Sesame Legal for general enquiries, feedback, or questions about our legal information and resources."
-                />
-                <link rel="canonical" href="https://www.sesamelegal.com/contact" />
+                <title>{seo.title}</title>
+                <meta name="description" content={seo.description} />
+                <link rel="canonical" href={pageUrl} />
 
-                <meta property="og:title" content="Contact | Sesame Legal" />
-                <meta
-                    property="og:description"
-                    content="Contact Sesame Legal for general enquiries, feedback, or questions."
-                />
+                <meta property="og:title" content={seo.title} />
+                <meta property="og:description" content={seo.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.sesamelegal.com/contact" />
-                <meta
-                    property="og:image"
-                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
-                />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:image" content={seo.image} />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Contact | Sesame Legal" />
-                <meta
-                    name="twitter:description"
-                    content="Contact Sesame Legal for general enquiries, feedback, or questions."
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
-                />
+                <meta name="twitter:title" content={seo.title} />
+                <meta name="twitter:description" content={seo.description} />
+                <meta name="twitter:image" content={seo.image} />
             </Head>
 
             <main id="main-content" className={styles.main}>
                 <section className={styles.hero} aria-labelledby="contact-heading">
-                    <p className={styles.eyebrow}>Contact</p>
+                    <p className={styles.eyebrow}>{pageContent.eyebrow}</p>
 
                     <h1 id="contact-heading" className={styles.title}>
-                        Get in touch
+                        {pageContent.title}
                     </h1>
 
                     <div className={styles.content}>
-                        <p className={styles.intro}>
-                            Use the form below to send a message and we will get back to you as
-                            soon as possible.
-                        </p>
+                        <p className={styles.intro}>{pageContent.intro}</p>
 
                         <form
                             className={styles['contact-form']}
@@ -272,11 +277,8 @@ export default function Contact() {
                                     aria-live="polite"
                                     role="status"
                                 >
-                                    <strong>Message sent.</strong>
-                                    <span>
-                                        Thanks for reaching out. Your message has been sent
-                                        successfully.
-                                    </span>
+                                    <strong>{pageContent.successTitle}</strong>
+                                    <span>{pageContent.successText}</span>
                                 </div>
                             )}
 
@@ -286,15 +288,13 @@ export default function Contact() {
                                     aria-live="polite"
                                     role="status"
                                 >
-                                    <strong>Message not sent.</strong>
-                                    <span>
-                                        Sorry, something went wrong. Please try again in a moment.
-                                    </span>
+                                    <strong>{pageContent.errorTitle}</strong>
+                                    <span>{pageContent.errorText}</span>
                                 </div>
                             )}
 
                             <button type="submit" className={styles['submit-button']}>
-                                Send message
+                                {pageContent.submitLabel}
                             </button>
                         </form>
                     </div>
