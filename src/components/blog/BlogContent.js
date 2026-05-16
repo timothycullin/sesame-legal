@@ -2,7 +2,7 @@ import styles from './BlogContent.module.css';
 
 export default function BlogContent({ excerpt, content }) {
     return (
-        <article className={styles['post-content']}>
+        <section className={styles['post-content']}>
             {excerpt && (
                 <div
                     className={styles['post-excerpt-highlight']}
@@ -14,6 +14,6 @@ export default function BlogContent({ excerpt, content }) {
                 className={styles['post-body']}
                 dangerouslySetInnerHTML={{ __html: content }}
             />
-        </article>
+        </section>
     );
 }

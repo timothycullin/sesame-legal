@@ -2,7 +2,7 @@ import Link from 'next/link';
 import AppImage from '../AppImage';
 import styles from './BlogHeader.module.css';
 
-export default function BlogHeader({ title, author, date, imageUrl }) {
+export default function BlogHeader({ title, author, date, imageUrl, titleId }) {
     const authorSlug = author.toLowerCase().replace(/\s+/g, '-');
 
     return (
@@ -16,24 +16,16 @@ export default function BlogHeader({ title, author, date, imageUrl }) {
             <div className={styles['post-info']}>
                 <p className={styles['post-meta-label']}>Blog</p>
 
-                <h1 className={styles['post-title']}>{title}</h1>
+                <h1 id={titleId} className={styles['post-title']}>
+                    {title}
+                </h1>
 
                 <div className={styles['post-meta']}>
                     <p className={styles['post-date']}>{date}</p>
 
                     <p className={styles['post-author']}>
                         By{' '}
-                        <Link
-                            href={{
-                                pathname: `/author/${authorSlug}`,
-                                query: {
-                                    from:
-                                        typeof window !== 'undefined'
-                                            ? window.location.pathname
-                                            : '',
-                                },
-                            }}
-                        >
+                        <Link href={`/author/${authorSlug}`}>
                             {author}
                         </Link>
                     </p>

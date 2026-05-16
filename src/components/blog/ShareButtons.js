@@ -1,4 +1,9 @@
-import { FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import {
+    FaTwitter,
+    FaFacebookF,
+    FaLinkedinIn,
+    FaLink,
+} from 'react-icons/fa';
 import styles from './ShareButtons.module.css';
 
 export default function ShareButtons({ postUrl, postTitle }) {
@@ -15,6 +20,14 @@ export default function ShareButtons({ postUrl, postTitle }) {
         }
     };
 
+    const handleCopyLink = async () => {
+        try {
+            await navigator.clipboard.writeText(postUrl);
+        } catch (error) {
+            console.error('Failed to copy link:', error);
+        }
+    };
+
     return (
         <div className={styles['share-buttons']}>
             <a
@@ -24,7 +37,7 @@ export default function ShareButtons({ postUrl, postTitle }) {
                 className={styles['share-button']}
                 aria-label={`Share "${postTitle}" on Twitter`}
             >
-                <FaTwitter className={styles['share-icon']} />
+                <FaTwitter className={styles['share-icon']} aria-hidden="true" />
             </a>
 
             <a
@@ -34,7 +47,7 @@ export default function ShareButtons({ postUrl, postTitle }) {
                 className={styles['share-button']}
                 aria-label={`Share "${postTitle}" on Facebook`}
             >
-                <FaFacebookF className={styles['share-icon']} />
+                <FaFacebookF className={styles['share-icon']} aria-hidden="true" />
             </a>
 
             <a
@@ -44,8 +57,17 @@ export default function ShareButtons({ postUrl, postTitle }) {
                 className={styles['share-button']}
                 aria-label={`Share "${postTitle}" on LinkedIn`}
             >
-                <FaLinkedinIn className={styles['share-icon']} />
+                <FaLinkedinIn className={styles['share-icon']} aria-hidden="true" />
             </a>
+
+            <button
+                type="button"
+                className={styles['share-button']}
+                onClick={handleCopyLink}
+                aria-label={`Copy link to "${postTitle}"`}
+            >
+                <FaLink className={styles['share-icon']} aria-hidden="true" />
+            </button>
         </div>
     );
 }

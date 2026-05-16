@@ -17,14 +17,14 @@ import { posts } from '../../data/posts';
 // Local styles
 import styles from './BlogPostPage.module.css';
 
+// Logic
 export default function BlogPost({ post }) {
-    // Logic
     const router = useRouter();
 
     if (router.isFallback) {
         return (
             <div className={styles.page}>
-                <main className={styles.main}>
+                <main className={styles.main} aria-live="polite">
                     <p className={styles.message}>Loading post...</p>
                 </main>
             </div>
@@ -47,30 +47,30 @@ export default function BlogPost({ post }) {
         year: 'numeric',
     });
 
+    const postTitle = `${post.title} | Blog | Sesame Legal`;
     const postUrl = `https://www.sesamelegal.com/blog/${post.slug}`;
+    const seoDescription =
+        post.excerpt || 'Read this blog post on Sesame Legal.';
     const seoImage = post.imageUrl
         ? `https://www.sesamelegal.com${post.imageUrl}`
         : 'https://www.sesamelegal.com/social-preview-1200x630.png';
-
-    const seoDescription =
-        post.excerpt || 'Read this blog post on Sesame Legal.';
 
     // Markup
     return (
         <div className={styles.page}>
             <Head>
-                <title>{post.title} | Blog | Sesame Legal</title>
+                <title>{postTitle}</title>
                 <meta name="description" content={seoDescription} />
                 <link rel="canonical" href={postUrl} />
 
-                <meta property="og:title" content={`${post.title} | Blog | Sesame Legal`} />
+                <meta property="og:title" content={postTitle} />
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={postUrl} />
                 <meta property="og:image" content={seoImage} />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} | Blog | Sesame Legal`} />
+                <meta name="twitter:title" content={postTitle} />
                 <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content={seoImage} />
             </Head>
@@ -80,21 +80,31 @@ export default function BlogPost({ post }) {
                     <BackButton href="/blog">← Back to Blog</BackButton>
                 </div>
 
-                <article className={styles.article}>
+                <article
+                    className={styles.article}
+                    aria-labelledby="blog-post-title"
+                >
                     <BlogHeader
                         title={post.title}
                         author={post.author}
                         date={formattedDate}
                         imageUrl={post.imageUrl}
+                        titleId="blog-post-title"
                     />
 
                     <BlogContent excerpt={post.excerpt} content={post.content} />
 
                     <section
                         className={styles['share-section']}
-                        aria-label="Share this article"
+                        aria-labelledby="share-title"
                     >
-                        <h2 className={styles['share-title']}>Share this article</h2>
+                        <h2
+                            id="share-title"
+                            className={styles['share-title']}
+                        >
+                            Share this article
+                        </h2>
+
                         <ShareButtons postUrl={postUrl} postTitle={post.title} />
                     </section>
                 </article>
