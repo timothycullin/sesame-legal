@@ -1,7 +1,7 @@
 import AppImage from '../AppImage';
 import styles from './AuthorHeader.module.css';
 
-export default function AuthorHeader({ name, image }) {
+export default function AuthorHeader({ id, name, image }) {
     return (
         <header className={styles['author-header']}>
             {image && (
@@ -18,7 +18,7 @@ export default function AuthorHeader({ name, image }) {
 
             <div className={styles['author-info']}>
                 <p className={styles['author-kicker']}>Author</p>
-                <h1 id="author-page-title" className={styles['author-page-title']}>
+                <h1 id={id} className={styles['author-page-title']}>
                     {name}
                 </h1>
             </div>

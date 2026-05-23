@@ -11,6 +11,16 @@ import { posts } from '../../data/posts';
 
 import styles from './AuthorPage.module.css';
 
+const SITE_URL = 'https://www.sesamelegal.com';
+
+const authorBioData = {
+    'tim-cullin': 'Tim Cullin is a lawyer practising in criminal defence, with an interest in advocacy and assisting clients through the legal system.',
+};
+
+const authorImageData = {
+    'tim-cullin': '/tim-cullin-author.jpg',
+};
+
 export default function AuthorPage({
     authorPosts,
     authorName,
@@ -20,24 +30,27 @@ export default function AuthorPage({
 }) {
     const router = useRouter();
 
+    const backHref =
+        typeof router.query.from === 'string' && router.query.from.startsWith('/')
+            ? router.query.from
+            : '/blog';
+
     if (router.isFallback) {
         return (
             <div className={styles.page}>
-                <main className={styles.main}>
+                <main className={styles.main} aria-live="polite">
                     <p className={styles.message}>Loading author...</p>
                 </main>
             </div>
         );
     }
 
-    const pageUrl = `https://www.sesamelegal.com/author/${authorSlug}`;
+    const pageUrl = `${SITE_URL}/author/${authorSlug}`;
     const seoTitle = `${authorName} | Author | Sesame Legal`;
-    const seoDescription = authorBio
-        ? `Read articles and commentary by ${authorName} on Sesame Legal.`
-        : `Read articles by ${authorName} on Sesame Legal.`;
+    const seoDescription = `Read articles and commentary by ${authorName} on Sesame Legal.`;
     const seoImage = authorImage
-        ? `https://www.sesamelegal.com${authorImage}`
-        : 'https://www.sesamelegal.com/social-preview-1200x630.png';
+        ? `${SITE_URL}${authorImage}`
+        : `${SITE_URL}/social-preview-1200x630.png`;
 
     return (
         <div className={styles.page}>
@@ -60,11 +73,15 @@ export default function AuthorPage({
 
             <main className={styles.main}>
                 <div className={styles['back-row']}>
-                    <BackButton href={router.query.from || '/blog'}>← Back</BackButton>
+                    <BackButton href={backHref}>← Back</BackButton>
                 </div>
 
-                <section className={styles['author-section']} aria-labelledby="author-page-title">
+                <section
+                    className={styles['author-section']}
+                    aria-labelledby="author-page-title"
+                >
                     <AuthorHeader
+                        id="author-page-title"
                         name={authorName}
                         image={authorImage}
                     />
@@ -72,8 +89,15 @@ export default function AuthorPage({
                     <AuthorBio bio={authorBio} />
                 </section>
 
-                <section className={styles['posts-section']} aria-label={`Posts by ${authorName}`}>
-                    <PostList posts={authorPosts || []} />
+                <section
+                    className={styles['posts-section']}
+                    aria-labelledby="author-posts-title"
+                >
+                    <h2 id="author-posts-title" className={styles['section-title']}>
+                        Articles by {authorName}
+                    </h2>
+
+                    <PostList posts={authorPosts} />
                 </section>
             </main>
 
@@ -82,18 +106,15 @@ export default function AuthorPage({
     );
 }
 
-// Static paths
 export async function getStaticPaths() {
     const slugs = Array.from(new Set(posts.map((post) => post.authorSlug)));
-    const paths = slugs.map((slug) => ({ params: { slug } }));
 
     return {
-        paths,
+        paths: slugs.map((slug) => ({ params: { slug } })),
         fallback: true,
     };
 }
 
-// Static props
 export async function getStaticProps({ params }) {
     const authorSlug = params.slug;
     const authorPosts = posts.filter((post) => post.authorSlug === authorSlug);
@@ -103,14 +124,6 @@ export async function getStaticProps({ params }) {
     }
 
     const authorName = authorPosts[0].author;
-
-    const authorBioData = {
-        'tim-cullin': 'Tim Cullin is a lawyer focusing on human rights.',
-    };
-
-    const authorImageData = {
-        'tim-cullin': '/tim-cullin.jpg',
-    };
 
     return {
         props: {
