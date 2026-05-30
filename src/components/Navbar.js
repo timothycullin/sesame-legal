@@ -198,56 +198,62 @@ export default function Navbar() {
             </header>
 
             {/* Mobile dropdown menu */}
-            <nav className={`${styles["mobile-menu"]} ${menuOpen ? styles.open : ""}`}>
-                {navLinks.map((link) =>
-                    !link.children ? (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={styles["nav-link"]}
-                            aria-current={isActive(link.href) ? "page" : undefined}
-                            onClick={() => {
-                                setMenuOpen(false);
-                                setMobileDropdownOpen(null);
-                            }}
-                        >
-                            {link.label}
-                        </Link>
-                    ) : (
-                        <div key={link.label} className={styles["mobile-dropdown"]}>
-                            <button
-                                type="button"
-                                className={`${styles["nav-link"]} ${styles["dropdown-link"]} ${mobileDropdownOpen === link.label ? styles["open-dropdown"] : ""
-                                    }`}
-                                onClick={() => toggleMobileDropdown(link.label)}
-                                aria-expanded={mobileDropdownOpen === link.label}
-                                aria-haspopup="true"
+            {menuOpen && (
+                <nav className={`${styles["mobile-menu"]} ${styles.open}`}>
+                    {navLinks.map((link) =>
+                        !link.children ? (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={styles["nav-link"]}
+                                aria-current={isActive(link.href) ? "page" : undefined}
+                                onClick={() => {
+                                    setMenuOpen(false);
+                                    setMobileDropdownOpen(null);
+                                }}
                             >
                                 {link.label}
-                            </button>
+                            </Link>
+                        ) : (
+                            <div key={link.label} className={styles["mobile-dropdown"]}>
+                                <button
+                                    type="button"
+                                    className={`${styles["nav-link"]} ${styles["dropdown-link"]} ${mobileDropdownOpen === link.label
+                                            ? styles["open-dropdown"]
+                                            : ""
+                                        }`}
+                                    onClick={() => toggleMobileDropdown(link.label)}
+                                    aria-expanded={mobileDropdownOpen === link.label}
+                                    aria-haspopup="true"
+                                >
+                                    {link.label}
+                                </button>
 
-                            {mobileDropdownOpen === link.label && (
-                                <div className={styles["mobile-submenu"]}>
-                                    {link.children.map((child) => (
-                                        <Link
-                                            key={child.href}
-                                            href={child.href}
-                                            className={styles["nav-link"]}
-                                            aria-current={isActive(child.href) ? "page" : undefined}
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setMobileDropdownOpen(null);
-                                            }}
-                                        >
-                                            {child.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    )
-                )}
-            </nav>
+                                {mobileDropdownOpen === link.label && (
+                                    <div className={styles["mobile-submenu"]}>
+                                        {link.children.map((child) => (
+                                            <Link
+                                                key={child.href}
+                                                href={child.href}
+                                                className={styles["nav-link"]}
+                                                aria-current={
+                                                    isActive(child.href) ? "page" : undefined
+                                                }
+                                                onClick={() => {
+                                                    setMenuOpen(false);
+                                                    setMobileDropdownOpen(null);
+                                                }}
+                                            >
+                                                {child.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        )
+                    )}
+                </nav>
+            )}
 
             <div
                 className={`${styles["mobile-overlay"]} ${menuOpen ? styles["open"] : ""}`}

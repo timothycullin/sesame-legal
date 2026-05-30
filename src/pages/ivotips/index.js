@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 // Local components
 import Footer from '../../components/Footer';
-import ResourcesHeader from '../../components/ResourcesHeader';
+import IvoTipsHeader from '../../components/ivotips/IvoTipsHeader';
 import TipSections from '../../components/ivotips/TipSections';
 
 // Local styles
@@ -55,7 +55,7 @@ export default function IvoTipLanding() {
             </Head>
 
             <main className={styles.main} aria-labelledby="ivo-tips-heading">
-                <ResourcesHeader
+                <IvoTipsHeader
                     headingId="ivo-tips-heading"
                     eyebrow="Resources"
                     title="IVO Tips"

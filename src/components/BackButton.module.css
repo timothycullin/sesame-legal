@@ -22,14 +22,14 @@
     transform 0.16s ease;
 }
 
-/* subtle arrow spacing feel */
+/* Arrow is handled here only */
 .link::before {
   display: inline-block;
   content: '←';
   transition: transform 0.16s ease;
 }
 
-/* desktop hover */
+/* Desktop hover */
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
     color: #101114;
@@ -45,14 +45,14 @@
   }
 }
 
-/* mobile feedback */
+/* Mobile feedback */
 @media (hover: none), (pointer: coarse) {
   .link:active {
     color: #101114;
   }
 }
 
-/* focus accessibility */
+/* Focus accessibility */
 .link:focus-visible {
   border-radius: 0.25rem;
   outline: 0.125rem solid #101114;

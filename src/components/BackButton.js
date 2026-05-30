@@ -1,16 +1,23 @@
-// components/BackButton.js
+// Imports
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './BackButton.module.css';
 
-export default function BackButton({ href, children = '← Back' }) {
+// Logic
+export default function BackButton({ href, children = 'Back' }) {
     const router = useRouter();
 
+    const label =
+        typeof children === 'string'
+            ? children.replace(/^←\s*/, '')
+            : children;
+
+    // Markup
     if (href) {
         return (
             <div className={styles.back}>
                 <Link href={href} className={styles.link}>
-                    {children}
+                    {label}
                 </Link>
             </div>
         );
@@ -23,7 +30,7 @@ export default function BackButton({ href, children = '← Back' }) {
                 onClick={() => router.back()}
                 className={styles.link}
             >
-                {children}
+                {label}
             </button>
         </div>
     );

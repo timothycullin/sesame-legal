@@ -90,6 +90,7 @@ export default function BlogPost({ post }) {
                         date={formattedDate}
                         imageUrl={post.imageUrl}
                         titleId="blog-post-title"
+                        authorHref={`/author/${post.authorSlug}?from=/blog/${post.slug}`}
                     />
 
                     <BlogContent excerpt={post.excerpt} content={post.content} />

@@ -1,10 +1,21 @@
+// Imports
 import Link from 'next/link';
 import AppImage from '../AppImage';
 import styles from './BlogHeader.module.css';
 
-export default function BlogHeader({ title, author, date, imageUrl, titleId }) {
+// Logic
+export default function BlogHeader({
+    title,
+    author,
+    date,
+    imageUrl,
+    titleId,
+    authorHref,
+}) {
     const authorSlug = author.toLowerCase().replace(/\s+/g, '-');
+    const resolvedAuthorHref = authorHref || `/author/${authorSlug}`;
 
+    // Markup
     return (
         <header className={styles['blog-post-header']}>
             {imageUrl && (
@@ -24,10 +35,7 @@ export default function BlogHeader({ title, author, date, imageUrl, titleId }) {
                     <p className={styles['post-date']}>{date}</p>
 
                     <p className={styles['post-author']}>
-                        By{' '}
-                        <Link href={`/author/${authorSlug}`}>
-                            {author}
-                        </Link>
+                        By <Link href={resolvedAuthorHref}>{author}</Link>
                     </p>
                 </div>
             </div>

@@ -1,6 +1,8 @@
+// Imports
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
+// Markup
 export default function Footer() {
     return (
         <footer className={styles.footer}>
@@ -9,7 +11,7 @@ export default function Footer() {
                     © {new Date().getFullYear()} Sesame Legal
                 </p>
 
-                <nav className={styles.links} aria-label="Footer">
+                <nav className={styles.links} aria-label="Footer navigation">
                     <Link href="/about">About</Link>
                     <Link href="/contact">Contact</Link>
                 </nav>
