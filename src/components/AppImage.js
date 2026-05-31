@@ -1,7 +1,7 @@
 // Imports
 import { useState } from 'react';
 import Image from 'next/image';
-import BlogIcon from './BlogIcon';
+import BlogIcon from './icons/BlogIcon';
 
 // Logic
 export default function AppImage({

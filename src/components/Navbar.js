@@ -22,6 +22,7 @@ export default function Navbar() {
             label: "Resources",
             children: [
                 { href: "/ivotips", label: "IVO Tips" },
+                { href: "/bail-applications", label: "Bail Applications" },
             ],
         },
         { href: "/blog", label: "Blog" },
@@ -219,8 +220,8 @@ export default function Navbar() {
                                 <button
                                     type="button"
                                     className={`${styles["nav-link"]} ${styles["dropdown-link"]} ${mobileDropdownOpen === link.label
-                                            ? styles["open-dropdown"]
-                                            : ""
+                                        ? styles["open-dropdown"]
+                                        : ""
                                         }`}
                                     onClick={() => toggleMobileDropdown(link.label)}
                                     aria-expanded={mobileDropdownOpen === link.label}

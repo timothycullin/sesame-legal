@@ -1,0 +1,130 @@
+.page {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 4.5rem;
+  flex: 1;
+  max-width: 52rem;
+}
+
+.article {
+  display: flex;
+  color: #222831;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 1rem;
+  line-height: 1.72;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #69707c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.article h1 {
+  margin: 0;
+  color: #101114;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  padding: 1rem 1.125rem;
+  color: #222831;
+  background: #f7f8fb;
+  border: 0.0625rem solid #e7eaf0;
+  border-left: 0.25rem solid #101114;
+  border-radius: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.section {
+  border-left: 0.0625rem solid #e7eaf0;
+  margin-top: 1.75rem;
+  padding-left: 1rem;
+}
+
+.section h2 {
+  margin: 0 0 0.25rem;
+  color: #101114;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.section p {
+  margin: 0 0 1rem;
+}
+
+.section ul {
+  margin: 0.25rem 0 0 1.25rem;
+  padding-left: 0;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.125rem;
+}
+
+@media (max-width: 48rem) {
+  .main {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .article {
+    font-size: 0.98rem;
+    gap: 0.875rem;
+    line-height: 1.68;
+  }
+
+  .article h1 {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .description {
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .section {
+    padding-left: 0.875rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  .section li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main {
+    padding: 2rem 0.875rem 3rem;
+  }
+
+  .article h1 {
+    font-size: 1.55rem;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+  }
+}

@@ -4,8 +4,9 @@ import Link from 'next/link';
 
 // Internal components
 import Footer from '../components/Footer';
-import BlogIcon from '../components/BlogIcon';
-import IVOTipsIcon from '../components/IvoTipsIcon';
+import BlogIcon from '../components/icons/BlogIcon';
+import BailApplicationsIcon from '../components/icons/BailApplicationsIcon';
+import IVOTipsIcon from '../components/icons/IvoTipsIcon';
 
 // Local styles
 import styles from './home.module.css';
@@ -64,6 +65,31 @@ export default function Home() {
 
                     <div className={styles['portal-panels']}>
                         <Link
+                            href="/bail-applications"
+                            className={styles.panel}
+                            aria-label="Bail Applications guide for understanding bail in Victoria"
+                        >
+                            <div className={styles['panel-top']}>
+                                <div className={styles['panel-icon']}>
+                                    <BailApplicationsIcon width={44} height={44} aria-hidden="true" />
+                                </div>
+
+                                <p className={styles['panel-kicker']}>Guide</p>
+                            </div>
+
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>Bail Applications</h3>
+
+                                <p className={styles['panel-text']}>
+                                    A practical guide to bail in Victoria, including bail tests,
+                                    unacceptable risk, bail conditions, and what happens if bail is refused.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>Read Bail Guide →</span>
+                        </Link>
+
+                        <Link
                             href="/ivotips"
                             className={styles.panel}
                             aria-label="IVO Tips for practical guidance on Intervention Orders in Victoria"
@@ -73,7 +99,7 @@ export default function Home() {
                                     <IVOTipsIcon width={44} height={44} aria-hidden="true" />
                                 </div>
 
-                                <p className={styles['panel-kicker']}>Guidance</p>
+                                <p className={styles['panel-kicker']}>Guide</p>
                             </div>
 
                             <div className={styles['panel-body']}>

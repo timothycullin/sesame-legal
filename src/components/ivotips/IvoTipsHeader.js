@@ -3,7 +3,6 @@ import styles from './IvoTipsHeader.module.css';
 
 // Markup
 export default function IvoTipsHeader({
-    eyebrow = 'Resources',
     title,
     headingId,
     description,
@@ -11,7 +10,7 @@ export default function IvoTipsHeader({
     return (
         <section className={styles.header} aria-labelledby={headingId}>
             <div className={styles.inner}>
-                {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
+                <p className={styles.eyebrow}>Guide</p>
 
                 <h1 id={headingId} className={styles.title}>
                     {title}
