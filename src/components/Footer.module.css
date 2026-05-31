@@ -44,6 +44,15 @@
   line-height: 1.5;
 }
 
+/* ---------------- CREDIT ---------------- */
+.credit {
+  margin: 0.25rem 0 0;
+  color: #8b919c;
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
 /* ---------------- LINKS ---------------- */
 .links {
   display: inline-flex;

@@ -11,6 +11,10 @@ export default function Footer() {
                     © {new Date().getFullYear()} Sesame Legal
                 </p>
 
+                <p className={styles.credit}>
+                    A Tim Cullin production
+                </p>
+
                 <nav className={styles.links} aria-label="Footer navigation">
                     <Link href="/about">About</Link>
                     <Link href="/contact">Contact</Link>
