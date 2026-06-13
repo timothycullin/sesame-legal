@@ -41,7 +41,7 @@ export default function Home() {
                 <meta name="twitter:image" content={imageUrl} />
             </Head>
 
-            <div className={styles.main}>
+            <main className={styles.main}>
                 <section className={styles.hero} aria-labelledby="home-title">
                     <h1 id="home-title" className={styles.title}>
                         Clear legal services,
@@ -159,7 +159,7 @@ export default function Home() {
                         </Link>
                     </div>
                 </section>
-            </div>
+            </main>
 
             <Footer />
         </div>

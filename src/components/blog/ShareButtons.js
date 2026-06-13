@@ -1,3 +1,4 @@
+// Imports
 import {
     FaTwitter,
     FaFacebookF,
@@ -6,15 +7,22 @@ import {
 } from 'react-icons/fa';
 import styles from './ShareButtons.module.css';
 
+// Logic
 export default function ShareButtons({ postUrl, postTitle }) {
     const getShareUrl = (platform) => {
         switch (platform) {
             case 'twitter':
-                return `https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(postTitle)}`;
+                return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                    postUrl
+                )}&text=${encodeURIComponent(postTitle)}`;
             case 'facebook':
-                return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`;
+                return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    postUrl
+                )}`;
             case 'linkedin':
-                return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`;
+                return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                    postUrl
+                )}`;
             default:
                 return '#';
         }
@@ -28,6 +36,7 @@ export default function ShareButtons({ postUrl, postTitle }) {
         }
     };
 
+    // Markup
     return (
         <div className={styles['share-buttons']}>
             <a

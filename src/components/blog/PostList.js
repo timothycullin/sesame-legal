@@ -1,7 +1,9 @@
+// Imports
 import Link from 'next/link';
 import AppImage from '../AppImage';
 import styles from './PostList.module.css';
 
+// Logic
 function stripHtml(html = '') {
     return html.replace(/<[^>]+>/g, '').trim();
 }
@@ -25,59 +27,64 @@ export default function PostList({ posts }) {
         (a, b) => new Date(b.date) - new Date(a.date)
     );
 
+    // Markup
     return (
-        <section
-            className={styles['posts-wrapper']}
-            aria-label="Blog posts"
-        >
+        <section className={styles['posts-wrapper']} aria-label="Blog posts">
             <div className={styles['posts-list']}>
-                {sortedPosts.map(({ title, slug, imageUrl, date, author, excerpt }, index) => (
-                    <Link
-                        href={`/blog/${slug}`}
-                        key={slug}
-                        className={styles['post-link']}
-                        aria-label={`Read blog post: ${title}`}
-                    >
-                        <article className={styles.post}>
-                            <div className={styles['post-content']}>
-                                {index === 0 && (
-                                    <p className={styles['feature-label']}>Latest post</p>
-                                )}
-
-                                <h2 className={styles['post-title']}>{title}</h2>
-
-                                <div className={styles['post-meta']}>
-                                    <span>{formatDate(date)}</span>
-                                    {author && (
-                                        <>
-                                            <span className={styles['meta-separator']}>•</span>
-                                            <span>By {author}</span>
-                                        </>
+                {sortedPosts.map(
+                    ({ title, slug, imageUrl, date, author, excerpt }, index) => (
+                        <Link
+                            href={`/blog/${slug}`}
+                            key={slug}
+                            className={styles['post-link']}
+                            aria-label={`Read blog post: ${title}`}
+                        >
+                            <article className={styles.post}>
+                                <div className={styles['post-content']}>
+                                    {index === 0 && (
+                                        <p className={styles['feature-label']}>
+                                            Latest post
+                                        </p>
                                     )}
+
+                                    <h2 className={styles['post-title']}>{title}</h2>
+
+                                    <div className={styles['post-meta']}>
+                                        <span>{formatDate(date)}</span>
+
+                                        {author && (
+                                            <>
+                                                <span className={styles['meta-separator']}>
+                                                    •
+                                                </span>
+                                                <span>By {author}</span>
+                                            </>
+                                        )}
+                                    </div>
+
+                                    {excerpt && (
+                                        <p className={styles['post-excerpt']}>
+                                            {truncateWords(stripHtml(excerpt), 28)}
+                                        </p>
+                                    )}
+
+                                    <span className={styles['post-link-text']}>
+                                        Read article →
+                                    </span>
                                 </div>
 
-                                {excerpt && (
-                                    <p className={styles['post-excerpt']}>
-                                        {truncateWords(stripHtml(excerpt), 28)}
-                                    </p>
+                                {imageUrl && (
+                                    <div className={styles['post-thumbnail']}>
+                                        <AppImage
+                                            src={imageUrl}
+                                            alt={`Thumbnail for ${title}`}
+                                        />
+                                    </div>
                                 )}
-
-                                <span className={styles['post-link-text']}>
-                                    Read article →
-                                </span>
-                            </div>
-
-                            {imageUrl && (
-                                <div className={styles['post-thumbnail']}>
-                                    <AppImage
-                                        src={imageUrl}
-                                        alt={`Thumbnail for ${title}`}
-                                    />
-                                </div>
-                            )}
-                        </article>
-                    </Link>
-                ))}
+                            </article>
+                        </Link>
+                    )
+                )}
             </div>
         </section>
     );

@@ -1,13 +1,13 @@
 // Framework
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 // Shared components
 import Footer from '../../components/Footer';
 import BackButton from '../../components/BackButton';
+import AppImage from '../../components/AppImage';
 
 // Blog components
-import BlogHeader from '../../components/blog/BlogHeader';
 import BlogContent from '../../components/blog/BlogContent';
 import ShareButtons from '../../components/blog/ShareButtons';
 
@@ -19,18 +19,6 @@ import styles from './BlogPostPage.module.css';
 
 // Logic
 export default function BlogPost({ post }) {
-    const router = useRouter();
-
-    if (router.isFallback) {
-        return (
-            <div className={styles.page}>
-                <main className={styles.main} aria-live="polite">
-                    <p className={styles.message}>Loading post...</p>
-                </main>
-            </div>
-        );
-    }
-
     if (!post) {
         return (
             <div className={styles.page}>
@@ -49,11 +37,15 @@ export default function BlogPost({ post }) {
 
     const postTitle = `${post.title} | Blog | Sesame Legal`;
     const postUrl = `https://www.sesamelegal.com/blog/${post.slug}`;
-    const seoDescription =
-        post.excerpt || 'Read this blog post on Sesame Legal.';
+    const seoDescription = post.excerpt || 'Read this blog post on Sesame Legal.';
     const seoImage = post.imageUrl
         ? `https://www.sesamelegal.com${post.imageUrl}`
         : 'https://www.sesamelegal.com/social-preview-1200x630.png';
+    const authorSlug = post.author.toLowerCase().replace(/\s+/g, '-');
+    const authorHref =
+        post.authorSlug
+            ? `/author/${post.authorSlug}?from=/blog/${post.slug}`
+            : `/author/${authorSlug}?from=/blog/${post.slug}`;
 
     // Markup
     return (
@@ -80,18 +72,33 @@ export default function BlogPost({ post }) {
                     <BackButton href="/blog">← Back to Blog</BackButton>
                 </div>
 
-                <article
-                    className={styles.article}
-                    aria-labelledby="blog-post-title"
-                >
-                    <BlogHeader
-                        title={post.title}
-                        author={post.author}
-                        date={formattedDate}
-                        imageUrl={post.imageUrl}
-                        titleId="blog-post-title"
-                        authorHref={`/author/${post.authorSlug}?from=/blog/${post.slug}`}
-                    />
+                <article className={styles.article} aria-labelledby="blog-post-title">
+                    <header className={styles['blog-post-header']}>
+                        {post.imageUrl && (
+                            <div className={styles['post-thumbnail-single']}>
+                                <AppImage
+                                    src={post.imageUrl}
+                                    alt={`Thumbnail for ${post.title}`}
+                                />
+                            </div>
+                        )}
+
+                        <div className={styles['post-info']}>
+                            <p className={styles['post-meta-label']}>Blog</p>
+
+                            <h1 id="blog-post-title" className={styles['post-title']}>
+                                {post.title}
+                            </h1>
+
+                            <div className={styles['post-meta']}>
+                                <p className={styles['post-date']}>{formattedDate}</p>
+
+                                <p className={styles['post-author']}>
+                                    By <Link href={authorHref}>{post.author}</Link>
+                                </p>
+                            </div>
+                        </div>
+                    </header>
 
                     <BlogContent excerpt={post.excerpt} content={post.content} />
 
@@ -99,10 +106,7 @@ export default function BlogPost({ post }) {
                         className={styles['share-section']}
                         aria-labelledby="share-title"
                     >
-                        <h2
-                            id="share-title"
-                            className={styles['share-title']}
-                        >
+                        <h2 id="share-title" className={styles['share-title']}>
                             Share this article
                         </h2>
 
@@ -124,7 +128,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: true,
+        fallback: false,
     };
 }
 

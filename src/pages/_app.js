@@ -9,7 +9,6 @@ import Navbar from '../components/Navbar';
 export default function MyApp({ Component, pageProps }) {
     return (
         <>
-            {/* Markup */}
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -33,13 +32,8 @@ export default function MyApp({ Component, pageProps }) {
                 />
             </Head>
 
-            <header>
-                <Navbar />
-            </header>
-
-            <main>
-                <Component {...pageProps} />
-            </main>
+            <Navbar />
+            <Component {...pageProps} />
         </>
     );
 }

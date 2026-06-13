@@ -21,7 +21,7 @@ export default function Footer() {
                 </nav>
 
                 <p className={styles.acknowledgment}>
-                    Sesame Legal acknowledges the Aboriginal and Torres Strait Islander peoples as the First Peoples and Traditional Custodians of the lands where we live, learn, work and play.
+                    Established in Victoria, Australia, Sesame Legal is informed by an appreciation for Victoria’s civic traditions, Australia’s democratic institutions, and the administration of justice.
                 </p>
             </div>
         </footer>

@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 
 // Blog components
-import BlogPageHeader from '../../components/blog/BlogPageHeader';
 import PostList from '../../components/blog/PostList';
 
 // Data
@@ -48,7 +47,18 @@ export default function BlogLanding() {
             </Head>
 
             <main className={styles.main} aria-labelledby="blog-page-title">
-                <BlogPageHeader />
+                <header className={styles['blog-page-header']}>
+                    <p className={styles['blog-page-kicker']}>Commentary</p>
+
+                    <h1 id="blog-page-title" className={styles['blog-page-title']}>
+                        Blog
+                    </h1>
+
+                    <p className={styles['blog-page-intro']}>
+                        Legal commentary, analysis, and public-interest writing.
+                    </p>
+                </header>
+
                 <PostList posts={posts} />
             </main>
 
