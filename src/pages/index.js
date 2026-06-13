@@ -15,9 +15,9 @@ import styles from './home.module.css';
 // Logic
 export default function Home() {
     const pageUrl = 'https://www.sesamelegal.com/';
-    const pageTitle = 'Legal Services | Sesame Legal';
+    const pageTitle = 'Legal Information | Sesame Legal';
     const pageDescription =
-        'Sesame Legal provides legal services and clear, practical guidance across a range of legal matters.';
+        'Sesame Legal provides clear, practical legal information and commentary about legal processes, rights, courts, and access to justice in Australia.';
     const imageUrl = 'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     // Markup
@@ -44,13 +44,13 @@ export default function Home() {
             <main className={styles.main}>
                 <section className={styles.hero} aria-labelledby="home-title">
                     <h1 id="home-title" className={styles.title}>
-                        Clear legal services,
+                        Clear legal information,
                         <br />
                         kept direct.
                     </h1>
 
                     <p className={styles.intro}>
-                        Legal services and practical guidance, delivered clearly and directly.
+                        Clear, practical legal information and commentary, delivered directly.
                     </p>
 
                     <div className={styles['author-card']}>
