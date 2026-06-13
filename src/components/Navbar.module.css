@@ -308,7 +308,7 @@
 }
 
 /* ----------------- MEDIA QUERIES ----------------- */
-@media (max-width: 48rem) {
+@media (max-width: 64rem) {
   .top-nav {
     padding: 0 1rem;
   }
@@ -326,7 +326,7 @@
   }
 }
 
-@media (min-width: 48.0625rem) {
+@media (min-width: 64.0625rem) {
   .nav-link:hover::after,
   .nav-link:focus::after {
     width: calc(100% - 1rem);

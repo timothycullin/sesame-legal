@@ -38,6 +38,34 @@
   max-width: 38rem;
 }
 
+.author-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.author-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.author-kicker {
+  margin: 0;
+  color: #101114;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.author-text {
+  margin: 0.25rem 0 0;
+  color: #4a4f57;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
 .portal-section {
   margin: 0 auto;
   max-width: 72rem;
@@ -272,6 +300,15 @@
 @media (max-width: 30rem) {
   .title {
     font-size: 2.2rem;
+  }
+
+  .author-card {
+    align-items: flex-start;
+  }
+
+  .author-image {
+    width: 5rem;
+    height: 5rem;
   }
 
   .panel {

@@ -1,6 +1,7 @@
 // Imports
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Internal components
 import Footer from '../components/Footer';
@@ -51,6 +52,24 @@ export default function Home() {
                     <p className={styles.intro}>
                         Legal services and practical guidance, delivered clearly and directly.
                     </p>
+
+                    <div className={styles['author-card']}>
+                        <Image
+                            src="/tim-cullin-author.jpg"
+                            alt="Tim Cullin"
+                            width={160}
+                            height={160}
+                            className={styles['author-image']}
+                            priority
+                        />
+
+                        <div>
+                            <p className={styles['author-kicker']}>By Tim Cullin</p>
+                            <p className={styles['author-text']}>
+                                Practical legal information from a Victorian lawyer.
+                            </p>
+                        </div>
+                    </div>
                 </section>
 
                 <section

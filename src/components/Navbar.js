@@ -43,7 +43,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 setMenuOpen(false);
                 setMobileDropdownOpen(null);
             }
@@ -110,6 +110,11 @@ export default function Navbar() {
                                             className={styles["nav-link"]}
                                             aria-haspopup="true"
                                             aria-expanded={desktopDropdownOpen === link.label}
+                                            onClick={() =>
+                                                setDesktopDropdownOpen((prev) =>
+                                                    prev === link.label ? null : link.label
+                                                )
+                                            }
                                         >
                                             {link.label}
                                             <svg
