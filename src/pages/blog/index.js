@@ -48,14 +48,14 @@ export default function BlogLanding() {
 
             <main className={styles.main} aria-labelledby="blog-page-title">
                 <header className={styles['blog-page-header']}>
-                    <p className={styles['blog-page-kicker']}>Commentary</p>
+                    <p className={styles['blog-page-kicker']}>Legal writing</p>
 
                     <h1 id="blog-page-title" className={styles['blog-page-title']}>
-                        Blog
+                        Practical legal commentary.
                     </h1>
 
                     <p className={styles['blog-page-intro']}>
-                        Legal commentary, analysis, and public-interest writing.
+                        Short articles on Victorian legal issues, court processes, and access to justice.
                     </p>
                 </header>
 

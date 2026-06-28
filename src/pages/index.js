@@ -84,6 +84,31 @@ export default function Home() {
 
                     <div className={styles['portal-panels']}>
                         <Link
+                            href="/blog"
+                            className={styles.panel}
+                            aria-label="Blog for legal commentary and analysis"
+                        >
+                            <div className={styles['panel-top']}>
+                                <div className={styles['panel-icon']}>
+                                    <BlogIcon width={44} height={44} aria-hidden="true" />
+                                </div>
+
+                                <p className={styles['panel-kicker']}>Commentary</p>
+                            </div>
+
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>Blog</h3>
+
+                                <p className={styles['panel-text']}>
+                                    Insights and analysis on law, rights, justice, and public issues
+                                    in Australia and beyond.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>Read the Blog →</span>
+                        </Link>
+
+                        <Link
                             href="/bail-applications"
                             className={styles.panel}
                             aria-label="Bail Applications guide for understanding bail in Victoria"
@@ -131,31 +156,6 @@ export default function Home() {
                             </div>
 
                             <span className={styles['panel-link']}>Explore IVO Tips →</span>
-                        </Link>
-
-                        <Link
-                            href="/blog"
-                            className={styles.panel}
-                            aria-label="Blog for legal commentary and analysis"
-                        >
-                            <div className={styles['panel-top']}>
-                                <div className={styles['panel-icon']}>
-                                    <BlogIcon width={44} height={44} aria-hidden="true" />
-                                </div>
-
-                                <p className={styles['panel-kicker']}>Commentary</p>
-                            </div>
-
-                            <div className={styles['panel-body']}>
-                                <h3 className={styles['panel-title']}>Blog</h3>
-
-                                <p className={styles['panel-text']}>
-                                    Insights and analysis on law, rights, justice, and public issues
-                                    in Australia and beyond.
-                                </p>
-                            </div>
-
-                            <span className={styles['panel-link']}>Read the Blog →</span>
                         </Link>
                     </div>
                 </section>

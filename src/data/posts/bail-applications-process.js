@@ -1,22 +1,25 @@
 export const bailApplicationsProcess = {
-    title: 'Bail Applications in Victoria: A Short Guide',
-    slug: 'bail-applications-process',
-    author: 'Tim Cullin',
-    authorSlug: 'tim-cullin',
-    excerpt: 'A short guide to bail applications in Victoria, including what bail is, what the court considers, common bail conditions, and why preparation matters.',
-    imageUrl: '/bail-applications-process.jpg',
-    content: `
-    <h2>Bail Applications in Victoria: A Short Guide</h2>
+  title: 'Bail Applications in Victoria: A Short Guide',
+  slug: 'bail-applications-process',
+  author: 'Tim Cullin',
+  authorSlug: 'tim-cullin',
+  excerpt:
+    'A short guide to bail applications in Victoria, including what bail is, what courts consider, and common bail conditions.',
+  imageUrl: '/bail-applications-process.jpg',
+  content: `
+    <p>Bail allows a person charged with an offence to remain in the community while their case continues through the courts.</p>
 
-    <p>Bail allows a person charged with an offence to remain in the community while their case is before the court. In Victoria, bail is governed by the <em>Bail Act 1977</em> and may be granted by police, a bail justice, or the court, depending on the circumstances.</p>
+    <p>Bail decisions may be made by police, a bail justice, or a court, depending on the circumstances.</p>
 
-    <p>In some cases, bail can be considered by police. In other cases, the person must be brought before the Magistrates’ Court, where a lawyer can make a bail application. The court will consider the charges, the person’s criminal history, their personal circumstances, their risk of failing to appear, and whether any bail conditions can reduce risk.</p>
+    <p>When deciding bail, courts consider whether releasing the person would create an unacceptable risk. This may include the risk of failing to attend court, committing further offences, endangering another person, or interfering with witnesses or the court process.</p>
 
-    <p>Common bail conditions include living at a particular address, reporting to police, obeying a curfew, not contacting certain people, attending treatment, or not entering certain areas. If bail is granted, the accused must sign an undertaking confirming they will attend court and comply with the conditions.</p>
+    <p>Courts may also consider matters such as criminal history, housing, employment, family support, and previous compliance with bail.</p>
 
-    <p>Preparation is important. Helpful material may include proof of address, employment, family support, treatment plans, medical material, or a proposed surety. The stronger the release plan, the better the chance of addressing the court’s concerns.</p>
+    <p>If bail is granted, conditions may be imposed to reduce risk. Common conditions include reporting to police, living at a particular address, obeying a curfew, not contacting certain people, or attending treatment or support services.</p>
 
-    <p>If bail is refused, the person will remain in custody unless a further application or appeal is brought. Because bail applications can be urgent and serious, it is important to get legal advice as early as possible.</p>
-  `,
-    date: '2026-05-24',
+    <p>If bail is refused, the person will usually remain in custody while the case continues, although a further bail application may sometimes be possible.</p>
+
+    <p>This guide is general information only and is not legal advice.</p>
+    `,
+  date: '2026-05-24',
 };
