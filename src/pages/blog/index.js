@@ -16,9 +16,12 @@ import styles from './blog.module.css';
 // Logic
 export default function BlogLanding() {
     const pageUrl = 'https://www.sesamelegal.com/blog';
-    const seoTitle = 'Blog | Legal Commentary & Analysis | Sesame Legal';
+    const imageUrl =
+        'https://www.sesamelegal.com/social-preview-1200x630.png';
+    const seoTitle =
+        'Blog | Commercial, Property, Wills & Estates | Sesame Legal';
     const seoDescription =
-        'Explore legal commentary, analysis, and public-interest writing from Sesame Legal.';
+        'Practical commentary on Victorian legal issues, commercial and property law, wills and estates.';
 
     // Markup
     return (
@@ -32,30 +35,37 @@ export default function BlogLanding() {
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={pageUrl} />
-                <meta
-                    property="og:image"
-                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
-                />
+                <meta property="og:site_name" content="Sesame Legal" />
+                <meta property="og:image" content={imageUrl} />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={seoTitle} />
-                <meta name="twitter:description" content={seoDescription} />
                 <meta
-                    name="twitter:image"
-                    content="https://www.sesamelegal.com/social-preview-1200x630.png"
+                    name="twitter:description"
+                    content={seoDescription}
                 />
+                <meta name="twitter:image" content={imageUrl} />
             </Head>
 
-            <main className={styles.main} aria-labelledby="blog-page-title">
+            <main
+                className={styles.main}
+                aria-labelledby="blog-page-title"
+            >
                 <header className={styles['blog-page-header']}>
-                    <p className={styles['blog-page-kicker']}>Legal writing</p>
+                    <p className={styles['blog-page-kicker']}>
+                        Legal commentary
+                    </p>
 
-                    <h1 id="blog-page-title" className={styles['blog-page-title']}>
-                        Practical legal commentary.
+                    <h1
+                        id="blog-page-title"
+                        className={styles['blog-page-title']}
+                    >
+                        Blog
                     </h1>
 
                     <p className={styles['blog-page-intro']}>
-                        Short articles on Victorian legal issues, court processes, and access to justice.
+                        Practical commentary on Victorian legal issues,
+                        commercial and property law, wills and estates.
                     </p>
                 </header>
 

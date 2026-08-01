@@ -22,7 +22,6 @@ export default function Navbar() {
             label: "Resources",
             children: [
                 { href: "/ivotips", label: "IVO Tips" },
-                { href: "/bail-applications", label: "Bail Applications" },
             ],
         },
         { href: "/blog", label: "Blog" },

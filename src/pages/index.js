@@ -6,7 +6,6 @@ import Image from 'next/image';
 // Internal components
 import Footer from '../components/Footer';
 import BlogIcon from '../components/icons/BlogIcon';
-import BailApplicationsIcon from '../components/icons/BailApplicationsIcon';
 import IVOTipsIcon from '../components/icons/IvoTipsIcon';
 
 // Local styles
@@ -15,10 +14,12 @@ import styles from './home.module.css';
 // Logic
 export default function Home() {
     const pageUrl = 'https://www.sesamelegal.com/';
-    const pageTitle = 'Legal Information | Sesame Legal';
+    const pageTitle =
+        'Legal Information | Commercial, Property, Wills & Estates | Sesame Legal';
     const pageDescription =
-        'Sesame Legal provides clear, practical legal information and commentary about legal processes, rights, courts, and access to justice in Australia.';
-    const imageUrl = 'https://www.sesamelegal.com/social-preview-1200x630.png';
+        'Clear, practical legal information on Victorian law, including commercial and property law, wills and estates.';
+    const imageUrl =
+        'https://www.sesamelegal.com/social-preview-1200x630.png';
 
     // Markup
     return (
@@ -37,23 +38,35 @@ export default function Home() {
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
-                <meta name="twitter:description" content={pageDescription} />
+                <meta
+                    name="twitter:description"
+                    content={pageDescription}
+                />
                 <meta name="twitter:image" content={imageUrl} />
             </Head>
 
             <main className={styles.main}>
-                <section className={styles.hero} aria-labelledby="home-title">
+                <section
+                    className={styles.hero}
+                    aria-labelledby="home-title"
+                >
                     <h1 id="home-title" className={styles.title}>
-                        Clear legal information,
+                        Legal information,
                         <br />
-                        kept direct.
+                        clear and direct.
                     </h1>
 
                     <p className={styles.intro}>
-                        Clear, practical legal information and commentary, delivered directly.
+                        Clear, practical legal information on Victorian law,
+                        including commercial and property law, wills and
+                        estates.
                     </p>
 
-                    <div className={styles['author-card']}>
+                    <Link
+                        href="/author/tim-cullin?from=/"
+                        className={styles['author-card']}
+                        aria-label="View Tim Cullin’s author profile and articles"
+                    >
                         <Image
                             src="/tim-cullin-author.jpg"
                             alt="Tim Cullin"
@@ -64,12 +77,21 @@ export default function Home() {
                         />
 
                         <div>
-                            <p className={styles['author-kicker']}>By Tim Cullin</p>
-                            <p className={styles['author-text']}>
-                                Practical legal information from a Victorian lawyer.
+                            <p className={styles['author-kicker']}>
+                                By Tim Cullin
                             </p>
+
+                            <p className={styles['author-text']}>
+                                Victorian lawyer focused on commercial and
+                                property law, including commercial
+                                transactions, wills and estates.
+                            </p>
+
+                            <span className={styles['author-link']}>
+                                View author profile →
+                            </span>
                         </div>
-                    </div>
+                    </Link>
                 </section>
 
                 <section
@@ -77,7 +99,10 @@ export default function Home() {
                     aria-labelledby="portal-heading"
                 >
                     <div className={styles['section-heading']}>
-                        <h2 id="portal-heading" className={styles['section-title']}>
+                        <h2
+                            id="portal-heading"
+                            className={styles['section-title']}
+                        >
                             Choose a section
                         </h2>
                     </div>
@@ -85,52 +110,38 @@ export default function Home() {
                     <div className={styles['portal-panels']}>
                         <Link
                             href="/blog"
-                            className={styles.panel}
-                            aria-label="Blog for legal commentary and analysis"
+                            className={`${styles.panel} ${styles['panel-primary']}`}
+                            aria-label="Blog about Victorian legal issues, commercial and property law, wills and estates"
                         >
                             <div className={styles['panel-top']}>
                                 <div className={styles['panel-icon']}>
-                                    <BlogIcon width={44} height={44} aria-hidden="true" />
+                                    <BlogIcon
+                                        width={52}
+                                        height={52}
+                                        aria-hidden="true"
+                                    />
                                 </div>
 
-                                <p className={styles['panel-kicker']}>Commentary</p>
-                            </div>
-
-                            <div className={styles['panel-body']}>
-                                <h3 className={styles['panel-title']}>Blog</h3>
-
-                                <p className={styles['panel-text']}>
-                                    Insights and analysis on law, rights, justice, and public issues
-                                    in Australia and beyond.
+                                <p className={styles['panel-kicker']}>
+                                    Legal commentary
                                 </p>
                             </div>
 
-                            <span className={styles['panel-link']}>Read the Blog →</span>
-                        </Link>
-
-                        <Link
-                            href="/bail-applications"
-                            className={styles.panel}
-                            aria-label="Bail Applications guide for understanding bail in Victoria"
-                        >
-                            <div className={styles['panel-top']}>
-                                <div className={styles['panel-icon']}>
-                                    <BailApplicationsIcon width={44} height={44} aria-hidden="true" />
-                                </div>
-
-                                <p className={styles['panel-kicker']}>Guide</p>
-                            </div>
-
                             <div className={styles['panel-body']}>
-                                <h3 className={styles['panel-title']}>Bail Applications</h3>
+                                <h3 className={styles['panel-title']}>
+                                    Blog
+                                </h3>
 
                                 <p className={styles['panel-text']}>
-                                    A practical guide to bail in Victoria, including bail tests,
-                                    unacceptable risk, bail conditions, and what happens if bail is refused.
+                                    Practical commentary on Victorian legal
+                                    issues, commercial and property law, wills
+                                    and estates.
                                 </p>
                             </div>
 
-                            <span className={styles['panel-link']}>Read Bail Guide →</span>
+                            <span className={styles['panel-link']}>
+                                Read the Blog →
+                            </span>
                         </Link>
 
                         <Link
@@ -140,22 +151,33 @@ export default function Home() {
                         >
                             <div className={styles['panel-top']}>
                                 <div className={styles['panel-icon']}>
-                                    <IVOTipsIcon width={44} height={44} aria-hidden="true" />
+                                    <IVOTipsIcon
+                                        width={44}
+                                        height={44}
+                                        aria-hidden="true"
+                                    />
                                 </div>
 
-                                <p className={styles['panel-kicker']}>Guide</p>
-                            </div>
-
-                            <div className={styles['panel-body']}>
-                                <h3 className={styles['panel-title']}>IVO Tips</h3>
-
-                                <p className={styles['panel-text']}>
-                                    Step-by-step guidance and practical resources for navigating
-                                    Intervention Orders in Victoria.
+                                <p className={styles['panel-kicker']}>
+                                    Guide
                                 </p>
                             </div>
 
-                            <span className={styles['panel-link']}>Explore IVO Tips →</span>
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>
+                                    IVO Tips
+                                </h3>
+
+                                <p className={styles['panel-text']}>
+                                    Step-by-step guidance and practical
+                                    resources for navigating Intervention Orders
+                                    in Victoria.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>
+                                Explore IVO Tips →
+                            </span>
                         </Link>
                     </div>
                 </section>

@@ -1,5 +1,4 @@
 // Imports
-
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -14,19 +13,16 @@ import { posts } from '../../data/posts';
 import styles from './AuthorPage.module.css';
 
 // Logic
-
 const SITE_URL = 'https://www.sesamelegal.com';
 
 const authorBioData = {
     'tim-cullin':
-        'Tim Cullin is a lawyer practising in criminal defence, with an interest in advocacy and assisting clients through the legal system.',
+        'Tim Cullin is a Victorian lawyer focused on commercial and property law, including commercial transactions, wills and estates.',
 };
 
 const authorImageData = {
     'tim-cullin': '/tim-cullin-author.jpg',
 };
-
-// Markup
 
 export default function AuthorPage({
     authorPosts,
@@ -38,67 +34,45 @@ export default function AuthorPage({
     const router = useRouter();
 
     const backHref =
-        typeof router.query.from === 'string' && router.query.from.startsWith('/')
+        typeof router.query.from === 'string' &&
+            router.query.from.startsWith('/')
             ? router.query.from
             : '/blog';
 
     const pageUrl = `${SITE_URL}/author/${authorSlug}`;
-
     const seoTitle = `${authorName} | Author | Sesame Legal`;
-
-    const seoDescription = `Read articles and commentary by ${authorName} on Sesame Legal.`;
-
+    const seoDescription = `${authorName} writes about commercial and property law, commercial transactions, wills and estates.`;
     const seoImage = authorImage
         ? `${SITE_URL}${authorImage}`
         : `${SITE_URL}/social-preview-1200x630.png`;
 
+    // Markup
     return (
         <div className={styles.page}>
             <Head>
                 <title>{seoTitle}</title>
-
-                <meta
-                    name="description"
-                    content={seoDescription}
-                />
-
-                <link
-                    rel="canonical"
-                    href={pageUrl}
-                />
+                <meta name="description" content={seoDescription} />
+                <link rel="canonical" href={pageUrl} />
 
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:type" content="profile" />
                 <meta property="og:url" content={pageUrl} />
+                <meta property="og:site_name" content="Sesame Legal" />
                 <meta property="og:image" content={seoImage} />
 
-                <meta
-                    name="twitter:card"
-                    content="summary_large_image"
-                />
-
-                <meta
-                    name="twitter:title"
-                    content={seoTitle}
-                />
-
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={seoTitle} />
                 <meta
                     name="twitter:description"
                     content={seoDescription}
                 />
-
-                <meta
-                    name="twitter:image"
-                    content={seoImage}
-                />
+                <meta name="twitter:image" content={seoImage} />
             </Head>
 
             <main className={styles.main}>
                 <div className={styles['back-row']}>
-                    <BackButton href={backHref}>
-                        ← Back
-                    </BackButton>
+                    <BackButton href={backHref}>← Back</BackButton>
                 </div>
 
                 <section
@@ -134,15 +108,14 @@ export default function AuthorPage({
     );
 }
 
-// Static Generation
-
+// Logic
 export async function getStaticPaths() {
-    const slugs = Array.from(
+    const authorSlugs = Array.from(
         new Set(posts.map((post) => post.authorSlug))
     );
 
     return {
-        paths: slugs.map((slug) => ({
+        paths: authorSlugs.map((slug) => ({
             params: { slug },
         })),
         fallback: false,
