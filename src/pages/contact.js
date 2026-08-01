@@ -159,6 +159,7 @@ export default function Contact() {
         }
     };
 
+
     // Markup
     return (
         <div className={styles.page}>
@@ -171,24 +172,35 @@ export default function Contact() {
                 <meta property="og:description" content={seo.description} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={pageUrl} />
+                <meta property="og:site_name" content="Sesame Legal" />
                 <meta property="og:image" content={seo.image} />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={seo.title} />
-                <meta name="twitter:description" content={seo.description} />
+                <meta
+                    name="twitter:description"
+                    content={seo.description}
+                />
                 <meta name="twitter:image" content={seo.image} />
             </Head>
 
             <main id="main-content" className={styles.main}>
-                <section className={styles.hero} aria-labelledby="contact-heading">
-                    <p className={styles.eyebrow}>{pageContent.eyebrow}</p>
+                <section
+                    className={styles.hero}
+                    aria-labelledby="contact-heading"
+                >
+                    <p className={styles.eyebrow}>
+                        {pageContent.eyebrow}
+                    </p>
 
                     <h1 id="contact-heading" className={styles.title}>
                         {pageContent.title}
                     </h1>
 
                     <div className={styles.content}>
-                        <p className={styles.intro}>{pageContent.intro}</p>
+                        <p className={styles.intro}>
+                            {pageContent.intro}
+                        </p>
 
                         <form
                             className={styles['contact-form']}
@@ -202,12 +214,18 @@ export default function Contact() {
                                 return (
                                     <div
                                         key={field}
-                                        className={`${styles['form-group']} ${hasError ? styles['form-group-error'] : ''
+                                        className={`${styles['form-group']} ${hasError
+                                                ? styles['form-group-error']
+                                                : ''
                                             }`}
                                     >
                                         {field !== 'message' ? (
                                             <input
-                                                type={field === 'email' ? 'email' : 'text'}
+                                                type={
+                                                    field === 'email'
+                                                        ? 'email'
+                                                        : 'text'
+                                                }
                                                 id={field}
                                                 name={field}
                                                 placeholder=" "
@@ -218,7 +236,9 @@ export default function Contact() {
                                                 required
                                                 aria-invalid={hasError}
                                                 aria-describedby={
-                                                    hasError ? `${field}-error` : `${field}-hint`
+                                                    hasError
+                                                        ? `${field}-error`
+                                                        : `${field}-hint`
                                                 }
                                             />
                                         ) : (
@@ -234,12 +254,16 @@ export default function Contact() {
                                                 required
                                                 aria-invalid={hasError}
                                                 aria-describedby={
-                                                    hasError ? 'message-error' : 'message-hint'
+                                                    hasError
+                                                        ? 'message-error'
+                                                        : 'message-hint'
                                                 }
                                             />
                                         )}
 
-                                        <label htmlFor={field}>{label}</label>
+                                        <label htmlFor={field}>
+                                            {label}
+                                        </label>
 
                                         {!hasError && (
                                             <div
@@ -259,11 +283,14 @@ export default function Contact() {
                                                 role="alert"
                                             >
                                                 <span
-                                                    className={styles['error-badge']}
+                                                    className={
+                                                        styles['error-badge']
+                                                    }
                                                     aria-hidden="true"
                                                 >
                                                     !
                                                 </span>
+
                                                 <span>{errors[field]}</span>
                                             </div>
                                         )}
@@ -277,8 +304,13 @@ export default function Contact() {
                                     aria-live="polite"
                                     role="status"
                                 >
-                                    <strong>{pageContent.successTitle}</strong>
-                                    <span>{pageContent.successText}</span>
+                                    <strong>
+                                        {pageContent.successTitle}
+                                    </strong>
+
+                                    <span>
+                                        {pageContent.successText}
+                                    </span>
                                 </div>
                             )}
 
@@ -288,12 +320,20 @@ export default function Contact() {
                                     aria-live="polite"
                                     role="status"
                                 >
-                                    <strong>{pageContent.errorTitle}</strong>
-                                    <span>{pageContent.errorText}</span>
+                                    <strong>
+                                        {pageContent.errorTitle}
+                                    </strong>
+
+                                    <span>
+                                        {pageContent.errorText}
+                                    </span>
                                 </div>
                             )}
 
-                            <button type="submit" className={styles['submit-button']}>
+                            <button
+                                type="submit"
+                                className={styles['submit-button']}
+                            >
                                 {pageContent.submitLabel}
                             </button>
                         </form>

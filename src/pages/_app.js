@@ -18,18 +18,6 @@ export default function MyApp({ Component, pageProps }) {
                 <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
 
                 <meta name="twitter:card" content="summary_large_image" />
-
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'WebSite',
-                            name: 'Sesame Legal',
-                            url: 'https://www.sesamelegal.com/',
-                        }),
-                    }}
-                />
             </Head>
 
             <Navbar />
