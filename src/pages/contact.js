@@ -159,7 +159,6 @@ export default function Contact() {
         }
     };
 
-
     // Markup
     return (
         <div className={styles.page}>
