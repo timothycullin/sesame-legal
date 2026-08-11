@@ -19,7 +19,7 @@ export default function Navbar() {
 
     const navLinks = [
         {
-            label: "Resources",
+            label: "Information",
             children: [
                 { href: "/ivotips", label: "IVO Tips" },
             ],
