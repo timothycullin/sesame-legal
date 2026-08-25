@@ -6,6 +6,8 @@ import { restrictedProBono } from './posts/restricted-pro-bono-new-lawyers.js';
 
 import { ayatollahToll } from './posts/ayatollah-toll-righteous-war.js'; */
 
+import { filippiniTrustControl } from './posts/filippini-trust-control.js';
+
 import { willsInVictoria } from './posts/wills-in-victoria.js';
 
 import { trustControlAndBeneficialOwnership } from './posts/trust-control-and-beneficial-ownership.js';
@@ -13,6 +15,8 @@ import { trustControlAndBeneficialOwnership } from './posts/trust-control-and-be
 import { typesOfTrusts } from './posts/types-of-trusts.js';
 
 export const posts = [
+
+    filippiniTrustControl,
 
     willsInVictoria,
 
