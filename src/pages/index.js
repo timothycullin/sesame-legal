@@ -5,11 +5,24 @@ import Image from 'next/image';
 
 // Internal components
 import Footer from '../components/Footer';
+import AppImage from '../components/AppImage';
 import BlogIcon from '../components/icons/BlogIcon';
 import IVOTipsIcon from '../components/icons/IvoTipsIcon';
 
+// Data
+import { posts } from '../data/posts';
+
 // Local styles
 import styles from './home.module.css';
+
+// Helpers
+function formatDate(date) {
+    return new Date(date).toLocaleDateString('en-AU', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    });
+}
 
 // Logic
 export default function Home() {
@@ -20,6 +33,10 @@ export default function Home() {
         'Clear, practical legal information on Victorian law, including commercial and property law, wills and estates.';
     const imageUrl =
         'https://www.sesamelegal.com/social-preview-1200x630.png';
+
+    const latestPost = [...posts].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    )[0];
 
     // Markup
     return (
@@ -93,6 +110,73 @@ export default function Home() {
                         </div>
                     </Link>
                 </section>
+
+                {latestPost && (
+                    <section
+                        className={styles['latest-section']}
+                        aria-label="Latest article"
+                    >
+                        <Link
+                            href={{
+                                pathname: `/blog/${latestPost.slug}`,
+                                query: { from: '/' },
+                            }}
+                            className={styles['latest-link']}
+                            aria-label={`Read latest article: ${latestPost.title}`}
+                        >
+                            <div className={styles['latest-content']}>
+                                <p className={styles['latest-label']}>
+                                    Latest article
+                                </p>
+
+                                <h2 className={styles['latest-title']}>
+                                    {latestPost.title}
+                                </h2>
+
+                                <div className={styles['latest-meta']}>
+                                    <span>
+                                        {formatDate(latestPost.date)}
+                                    </span>
+
+                                    {latestPost.author && (
+                                        <>
+                                            <span
+                                                className={
+                                                    styles['meta-separator']
+                                                }
+                                            >
+                                                •
+                                            </span>
+
+                                            <span>
+                                                By {latestPost.author}
+                                            </span>
+                                        </>
+                                    )}
+                                </div>
+
+                                {latestPost.excerpt && (
+                                    <p className={styles['latest-excerpt']}>
+                                        {latestPost.excerpt}
+                                    </p>
+                                )}
+
+                                <span className={styles['latest-read']}>
+                                    Read article →
+                                </span>
+                            </div>
+
+                            {latestPost.imageUrl && (
+                                <div className={styles['latest-thumbnail']}>
+                                    <AppImage
+                                        src={latestPost.imageUrl}
+                                        alt={`Thumbnail for ${latestPost.title}`}
+                                    />
+                                </div>
+                            )}
+                        </Link>
+                    </section>
+                )}
 
                 <section
                     className={styles['portal-section']}

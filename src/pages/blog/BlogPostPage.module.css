@@ -33,7 +33,7 @@
   width: 8rem;
   aspect-ratio: 3 / 2;
   background-color: #f3f4f6;
-  border-radius: 0.75rem;
+  border-radius: 0.875rem; 
   flex: 0 0 8rem;
   overflow: hidden;
 }
