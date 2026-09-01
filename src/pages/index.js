@@ -3,19 +3,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Internal components
 import Footer from '../components/Footer';
 import AppImage from '../components/AppImage';
 import BlogIcon from '../components/icons/BlogIcon';
 import IVOTipsIcon from '../components/icons/IvoTipsIcon';
 
-// Data
 import { posts } from '../data/posts';
 
-// Local styles
 import styles from './home.module.css';
 
-// Helpers
+// Logic
 function formatDate(date) {
     return new Date(date).toLocaleDateString('en-AU', {
         day: 'numeric',
@@ -24,13 +21,11 @@ function formatDate(date) {
     });
 }
 
-// Logic
 export default function Home() {
     const pageUrl = 'https://www.sesamelegal.com/';
-    const pageTitle =
-        'Legal Information | Commercial, Property, Wills & Estates | Sesame Legal';
+    const pageTitle = 'Victorian Legal Information | Sesame Legal';
     const pageDescription =
-        'Clear, practical legal information on Victorian law, including commercial and property law, wills and estates.';
+        'Clear, practical legal information on Victorian law, with commentary, resources and practical guides across a range of legal issues.';
     const imageUrl =
         'https://www.sesamelegal.com/social-preview-1200x630.png';
 
@@ -75,8 +70,7 @@ export default function Home() {
 
                     <p className={styles.intro}>
                         Clear, practical legal information on Victorian law,
-                        including commercial and property law, wills and
-                        estates.
+                        with commentary, resources and practical guides.
                     </p>
 
                     <Link
@@ -99,9 +93,8 @@ export default function Home() {
                             </p>
 
                             <p className={styles['author-text']}>
-                                Victorian lawyer focused on commercial and
-                                property law, including commercial
-                                transactions, wills and estates.
+                                Victorian lawyer with an interest in clear,
+                                practical legal information.
                             </p>
 
                             <span className={styles['author-link']}>
@@ -193,15 +186,51 @@ export default function Home() {
 
                     <div className={styles['portal-panels']}>
                         <Link
-                            href="/blog"
+                            href="/ivotips"
                             className={`${styles.panel} ${styles['panel-primary']}`}
-                            aria-label="Blog about Victorian legal issues, commercial and property law, wills and estates"
+                            aria-label="IVO Tips for practical guidance on Intervention Orders in Victoria"
+                        >
+                            <div className={styles['panel-top']}>
+                                <div className={styles['panel-icon']}>
+                                    <IVOTipsIcon
+                                        width={52}
+                                        height={52}
+                                        aria-hidden="true"
+                                    />
+                                </div>
+
+                                <p className={styles['panel-kicker']}>
+                                    Practical guide
+                                </p>
+                            </div>
+
+                            <div className={styles['panel-body']}>
+                                <h3 className={styles['panel-title']}>
+                                    IVO Tips
+                                </h3>
+
+                                <p className={styles['panel-text']}>
+                                    Practical information and step-by-step
+                                    guidance for people navigating Intervention
+                                    Order matters in Victoria.
+                                </p>
+                            </div>
+
+                            <span className={styles['panel-link']}>
+                                Explore IVO Tips →
+                            </span>
+                        </Link>
+
+                        <Link
+                            href="/blog"
+                            className={styles.panel}
+                            aria-label="Blog about Victorian law and related legal issues"
                         >
                             <div className={styles['panel-top']}>
                                 <div className={styles['panel-icon']}>
                                     <BlogIcon
-                                        width={52}
-                                        height={52}
+                                        width={44}
+                                        height={44}
                                         aria-hidden="true"
                                     />
                                 </div>
@@ -217,50 +246,13 @@ export default function Home() {
                                 </h3>
 
                                 <p className={styles['panel-text']}>
-                                    Practical commentary on Victorian legal
-                                    issues, commercial and property law, wills
-                                    and estates.
+                                    Practical commentary and analysis on
+                                    Victorian law and related legal issues.
                                 </p>
                             </div>
 
                             <span className={styles['panel-link']}>
                                 Read the Blog →
-                            </span>
-                        </Link>
-
-                        <Link
-                            href="/ivotips"
-                            className={styles.panel}
-                            aria-label="IVO Tips for practical guidance on Intervention Orders in Victoria"
-                        >
-                            <div className={styles['panel-top']}>
-                                <div className={styles['panel-icon']}>
-                                    <IVOTipsIcon
-                                        width={44}
-                                        height={44}
-                                        aria-hidden="true"
-                                    />
-                                </div>
-
-                                <p className={styles['panel-kicker']}>
-                                    Guide
-                                </p>
-                            </div>
-
-                            <div className={styles['panel-body']}>
-                                <h3 className={styles['panel-title']}>
-                                    IVO Tips
-                                </h3>
-
-                                <p className={styles['panel-text']}>
-                                    Step-by-step guidance and practical
-                                    resources for navigating Intervention Orders
-                                    in Victoria.
-                                </p>
-                            </div>
-
-                            <span className={styles['panel-link']}>
-                                Explore IVO Tips →
                             </span>
                         </Link>
                     </div>

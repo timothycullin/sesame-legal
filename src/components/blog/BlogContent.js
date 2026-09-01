@@ -1,8 +1,10 @@
+// Imports
 import styles from './BlogContent.module.css';
 
+// Markup
 export default function BlogContent({ excerpt, content }) {
     return (
-        <section className={styles['post-content']}>
+        <div className={styles['post-content']}>
             {excerpt && (
                 <div
                     className={styles['post-excerpt-highlight']}
@@ -14,6 +16,6 @@ export default function BlogContent({ excerpt, content }) {
                 className={styles['post-body']}
                 dangerouslySetInnerHTML={{ __html: content }}
             />
-        </section>
+        </div>
     );
 }

@@ -17,7 +17,7 @@ const SITE_URL = 'https://www.sesamelegal.com';
 
 const authorBioData = {
     'tim-cullin':
-        'Tim Cullin is a Victorian lawyer focused on commercial and property law, including commercial transactions, wills and estates.',
+        'Tim Cullin is a Victorian lawyer with an interest in clear, practical legal information.',
 };
 
 const authorImageData = {
@@ -41,7 +41,8 @@ export default function AuthorPage({
 
     const pageUrl = `${SITE_URL}/author/${authorSlug}`;
     const seoTitle = `${authorName} | Author | Sesame Legal`;
-    const seoDescription = `${authorName} writes about commercial and property law, commercial transactions, wills and estates.`;
+    const seoDescription =
+        `${authorName} writes clear, practical legal information on Victorian law and related legal issues.`;
     const seoImage = authorImage
         ? `${SITE_URL}${authorImage}`
         : `${SITE_URL}/social-preview-1200x630.png`;
@@ -108,7 +109,6 @@ export default function AuthorPage({
     );
 }
 
-// Logic
 export async function getStaticPaths() {
     const authorSlugs = Array.from(
         new Set(posts.map((post) => post.authorSlug))

@@ -1,24 +1,46 @@
-// Framework
+// Imports
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-// Shared components
 import Footer from '../../components/Footer';
 import BackButton from '../../components/BackButton';
 import AppImage from '../../components/AppImage';
-
-// Blog components
 import BlogContent from '../../components/blog/BlogContent';
 import ShareButtons from '../../components/blog/ShareButtons';
 
-// Data
 import { posts } from '../../data/posts';
 
-// Local styles
 import styles from './BlogPostPage.module.css';
 
 // Logic
+const SITE_URL = 'https://www.sesamelegal.com';
+
+export async function getStaticPaths() {
+    const paths = posts.map((post) => ({
+        params: {
+            id: post.slug,
+        },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const post =
+        posts.find((post) => post.slug === params.id) || null;
+
+    return {
+        props: {
+            post,
+        },
+        revalidate: 10,
+    };
+}
+
 export default function BlogPost({ post }) {
     const router = useRouter();
 
@@ -44,13 +66,13 @@ export default function BlogPost({ post }) {
     );
 
     const postTitle = `${post.title} | Blog | Sesame Legal`;
-    const postUrl =
-        `https://www.sesamelegal.com/blog/${post.slug}`;
+    const postUrl = `${SITE_URL}/blog/${post.slug}`;
     const seoDescription =
-        post.excerpt || 'Read this blog post on Sesame Legal.';
+        post.excerpt ||
+        'Clear, practical legal information on Victorian law from Sesame Legal.';
     const seoImage = post.imageUrl
-        ? `https://www.sesamelegal.com${post.imageUrl}`
-        : 'https://www.sesamelegal.com/social-preview-1200x630.png';
+        ? `${SITE_URL}${post.imageUrl}`
+        : `${SITE_URL}/social-preview-1200x630.png`;
 
     const fromHref =
         typeof router.query.from === 'string' &&
@@ -99,6 +121,10 @@ export default function BlogPost({ post }) {
                 />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={postUrl} />
+                <meta
+                    property="og:site_name"
+                    content="Sesame Legal"
+                />
                 <meta property="og:image" content={seoImage} />
 
                 <meta
@@ -216,30 +242,4 @@ export default function BlogPost({ post }) {
             <Footer />
         </div>
     );
-}
-
-// Static generation
-export async function getStaticPaths() {
-    const paths = posts.map((post) => ({
-        params: {
-            id: post.slug,
-        },
-    }));
-
-    return {
-        paths,
-        fallback: false,
-    };
-}
-
-export async function getStaticProps({ params }) {
-    const post =
-        posts.find((p) => p.slug === params.id) || null;
-
-    return {
-        props: {
-            post,
-        },
-        revalidate: 10,
-    };
 }

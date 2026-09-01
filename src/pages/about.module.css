@@ -13,6 +13,8 @@
   max-width: 46rem;
 }
 
+/* Hero */
+
 .hero {
   margin: 0 auto;
 }
@@ -37,8 +39,31 @@
   text-wrap: balance;
 }
 
-.content {
+/* Brand */
+
+.brand-visual {
+  position: relative;
+  border: 0.0625rem solid #e3e8ee;
+  box-shadow:
+    0 1rem 2.5rem rgb(16 17 20 / 6%),
+    0 0.125rem 0.5rem rgb(16 17 20 / 4%);
+  background-color: #f8fafc;
+  border-radius: 1.5rem;
   margin-top: 1.75rem;
+  overflow: hidden;
+}
+
+.brand-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Content */
+
+.content {
+  margin-top: 2rem;
 }
 
 .lead {
@@ -74,9 +99,20 @@
   max-width: 38rem;
 }
 
+/* Tablet and mobile */
+
 @media (max-width: 48rem) {
   .main {
     padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .brand-visual {
+    border-radius: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .content {
+    margin-top: 1.75rem;
   }
 
   .lead {
@@ -109,5 +145,9 @@
   .title {
     font-size: 2.15rem;
     line-height: 1;
+  }
+
+  .brand-visual {
+    border-radius: 1rem;
   }
 }

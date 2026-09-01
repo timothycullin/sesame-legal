@@ -1,6 +1,9 @@
 // Imports
 import Head from 'next/head';
+import Image from 'next/image';
+
 import Footer from '../components/Footer';
+
 import styles from './about.module.css';
 
 // Logic
@@ -9,7 +12,7 @@ const pageUrl = 'https://www.sesamelegal.com/about';
 const seo = {
     title: 'About | Sesame Legal',
     description:
-        'Learn about Sesame Legal, an independent legal information project providing clear, practical information on Victorian commercial and property law, wills and estates.',
+        'Learn about Sesame Legal, an independent legal information project providing clear, practical information on Victorian law and related legal issues.',
     image: 'https://www.sesamelegal.com/social-preview-1200x630.png',
 };
 
@@ -19,11 +22,11 @@ const pageContent = {
     lead:
         'Sesame Legal is an independent legal information project focused on making Victorian law clear, practical and easier to understand.',
     body: [
-        'It publishes legal information and commentary on commercial and property law, commercial transactions, wills and estates.',
+        'It publishes legal information, commentary and practical resources on Victorian law and related legal issues.',
         'The aim is to present legal concepts in a way that is direct, readable and useful, while respecting the seriousness and precision of the law.',
     ],
     note:
-        'Sesame Legal provides general legal information only. It is not a law firm and does not provide legal advice tailored to your individual circumstances.',
+        'Sesame Legal provides general legal information only. It is not a law firm and the information published on this website is not a substitute for legal advice.',
 };
 
 export default function About() {
@@ -67,6 +70,17 @@ export default function About() {
                         {pageContent.title}
                     </h1>
 
+                    <div className={styles['brand-visual']}>
+                        <Image
+                            src="/social-preview-1200x630.png"
+                            alt="Sesame Legal"
+                            width={1200}
+                            height={630}
+                            className={styles['brand-image']}
+                            priority
+                        />
+                    </div>
+
                     <div className={styles.content}>
                         <p className={styles.lead}>
                             {pageContent.lead}
@@ -74,7 +88,9 @@ export default function About() {
 
                         <div className={styles.body}>
                             {pageContent.body.map((paragraph) => (
-                                <p key={paragraph}>{paragraph}</p>
+                                <p key={paragraph}>
+                                    {paragraph}
+                                </p>
                             ))}
                         </div>
 

@@ -13,13 +13,19 @@
   max-width: 58rem;
 }
 
+/* Navigation */
+
 .back-row {
   margin-bottom: 1.5rem;
 }
 
+/* Author */
+
 .author-section {
   margin-bottom: 2.5rem;
 }
+
+/* Articles */
 
 .posts-section {
   width: 100%;
@@ -32,6 +38,8 @@
   font-weight: 700;
   line-height: 1.3;
 }
+
+/* Tablet and mobile */
 
 @media (max-width: 48rem) {
   .main {

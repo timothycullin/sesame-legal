@@ -1,16 +1,11 @@
 // Imports
 import Head from 'next/head';
 
-// Shared components
 import Footer from '../../components/Footer';
-
-// Blog components
 import PostList from '../../components/blog/PostList';
 
-// Data
 import { posts } from '../../data/posts';
 
-// Local styles
 import styles from './blog.module.css';
 
 // Logic
@@ -18,10 +13,9 @@ export default function BlogLanding() {
     const pageUrl = 'https://www.sesamelegal.com/blog';
     const imageUrl =
         'https://www.sesamelegal.com/social-preview-1200x630.png';
-    const seoTitle =
-        'Blog | Commercial, Property, Wills & Estates | Sesame Legal';
+    const seoTitle = 'Blog | Victorian Legal Information | Sesame Legal';
     const seoDescription =
-        'Practical commentary on Victorian legal issues, commercial and property law, wills and estates.';
+        'Clear, practical commentary and information on Victorian law and related legal issues.';
 
     // Markup
     return (
@@ -64,8 +58,8 @@ export default function BlogLanding() {
                     </h1>
 
                     <p className={styles['blog-page-intro']}>
-                        Practical commentary on Victorian legal issues,
-                        commercial and property law, wills and estates.
+                        Clear, practical commentary and information on
+                        Victorian law and related legal issues.
                     </p>
                 </header>
 
