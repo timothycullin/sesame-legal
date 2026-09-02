@@ -1,21 +1,10 @@
+/* ----------------- FOOTER BASE ----------------- */
 .footer {
   position: relative;
   padding: 2.5rem 1.5rem 2rem;
-  background:
-    linear-gradient(180deg, #fff 0%, #fbfcfe 100%);
+  background: linear-gradient(180deg, #fff 0%, #fbfcfe 100%);
   border-top: 0.0625rem solid #e6eaf0;
   margin-top: 4rem;
-}
-
-.footer::before {
-  position: absolute;
-  top: -0.0625rem;
-  left: 50%;
-  width: min(18rem, 70%);
-  height: 0.0625rem;
-  background: linear-gradient(90deg, transparent, #b8bec8, transparent);
-  content: '';
-  transform: translateX(-50%);
 }
 
 .inner {
@@ -35,7 +24,7 @@
   content: '';
 }
 
-/* ---------------- TOP LINE ---------------- */
+/* ----------------- COPYRIGHT ----------------- */
 .copyright {
   margin: 0;
   color: #69707c;
@@ -44,7 +33,7 @@
   line-height: 1.5;
 }
 
-/* ---------------- CREDIT ---------------- */
+/* ----------------- CREDIT ----------------- */
 .credit {
   margin: 0.25rem 0 0;
   color: #8b919c;
@@ -53,7 +42,7 @@
   line-height: 1.5;
 }
 
-/* ---------------- LINKS ---------------- */
+/* ----------------- LINKS ----------------- */
 .links {
   display: inline-flex;
   gap: 1.25rem;
@@ -65,38 +54,23 @@
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
-  transition:
-    color 0.16s ease,
-    transform 0.16s ease;
+  transition: color 0.16s ease;
 }
 
-/* ---------------- DESKTOP ---------------- */
+/* ----------------- LINK STATES ----------------- */
 @media (hover: hover) and (pointer: fine) {
   .links a:hover {
     color: #101114;
-    transform: translateY(-0.0313rem);
-  }
-
-  .links a:active {
-    transform: translateY(0);
   }
 }
 
-/* ---------------- MOBILE ---------------- */
 @media (hover: none), (pointer: coarse) {
   .links a:active {
     color: #101114;
   }
 }
 
-/* ---------------- ACCESSIBILITY ---------------- */
-.links a:focus-visible {
-  border-radius: 0.25rem;
-  outline: 0.125rem solid #101114;
-  outline-offset: 0.125rem;
-}
-
-/* ---------------- ACKNOWLEDGEMENT ---------------- */
+/* ----------------- ACKNOWLEDGEMENT ----------------- */
 .acknowledgment {
   margin: 1.25rem auto 0;
   color: #8b919c;
@@ -105,7 +79,7 @@
   max-width: 40rem;
 }
 
-/* ---------------- MOBILE LAYOUT ---------------- */
+/* ----------------- MOBILE ----------------- */
 @media (max-width: 48rem) {
   .footer {
     padding: 2rem 1rem 1.75rem;
