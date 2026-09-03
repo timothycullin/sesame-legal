@@ -8,13 +8,203 @@
 .main {
   width: 100%;
   margin: 0 auto;
-  padding: 3.75rem 1.5rem;
+  padding: 3.75rem 1.5rem 4.5rem;
   flex: 1;
   max-width: 55rem;
 }
 
+/* Header */
+
+.header {
+  padding: 2.5rem 0 1.75rem;
+  background: linear-gradient(to bottom, #f8fbff 0%, #fff 100%);
+}
+
+.inner {
+  margin: 0 auto;
+  border-left: 0.25rem solid #2f6fed;
+  max-width: 50rem;
+  padding-left: 1.125rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #69707c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #101114;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.description {
+  margin: 1rem 0 0;
+  color: #4a4f57;
+  font-size: 1.02rem;
+  line-height: 1.68;
+  max-width: 42rem;
+}
+
+/* Tips */
+
+.tips-container {
+  display: flex;
+  padding: 2rem 0 0;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tip-section {
+  display: block;
+  padding: 2rem;
+  color: inherit;
+  border: 0.125rem solid #e3edf7;
+  background-color: #f9fcff;
+  border-left: 0.25rem solid transparent;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-left-color 0.2s ease;
+}
+
+.tip-section h3 {
+  margin: 0 0 1rem;
+  color: #0d0d0d;
+  border-bottom: 0.0625rem solid #e6eef5;
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.tip-section p {
+  margin: 0;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Tablet and mobile */
+
 @media (max-width: 48rem) {
   .main {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1rem 3.5rem;
   }
+
+  .header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .inner {
+    padding-left: 0.9375rem;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    line-height: 0.98;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.62;
+    margin-top: 0.875rem;
+  }
+
+  .tips-container {
+    padding: 1.5rem 0 0;
+    gap: 1.5rem;
+  }
+
+  .tip-section {
+    padding: 1.5rem;
+  }
+
+  .tip-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main {
+    padding: 2rem 0.875rem 3rem;
+  }
+
+  .header {
+    padding: 1.75rem 0 1.25rem;
+  }
+
+  .title {
+    font-size: 1.9rem;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .tip-section,
+  .tip-section h3 {
+    transition: none;
+  }
+}
+
+/* Pointer hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .tip-section:hover {
+    box-shadow: 0 0.75rem 1.25rem rgb(0 0 0 / 10%);
+    background-color: #eef6ff;
+    border-color: #cfe0f2;
+    border-left-color: #0070f3;
+    transform: translateY(-0.125rem);
+  }
+
+  .tip-section:hover h3 {
+    color: #0070f3;
+  }
+}
+
+/* Active and keyboard focus */
+
+.tip-section:active,
+.tip-section:focus-visible {
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
+  background-color: #eef6ff;
+  border-color: #cfe0f2;
+  border-left-color: #0070f3;
+  transform: none;
+}
+
+.tip-section:focus-visible {
+  outline: 0.125rem solid #101114;
+  outline-offset: 0.1875rem;
 }
