@@ -73,6 +73,16 @@ export default function Home() {
                         with commentary, resources and practical guides.
                     </p>
 
+                    <div className={styles['hero-landscape']}>
+                        <AppImage
+                            src="/victorian-countryside.jpg"
+                            alt="Victorian countryside with a wagon wheel and butterflies"
+                            loading="eager"
+                            objectPosition="center"
+                            sizes="(max-width: 48rem) calc(100vw - 2rem), 46rem"
+                        />
+                    </div>
+
                     <Link
                         href="/author/tim-cullin?from=/"
                         className={styles['author-card']}
@@ -84,10 +94,9 @@ export default function Home() {
                             width={160}
                             height={160}
                             className={styles['author-image']}
-                            priority
                         />
 
-                        <div>
+                        <div className={styles['author-content']}>
                             <p className={styles['author-kicker']}>
                                 By Tim Cullin
                             </p>
@@ -127,9 +136,7 @@ export default function Home() {
                                 </h2>
 
                                 <div className={styles['latest-meta']}>
-                                    <span>
-                                        {formatDate(latestPost.date)}
-                                    </span>
+                                    <span>{formatDate(latestPost.date)}</span>
 
                                     {latestPost.author && (
                                         <>
@@ -140,7 +147,6 @@ export default function Home() {
                                             >
                                                 •
                                             </span>
-
                                             <span>
                                                 By {latestPost.author}
                                             </span>
@@ -164,6 +170,7 @@ export default function Home() {
                                     <AppImage
                                         src={latestPost.imageUrl}
                                         alt={`Thumbnail for ${latestPost.title}`}
+                                        sizes="(max-width: 48rem) 6rem, 8rem"
                                     />
                                 </div>
                             )}
@@ -180,28 +187,32 @@ export default function Home() {
                             id="portal-heading"
                             className={styles['section-title']}
                         >
-                            Choose a section
+                            Explore
                         </h2>
+
+                        <p className={styles['section-intro']}>
+                            Practical resources and commentary on Victorian law.
+                        </p>
                     </div>
 
                     <div className={styles['portal-panels']}>
                         <Link
                             href="/ivotips"
-                            className={`${styles.panel} ${styles['panel-primary']}`}
+                            className={`${styles.panel} ${styles['panel-guide']}`}
                             aria-label="IVO Tips for practical guidance on Intervention Orders in Victoria"
                         >
-                            <div className={styles['panel-top']}>
-                                <div className={styles['panel-icon']}>
-                                    <IVOTipsIcon
-                                        width={52}
-                                        height={52}
-                                        aria-hidden="true"
-                                    />
-                                </div>
-
+                            <div className={styles['panel-header']}>
                                 <p className={styles['panel-kicker']}>
                                     Practical guide
                                 </p>
+
+                                <div className={styles['panel-icon']}>
+                                    <IVOTipsIcon
+                                        width={46}
+                                        height={46}
+                                        aria-hidden="true"
+                                    />
+                                </div>
                             </div>
 
                             <div className={styles['panel-body']}>
@@ -216,28 +227,34 @@ export default function Home() {
                                 </p>
                             </div>
 
-                            <span className={styles['panel-link']}>
-                                Explore IVO Tips →
-                            </span>
+                            <div className={styles['panel-footer']}>
+                                <span>Explore IVO Tips</span>
+                                <span
+                                    className={styles['panel-arrow']}
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </div>
                         </Link>
 
                         <Link
                             href="/blog"
-                            className={styles.panel}
+                            className={`${styles.panel} ${styles['panel-blog']}`}
                             aria-label="Blog about Victorian law and related legal issues"
                         >
-                            <div className={styles['panel-top']}>
-                                <div className={styles['panel-icon']}>
-                                    <BlogIcon
-                                        width={44}
-                                        height={44}
-                                        aria-hidden="true"
-                                    />
-                                </div>
-
+                            <div className={styles['panel-header']}>
                                 <p className={styles['panel-kicker']}>
                                     Legal commentary
                                 </p>
+
+                                <div className={styles['panel-icon']}>
+                                    <BlogIcon
+                                        width={40}
+                                        height={40}
+                                        aria-hidden="true"
+                                    />
+                                </div>
                             </div>
 
                             <div className={styles['panel-body']}>
@@ -251,9 +268,15 @@ export default function Home() {
                                 </p>
                             </div>
 
-                            <span className={styles['panel-link']}>
-                                Read the Blog →
-                            </span>
+                            <div className={styles['panel-footer']}>
+                                <span>Read the Blog</span>
+                                <span
+                                    className={styles['panel-arrow']}
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </div>
                         </Link>
                     </div>
                 </section>

@@ -1,7 +1,9 @@
 // Imports
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import AppImage from '../AppImage';
+
 import styles from './PostList.module.css';
 
 // Logic
@@ -62,63 +64,51 @@ export default function PostList({ posts }) {
                             className={styles['post-link']}
                             aria-label={`Read blog post: ${title}`}
                         >
-                            <article className={styles.post}>
+                            <article
+                                className={`${styles.post} ${index === 0
+                                        ? styles['post-featured']
+                                        : ''
+                                    }`}
+                            >
                                 <div className={styles['post-content']}>
                                     {index === 0 && (
-                                        <p
-                                            className={
-                                                styles['feature-label']
-                                            }
-                                        >
+                                        <p className={styles['feature-label']}>
                                             Latest post
                                         </p>
                                     )}
 
-                                    <h2
-                                        className={styles['post-title']}
-                                    >
+                                    <h2 className={styles['post-title']}>
                                         {title}
                                     </h2>
 
-                                    <div
-                                        className={styles['post-meta']}
-                                    >
+                                    <div className={styles['post-meta']}>
                                         <span>{formatDate(date)}</span>
 
                                         {author && (
                                             <>
                                                 <span
                                                     className={
-                                                        styles[
-                                                        'meta-separator'
-                                                        ]
+                                                        styles['meta-separator']
                                                     }
                                                 >
                                                     •
                                                 </span>
-
                                                 <span>By {author}</span>
                                             </>
                                         )}
                                     </div>
 
                                     {excerpt && (
-                                        <p
-                                            className={
-                                                styles['post-excerpt']
-                                            }
-                                        >
+                                        <p className={styles['post-excerpt']}>
                                             {truncateWords(
                                                 stripHtml(excerpt),
-                                                28
+                                                26
                                             )}
                                         </p>
                                     )}
 
                                     <span
-                                        className={
-                                            styles['post-link-text']
-                                        }
+                                        className={styles['post-link-text']}
                                     >
                                         Read article →
                                     </span>
@@ -133,6 +123,11 @@ export default function PostList({ posts }) {
                                         <AppImage
                                             src={imageUrl}
                                             alt={`Thumbnail for ${title}`}
+                                            sizes={
+                                                index === 0
+                                                    ? '(max-width: 48rem) 6rem, 8rem'
+                                                    : '(max-width: 48rem) 6rem, 7.25rem'
+                                            }
                                         />
                                     </div>
                                 )}

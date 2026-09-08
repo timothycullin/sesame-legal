@@ -12,6 +12,12 @@ import styles from './tip-page.module.css';
 // Logic
 const SITE_URL = 'https://www.sesamelegal.com';
 
+function getTipNumber(slug) {
+    const index = tips.findIndex((tip) => tip.slug === slug);
+
+    return String(index + 1).padStart(2, '0');
+}
+
 export async function getStaticPaths() {
     const paths = tips.map((tip) => ({
         params: {
@@ -96,7 +102,7 @@ export default function TipPage({ tip }) {
             >
                 <div className={styles['back-row']}>
                     <BackButton href="/ivotips">
-                        ← Back to IVO Tips
+                        Back to IVO Tips
                     </BackButton>
                 </div>
 
@@ -114,11 +120,7 @@ export default function TipPage({ tip }) {
                         </h1>
 
                         {tip.description && (
-                            <p
-                                className={
-                                    styles['tip-description']
-                                }
-                            >
+                            <p className={styles['tip-description']}>
                                 {tip.description}
                             </p>
                         )}
@@ -137,31 +139,46 @@ export default function TipPage({ tip }) {
                         className={styles['tip-nav']}
                         aria-labelledby="other-tips-title"
                     >
-                        <h2
-                            id="other-tips-title"
-                            className={styles['tip-nav-title']}
-                        >
-                            Other IVO tips
-                        </h2>
+                        <div className={styles['tip-nav-heading']}>
+                            <p className={styles['tip-nav-kicker']}>
+                                More guides
+                            </p>
+
+                            <h2
+                                id="other-tips-title"
+                                className={styles['tip-nav-title']}
+                            >
+                                Other IVO tips
+                            </h2>
+                        </div>
 
                         <ul className={styles['tip-nav-list']}>
                             {otherTips.map((otherTip) => (
                                 <li key={otherTip.slug}>
                                     <Link
                                         href={`/ivotips/${otherTip.slug}`}
-                                        className={
-                                            styles['tip-nav-link']
-                                        }
+                                        className={styles['tip-nav-link']}
                                     >
-                                        <span>
+                                        <span
+                                            className={
+                                                styles['tip-nav-number']
+                                            }
+                                            aria-hidden="true"
+                                        >
+                                            {getTipNumber(otherTip.slug)}
+                                        </span>
+
+                                        <span
+                                            className={
+                                                styles['tip-nav-text']
+                                            }
+                                        >
                                             {otherTip.title}
                                         </span>
 
                                         <span
                                             className={
-                                                styles[
-                                                'tip-nav-arrow'
-                                                ]
+                                                styles['tip-nav-arrow']
                                             }
                                             aria-hidden="true"
                                         >

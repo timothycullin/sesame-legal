@@ -52,57 +52,86 @@ export default function IvoTipLanding() {
                 className={styles.main}
                 aria-labelledby="ivo-tips-heading"
             >
-                <section className={styles.header}>
-                    <div className={styles.inner}>
-                        <p className={styles.eyebrow}>
-                            Resources
-                        </p>
+                <header className={styles.header}>
+                    <p className={styles.eyebrow}>
+                        Practical resources
+                    </p>
 
-                        <h1
-                            id="ivo-tips-heading"
-                            className={styles.title}
-                        >
-                            IVO Tips
-                        </h1>
+                    <h1
+                        id="ivo-tips-heading"
+                        className={styles.title}
+                    >
+                        IVO Tips
+                    </h1>
 
-                        <p className={styles.description}>
-                            Practical guidance for people navigating
-                            Intervention Orders in Victoria, including
-                            the application process, court support,
-                            community support, and what to expect
-                            along the way.
-                        </p>
-                    </div>
-                </section>
+                    <p className={styles.description}>
+                        Practical guidance for people navigating
+                        Intervention Orders in Victoria, including
+                        the application process, court support,
+                        community support, and what to expect
+                        along the way.
+                    </p>
+                </header>
 
                 <section
                     className={styles['tips-container']}
-                    aria-labelledby="other-ivo-tips-heading"
+                    aria-labelledby="guides-heading"
                 >
-                    <h2
-                        id="other-ivo-tips-heading"
-                        className={styles['sr-only']}
-                    >
-                        Other IVO tips
-                    </h2>
-
-                    {tips.map((tip) => (
-                        <Link
-                            key={tip.slug}
-                            href={`/ivotips/${tip.slug}`}
-                            className={styles['tip-section']}
-                            aria-labelledby={`tip-${tip.slug}`}
-                            aria-describedby={`tip-desc-${tip.slug}`}
+                    <div className={styles['tips-heading']}>
+                        <h2
+                            id="guides-heading"
+                            className={styles['tips-title']}
                         >
-                            <h3 id={`tip-${tip.slug}`}>
-                                {tip.title}
-                            </h3>
+                            Browse the guides
+                        </h2>
 
-                            <p id={`tip-desc-${tip.slug}`}>
-                                {tip.description}
-                            </p>
-                        </Link>
-                    ))}
+                        <p className={styles['tips-intro']}>
+                            Select a topic for practical information and
+                            guidance.
+                        </p>
+                    </div>
+
+                    <div className={styles['tips-list']}>
+                        {tips.map((tip, index) => (
+                            <Link
+                                key={tip.slug}
+                                href={`/ivotips/${tip.slug}`}
+                                className={styles['tip-section']}
+                                aria-labelledby={`tip-${tip.slug}`}
+                                aria-describedby={
+                                    tip.description
+                                        ? `tip-desc-${tip.slug}`
+                                        : undefined
+                                }
+                            >
+                                <span
+                                    className={styles['tip-number']}
+                                    aria-hidden="true"
+                                >
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+
+                                <div className={styles['tip-content']}>
+                                    <h3 id={`tip-${tip.slug}`}>
+                                        {tip.title}
+                                    </h3>
+
+                                    {tip.description && (
+                                        <p id={`tip-desc-${tip.slug}`}>
+                                            {tip.description}
+                                        </p>
+                                    )}
+                                </div>
+
+                                <span
+                                    className={styles['tip-arrow']}
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
                 </section>
             </main>
 

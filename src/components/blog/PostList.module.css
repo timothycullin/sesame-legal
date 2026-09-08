@@ -1,13 +1,13 @@
 .posts-wrapper {
   width: 100%;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
 }
 
 .posts-list {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .post-link {
@@ -18,13 +18,13 @@
 
 .post {
   display: flex;
-  padding: 1.375rem 1.5rem;
+  padding: 1.125rem 1.25rem;
   border: 0.0938rem solid #d9dee6;
   align-items: flex-start;
   background-color: #fff;
   border-left: 0.25rem solid transparent;
-  border-radius: 1.25rem;
-  gap: 1.25rem;
+  border-radius: 1rem;
+  gap: 1rem;
   justify-content: space-between;
   min-width: 0;
   transition:
@@ -32,18 +32,13 @@
     border-color 0.18s ease,
     border-left-color 0.18s ease,
     box-shadow 0.18s ease,
-    transform 0.18s ease,
-    color 0.18s ease;
+    transform 0.18s ease;
 }
 
-.post-link:focus {
-  outline: none;
-}
-
-.post-link:focus-visible {
-  border-radius: 1.25rem;
-  outline: 0.125rem solid #101114;
-  outline-offset: 0.1875rem;
+.post-featured {
+  padding: 1.25rem 1.375rem;
+  background-color: #fbfdff;
+  border-color: #dbe7f3;
 }
 
 .post-content {
@@ -54,9 +49,9 @@
 }
 
 .feature-label {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   color: #69707c;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   line-height: 1.2;
@@ -65,14 +60,18 @@
 }
 
 .post-title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   color: #101114;
-  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.08;
+  line-height: 1.1;
   text-wrap: balance;
   transition: color 0.18s ease;
+}
+
+.post-featured .post-title {
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
 }
 
 .post-meta {
@@ -80,10 +79,10 @@
   color: #5f6672;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   gap: 0.35rem;
-  line-height: 1.45;
-  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
 }
 
 .meta-separator {
@@ -91,36 +90,42 @@
 }
 
 .post-excerpt {
-  margin: 0;
   color: #454b54;
-  font-size: 0.975rem;
-  line-height: 1.68;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .post-link-text {
   display: inline-flex;
   color: #101114;
   align-items: center;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.4;
-  margin-top: 1.25rem;
+  margin-top: 0.8rem;
   transition: color 0.18s ease;
 }
 
 .post-thumbnail {
   position: relative;
-  width: 8rem;
+  width: 7.25rem;
   aspect-ratio: 3 / 2;
   background-color: #f3f4f6;
-  border-radius: 0.875rem;
-  flex: 0 0 8rem;
+  border-radius: 0.75rem;
+  flex: 0 0 7.25rem;
   overflow: hidden;
 }
 
+.post-featured .post-thumbnail {
+  width: 8rem;
+  flex-basis: 8rem;
+}
+
+/* Pointer hover */
+
 @media (hover: hover) and (pointer: fine) {
   .post-link:hover .post {
-    box-shadow: 0 0.875rem 1.5rem rgb(16 17 20 / 7%);
+    box-shadow: 0 0.75rem 1.25rem rgb(16 17 20 / 7%);
     background-color: #f8fbff;
     border-color: #cfe0f2;
     border-left-color: #2f6fed;
@@ -135,15 +140,9 @@
   .post-link:hover .feature-label {
     color: #4b6293;
   }
-
-  .post-link:active .post {
-    box-shadow: 0 0.375rem 0.75rem rgb(16 17 20 / 6%);
-    background-color: #f2f7fd;
-    border-color: #c9dbef;
-    border-left-color: #2f6fed;
-    transform: translateY(-0.0625rem);
-  }
 }
+
+/* Mobile feedback */
 
 @media (hover: none), (pointer: coarse) {
   .post-link:active .post {
@@ -151,7 +150,6 @@
     background-color: #f4f8fd;
     border-color: #d4e1ef;
     border-left-color: #2f6fed;
-    transform: none;
   }
 
   .post-link:active .post-title,
@@ -164,66 +162,70 @@
   }
 }
 
+/* Tablet and mobile */
+
 @media (max-width: 48rem) {
   .posts-wrapper {
-    margin-top: 1rem;
+    margin-top: 0.875rem;
   }
 
   .posts-list {
+    gap: 0.625rem;
+  }
+
+  .post,
+  .post-featured {
+    padding: 1rem;
+    border-radius: 0.875rem;
     gap: 0.875rem;
   }
 
-  .post {
-    padding: 1.125rem;
-    border-radius: 1rem;
-    gap: 1rem;
-  }
-
-  .post-title {
-    font-size: 1.375rem;
+  .post-title,
+  .post-featured .post-title {
+    font-size: 1.25rem;
     line-height: 1.12;
   }
 
   .post-meta {
-    font-size: 0.8125rem;
-    margin-bottom: 0.625rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .post-excerpt {
-    font-size: 0.9375rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .post-link-text {
-    font-size: 0.875rem;
-    margin-top: 1rem;
+    font-size: 0.85rem;
+    margin-top: 0.7rem;
   }
 
-  .post-thumbnail {
-    width: 6.25rem;
-    border-radius: 0.75rem;
-    flex: 0 0 6.25rem;
+  .post-thumbnail,
+  .post-featured .post-thumbnail {
+    width: 6rem;
+    border-radius: 0.625rem;
+    flex-basis: 6rem;
   }
 }
 
 @media (max-width: 36rem) {
-  .post {
-    align-items: flex-start;
+  .post-title,
+  .post-featured .post-title {
+    font-size: 1.15rem;
   }
 
-  .post-title {
-    font-size: 1.25rem;
-  }
-
-  .post-thumbnail {
-    width: 5.5rem;
-    flex: 0 0 5.5rem;
+  .post-thumbnail,
+  .post-featured .post-thumbnail {
+    width: 5.25rem;
+    flex-basis: 5.25rem;
   }
 }
 
 @media (max-width: 30rem) {
-  .post {
-    padding: 1rem;
+  .post,
+  .post-featured {
+    padding: 0.875rem;
   }
 
   .feature-label {
@@ -239,9 +241,11 @@
   }
 
   .post-link-text {
-    margin-top: 0.875rem;
+    margin-top: 0.625rem;
   }
 }
+
+/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   .post,
