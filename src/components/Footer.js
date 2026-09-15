@@ -57,6 +57,13 @@ export default function Footer() {
                 />
 
                 <p className={styles.acknowledgment}>
+                    Established in Victoria, Australia, Sesame Legal is
+                    informed by an appreciation for Victoria’s civic
+                    traditions, Australia’s democratic institutions,
+                    and the administration of justice.
+                </p>
+
+                <p className={styles.acknowledgment}>
                     Sesame Legal acknowledges Aboriginal and Torres Strait
                     Islander peoples as the first inhabitants and the
                     Traditional Custodians of the lands where we live, learn,
