@@ -148,7 +148,7 @@ export default function BlogPost({ post }) {
             <main className={styles.main}>
                 <div className={styles['back-row']}>
                     <BackButton href={backHref}>
-                        ← Back
+                        Back
                     </BackButton>
                 </div>
 

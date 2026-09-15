@@ -73,7 +73,7 @@ export default function AuthorPage({
 
             <main className={styles.main}>
                 <div className={styles['back-row']}>
-                    <BackButton href={backHref}>← Back</BackButton>
+                    <BackButton href={backHref}>Back</BackButton>
                 </div>
 
                 <section

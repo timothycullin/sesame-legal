@@ -54,10 +54,6 @@
   display: block;
   width: auto;
   height: 6.5rem;
-  filter:
-    drop-shadow(0 0.18rem 0.12rem rgb(16 17 20 / 22%))
-    drop-shadow(0 0.55rem 0.3rem rgb(16 17 20 / 20%))
-    drop-shadow(0 0.9rem 0.65rem rgb(16 17 20 / 8%));
   flex-shrink: 0;
   overflow: visible;
 }
