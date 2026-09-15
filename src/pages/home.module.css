@@ -255,14 +255,6 @@
     transform 0.2s ease;
 }
 
-.panel-guide {
-  background-color: #f7fbff;
-}
-
-.panel-blog {
-  background-color: #fbfbfc;
-}
-
 .panel-header {
   display: flex;
   align-items: flex-start;
