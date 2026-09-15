@@ -14,6 +14,7 @@
 }
 
 /* Top */
+
 .top {
   display: flex;
   align-items: flex-start;
@@ -22,6 +23,7 @@
 }
 
 /* Identity */
+
 .identity {
   min-width: 0;
 }
@@ -63,6 +65,7 @@
 }
 
 /* Navigation */
+
 .links {
   display: flex;
   align-items: center;
@@ -89,6 +92,7 @@
 }
 
 /* Divider */
+
 .divider {
   width: 100%;
   height: 0.0625rem;
@@ -96,15 +100,29 @@
   background-color: #e2e6eb;
 }
 
-/* Acknowledgment */
-.acknowledgment {
-  color: #7b828c;
-  font-size: 0.75rem;
-  line-height: 1.65;
+/* Footer copy */
+
+.footer-copy {
   max-width: 48rem;
 }
 
+.statement {
+  margin: 0;
+  color: #707782;
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+
+.acknowledgment {
+  margin: 0.8rem 0 0;
+  color: #969da7;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  max-width: 44rem;
+}
+
 /* Desktop hover */
+
 @media (hover: hover) and (pointer: fine) {
   .links a:hover {
     color: #101114;
@@ -114,6 +132,7 @@
 }
 
 /* Mobile feedback */
+
 @media (hover: none), (pointer: coarse) {
   .links a:active {
     color: #101114;
@@ -123,6 +142,7 @@
 }
 
 /* Tablet and mobile */
+
 @media (max-width: 48rem) {
   .footer {
     padding: 2.25rem 1rem 2rem;
@@ -142,9 +162,15 @@
     margin: 1.5rem 0 1.125rem;
   }
 
-  .acknowledgment {
+  .statement {
     font-size: 0.72rem;
     line-height: 1.6;
+  }
+
+  .acknowledgment {
+    font-size: 0.68rem;
+    line-height: 1.55;
+    margin-top: 0.75rem;
   }
 }
 
@@ -163,6 +189,7 @@
 }
 
 /* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   .links a {
     transition: none;
