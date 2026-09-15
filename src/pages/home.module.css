@@ -299,6 +299,7 @@
   width: auto;
   height: 2rem;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .panel-body {
