@@ -6,17 +6,12 @@
   --ivo-text: #101114;
   --ivo-muted: #69707c;
   --ivo-border: #dfe5ec;
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 .main {
   width: 100%;
   margin: 0 auto;
   padding: 3.5rem 1.5rem 4.5rem;
-  flex: 1;
   max-width: 58rem;
 }
 
