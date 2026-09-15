@@ -1,3 +1,5 @@
+/* about.module.css */
+
 .page {
   display: flex;
   background-color: #fff;
@@ -42,28 +44,28 @@
 /* Brand */
 
 .brand-visual {
-  position: relative;
-  border: 0.0625rem solid #e3e8ee;
-  box-shadow:
-    0 1rem 2.5rem rgb(16 17 20 / 6%),
-    0 0.125rem 0.5rem rgb(16 17 20 / 4%);
-  background-color: #f8fafc;
-  border-radius: 1.5rem;
-  margin-top: 1.75rem;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.25rem;
 }
 
-.brand-image {
+.totem {
   display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: auto;
+  height: 6.5rem;
+  filter:
+    drop-shadow(0 0.18rem 0.12rem rgb(16 17 20 / 22%))
+    drop-shadow(0 0.55rem 0.3rem rgb(16 17 20 / 20%))
+    drop-shadow(0 0.9rem 0.65rem rgb(16 17 20 / 8%));
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 /* Content */
 
 .content {
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
 
 .lead {
@@ -107,12 +109,15 @@
   }
 
   .brand-visual {
-    border-radius: 1.25rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .totem {
+    height: 5.25rem;
   }
 
   .content {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 
   .lead {
@@ -148,6 +153,10 @@
   }
 
   .brand-visual {
-    border-radius: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .totem {
+    height: 4.5rem;
   }
 }

@@ -1,8 +1,10 @@
+// about.js
+
 // Imports
 import Head from 'next/head';
-import Image from 'next/image';
 
 import Footer from '../components/Footer';
+import Totem from '../components/Totem';
 
 import styles from './about.module.css';
 
@@ -70,15 +72,11 @@ export default function About() {
                         {pageContent.title}
                     </h1>
 
-                    <div className={styles['brand-visual']}>
-                        <Image
-                            src="/social-preview-1200x630.png"
-                            alt="Sesame Legal"
-                            width={1200}
-                            height={630}
-                            className={styles['brand-image']}
-                            priority
-                        />
+                    <div
+                        className={styles['brand-visual']}
+                        aria-hidden="true"
+                    >
+                        <Totem className={styles.totem} />
                     </div>
 
                     <div className={styles.content}>

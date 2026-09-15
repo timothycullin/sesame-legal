@@ -1,10 +1,12 @@
+// Navbar.js
+
 // React + Next
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 // Components
-import SvgLogoComponent from "./SvgLogoComponent";
+import Totem from "./Totem";
 
 // Styles
 import styles from "./Navbar.module.css";
@@ -71,11 +73,15 @@ export default function Navbar() {
                     <div className={styles["nav-left"]}>
                         <Link
                             href="/"
-                            aria-label="Home"
+                            aria-label="Sesame Legal home"
                             className={styles["logo-link"]}
                             onClick={() => setMenuOpen(false)}
                         >
-                            <SvgLogoComponent className={styles.logo} />
+                            <Totem className={styles.totem} />
+
+                            <span className={styles["brand-name"]}>
+                                Sesame Legal
+                            </span>
                         </Link>
                     </div>
 

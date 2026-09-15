@@ -1,3 +1,5 @@
+/* home.module.css */
+
 .page {
   display: flex;
   flex-direction: column;
@@ -284,13 +286,19 @@
   display: flex;
   width: 3.5rem;
   height: 3.5rem;
-  color: #101114;
   border: 0.0625rem solid #dce5ef;
   align-items: center;
   background-color: #fff;
   border-radius: 50%;
   flex-shrink: 0;
   justify-content: center;
+}
+
+.panel-totem {
+  display: block;
+  width: auto;
+  height: 2rem;
+  flex-shrink: 0;
 }
 
 .panel-body {
@@ -467,6 +475,10 @@
   .panel-icon {
     width: 3.25rem;
     height: 3.25rem;
+  }
+
+  .panel-totem {
+    height: 1.875rem;
   }
 
   .panel-footer {

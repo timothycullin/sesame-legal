@@ -1,3 +1,5 @@
+// index.js
+
 // Imports
 import Head from 'next/head';
 import Link from 'next/link';
@@ -5,8 +7,7 @@ import Image from 'next/image';
 
 import Footer from '../components/Footer';
 import AppImage from '../components/AppImage';
-import BlogIcon from '../components/icons/BlogIcon';
-import IVOTipsIcon from '../components/icons/IvoTipsIcon';
+import Totem from '../components/Totem';
 
 import { posts } from '../data/posts';
 
@@ -207,9 +208,8 @@ export default function Home() {
                                 </p>
 
                                 <div className={styles['panel-icon']}>
-                                    <IVOTipsIcon
-                                        width={46}
-                                        height={46}
+                                    <Totem
+                                        className={styles['panel-totem']}
                                         aria-hidden="true"
                                     />
                                 </div>
@@ -249,9 +249,8 @@ export default function Home() {
                                 </p>
 
                                 <div className={styles['panel-icon']}>
-                                    <BlogIcon
-                                        width={40}
-                                        height={40}
+                                    <Totem
+                                        className={styles['panel-totem']}
                                         aria-hidden="true"
                                     />
                                 </div>

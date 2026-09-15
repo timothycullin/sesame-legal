@@ -1,7 +1,10 @@
+// AppImage.js
+
 // Imports
 import { useState } from 'react';
 import Image from 'next/image';
-import BlogIcon from './icons/BlogIcon';
+
+import Totem from './Totem';
 
 // Logic
 export default function AppImage({
@@ -35,11 +38,11 @@ export default function AppImage({
     if (!hasImage) {
         return (
             <div className={className} style={fallbackStyle} aria-hidden="true">
-                <BlogIcon
-                    width="50%"
-                    height="50%"
+                <Totem
                     style={{
                         display: 'block',
+                        width: 'auto',
+                        height: '50%',
                         maxWidth: '100%',
                         maxHeight: '100%',
                         filter: 'grayscale(100%) opacity(0.6)',

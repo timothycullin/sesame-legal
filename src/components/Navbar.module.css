@@ -1,3 +1,5 @@
+/* Navbar.module.css */
+
 /* ----------------- NAVBAR BASE ----------------- */
 .top-nav {
   position: relative;
@@ -30,23 +32,33 @@
   gap: 2rem; /* 32px */
 }
 
-.logo {
+.logo-link {
+  display: inline-flex;
+  color: #111;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  min-height: 2.75rem; /* 44px */
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.totem {
   display: block;
   width: auto;
-  height: auto;
-  max-height: 1.75rem; /* 28px */
+  height: 1.75rem; /* 28px */
+  flex-shrink: 0;
   overflow: visible;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  justify-content: center;
-  min-height: 2.75rem; /* 44px */
-  min-width: 2.75rem; /* 44px */
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+.brand-name {
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* ----------------- NAV LINKS BASE ----------------- */
@@ -288,8 +300,12 @@
     min-height: 4rem; /* 64px */
   }
 
-  .logo {
-    max-height: 2rem; /* 32px */
+  .totem {
+    height: 2rem; /* 32px */
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
   }
 
   .logo-link {

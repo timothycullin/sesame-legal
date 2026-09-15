@@ -1,7 +1,9 @@
+// Footer.js
+
 // Imports
 import Link from 'next/link';
 
-import TotemIcon from './icons/TotemIcon';
+import Totem from './Totem';
 
 import styles from './Footer.module.css';
 
@@ -16,10 +18,7 @@ export default function Footer() {
                 <div className={styles.top}>
                     <div className={styles.identity}>
                         <div className={styles.brand}>
-                            <TotemIcon
-                                width="1.25rem"
-                                height="2rem"
-                            />
+                            <Totem className={styles.totem} />
 
                             <span className={styles['brand-name']}>
                                 Sesame Legal

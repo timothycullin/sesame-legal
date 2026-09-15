@@ -1,3 +1,5 @@
+/* Footer.module.css */
+
 .footer {
   padding: 2.75rem 1.5rem 2.25rem;
   background-color: #fafbfc;
@@ -12,7 +14,6 @@
 }
 
 /* Top */
-
 .top {
   display: flex;
   align-items: flex-start;
@@ -21,7 +22,6 @@
 }
 
 /* Identity */
-
 .identity {
   min-width: 0;
 }
@@ -32,8 +32,10 @@
   gap: 0.5rem;
 }
 
-.brand svg {
+.totem {
   display: block;
+  width: auto;
+  height: 2rem;
   flex-shrink: 0;
 }
 
@@ -61,7 +63,6 @@
 }
 
 /* Navigation */
-
 .links {
   display: flex;
   align-items: center;
@@ -88,7 +89,6 @@
 }
 
 /* Divider */
-
 .divider {
   width: 100%;
   height: 0.0625rem;
@@ -97,7 +97,6 @@
 }
 
 /* Acknowledgment */
-
 .acknowledgment {
   color: #7b828c;
   font-size: 0.75rem;
@@ -106,7 +105,6 @@
 }
 
 /* Desktop hover */
-
 @media (hover: hover) and (pointer: fine) {
   .links a:hover {
     color: #101114;
@@ -116,7 +114,6 @@
 }
 
 /* Mobile feedback */
-
 @media (hover: none), (pointer: coarse) {
   .links a:active {
     color: #101114;
@@ -126,7 +123,6 @@
 }
 
 /* Tablet and mobile */
-
 @media (max-width: 48rem) {
   .footer {
     padding: 2.25rem 1rem 2rem;
@@ -167,7 +163,6 @@
 }
 
 /* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   .links a {
     transition: none;
