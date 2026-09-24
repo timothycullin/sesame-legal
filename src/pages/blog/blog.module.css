@@ -2,12 +2,6 @@
   background-color: #fff;
 }
 
-.main {
-  width: 100%;
-  margin: 0 auto;
-  padding: 3.75rem 1.5rem 4.5rem;
-  max-width: 58rem;
-}
 
 .blog-page-header {
   margin: 0 0 2rem;
@@ -44,9 +38,6 @@
 }
 
 @media (max-width: 48rem) {
-  .main {
-    padding: 2.5rem 1rem 3.5rem;
-  }
 
   .blog-page-header {
     margin-bottom: 1.5rem;
@@ -66,7 +57,4 @@
 }
 
 @media (max-width: 30rem) {
-  .main {
-    padding: 2rem 0.875rem 3rem;
-  }
 }

@@ -5,6 +5,7 @@ import Head from 'next/head';
 
 import Footer from '../components/Footer';
 import Totem from '../components/Totem';
+import PageShell from '../components/PageShell';
 
 import styles from './about.module.css';
 
@@ -56,7 +57,7 @@ export default function About() {
                 <meta name="twitter:image" content={seo.image} />
             </Head>
 
-            <main className={styles.main}>
+            <PageShell>
                 <section
                     className={styles.hero}
                     aria-labelledby="about-sesame-legal"
@@ -97,7 +98,7 @@ export default function About() {
                         </p>
                     </div>
                 </section>
-            </main>
+            </PageShell>
 
             <Footer />
         </div>

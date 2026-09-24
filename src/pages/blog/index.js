@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Footer from '../../components/Footer';
 import PostList from '../../components/blog/PostList';
+import PageShell from '../../components/PageShell';
 
 import { posts } from '../../data/posts';
 
@@ -41,10 +42,7 @@ export default function BlogLanding() {
                 <meta name="twitter:image" content={imageUrl} />
             </Head>
 
-            <main
-                className={styles.main}
-                aria-labelledby="blog-page-title"
-            >
+            <PageShell aria-labelledby="blog-page-title">
                 <header className={styles['blog-page-header']}>
                     <p className={styles['blog-page-kicker']}>
                         Legal commentary
@@ -64,7 +62,7 @@ export default function BlogLanding() {
                 </header>
 
                 <PostList posts={posts} />
-            </main>
+            </PageShell>
 
             <Footer />
         </div>
