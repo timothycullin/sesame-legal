@@ -43,7 +43,7 @@
 }
 
 .brand-name {
-  color: #101114;
+  color: var(--color-text);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -126,7 +126,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .links a:hover {
-    color: #101114;
+    color: var(--color-text);
     background-color: #f3f5f7;
     border-color: #d7dde5;
   }
@@ -136,7 +136,7 @@
 
 @media (hover: none), (pointer: coarse) {
   .links a:active {
-    color: #101114;
+    color: var(--color-text);
     background-color: #f3f5f7;
     border-color: #d7dde5;
   }

@@ -8,7 +8,7 @@
 
 .eyebrow {
   margin: 0 0 0.5rem;
-  color: #69707c;
+  color: var(--color-muted);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -18,7 +18,7 @@
 
 .title {
   margin: 0;
-  color: #101114;
+  color: var(--color-text);
   font-size: clamp(2.4rem, 5vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.055em;
@@ -32,7 +32,7 @@
 
 .intro {
   margin: 0 0 1.75rem;
-  color: #222831;
+  color: var(--color-body);
   font-size: 1.05rem;
   line-height: 1.72;
 }
@@ -50,7 +50,7 @@
 .form-group textarea {
   width: 100%;
   padding: 1rem 0.875rem;
-  color: #101114;
+  color: var(--color-text);
   background: #fff;
   border: 0.0625rem solid #d9dee6;
   border-radius: 0.875rem;
@@ -85,7 +85,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   box-shadow: 0 0 0 0.1875rem rgb(16 17 20 / 8%);
-  border-color: #101114;
+  border-color: var(--color-text);
 }
 
 .form-group-error input:hover,
@@ -100,7 +100,7 @@
   position: absolute;
   top: 1rem;
   left: 0.875rem;
-  color: #69707c;
+  color: var(--color-muted);
   background: #fff;
   font-size: 1rem;
   line-height: 1;
@@ -124,7 +124,7 @@
   top: -0.5rem;
   left: 0.75rem;
   padding: 0 0.25rem;
-  color: #101114;
+  color: var(--color-text);
   font-size: 0.75rem;
 }
 
@@ -204,8 +204,8 @@
   width: 100%;
   padding: 0.95rem 1rem;
   color: #fff;
-  background: #101114;
-  border: 0.0625rem solid #101114;
+  background: var(--color-text);
+  border: 0.0625rem solid var(--color-text);
   border-radius: 999rem;
   cursor: pointer;
   font: inherit;
@@ -228,9 +228,9 @@
   }
 
   .submit-button:active {
-    background: #101114;
+    background: var(--color-text);
     box-shadow: 0 0.25rem 0.5rem rgb(16 17 20 / 6%);
-    border-color: #101114;
+    border-color: var(--color-text);
     transform: translateY(0);
   }
 }
@@ -242,7 +242,7 @@
 }
 
 .submit-button:focus-visible {
-  outline: 0.125rem solid #101114;
+  outline: 0.125rem solid var(--color-text);
   outline-offset: 0.125rem;
 }
 

@@ -15,7 +15,7 @@
 }
 
 .author-bio-text a {
-  color: #184fbf;
+  color: var(--color-link);
   text-decoration-thickness: 0.0625rem;
   text-underline-offset: 0.14em;
   transition: color 0.16s ease;
@@ -27,7 +27,7 @@
 
 .author-bio-text a:focus-visible {
   border-radius: 0.125rem;
-  outline: 0.125rem solid #101114;
+  outline: 0.125rem solid var(--color-text);
   outline-offset: 0.125rem;
 }
 

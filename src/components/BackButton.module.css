@@ -50,14 +50,14 @@
 
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
-    color: #101114;
+    color: var(--color-text);
     box-shadow: 0 0.25rem 0.625rem rgb(16 17 20 / 5%);
     background-color: #f8fafc;
     border-color: #cfd6df;
   }
 
   .link:hover .icon {
-    color: #184fbf;
+    color: var(--color-link);
     background-color: #eef5fc;
     border-color: #d2ddeb;
     transform: translateX(-0.125rem);
@@ -73,13 +73,13 @@
 
 @media (hover: none), (pointer: coarse) {
   .link:active {
-    color: #101114;
+    color: var(--color-text);
     background-color: #f3f6f9;
     border-color: #cfd6df;
   }
 
   .link:active .icon {
-    color: #184fbf;
+    color: var(--color-link);
     background-color: #eef5fc;
   }
 }

@@ -4,9 +4,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
+:root {
+  --color-text: #101114;
+  --color-body: #222831;
+  --color-muted: #69707c;
+  --color-link: #184fbf;
+  --color-accent: #99e600;
+}
+
 ::selection {
   color: #000;
-  background-color: #99e600;
+  background-color: var(--color-accent);
 }
 
 *,

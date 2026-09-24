@@ -50,7 +50,7 @@
 
 .feature-label {
   margin: 0 0 0.4rem;
-  color: #69707c;
+  color: var(--color-muted);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -61,7 +61,7 @@
 
 .post-title {
   margin: 0 0 0.4rem;
-  color: #101114;
+  color: var(--color-text);
   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -97,7 +97,7 @@
 
 .post-link-text {
   display: inline-flex;
-  color: #101114;
+  color: var(--color-text);
   align-items: center;
   font-size: 0.875rem;
   font-weight: 600;
@@ -134,7 +134,7 @@
 
   .post-link:hover .post-title,
   .post-link:hover .post-link-text {
-    color: #184fbf;
+    color: var(--color-link);
   }
 
   .post-link:hover .feature-label {
@@ -154,7 +154,7 @@
 
   .post-link:active .post-title,
   .post-link:active .post-link-text {
-    color: #184fbf;
+    color: var(--color-link);
   }
 
   .post-link:active .feature-label {

@@ -35,7 +35,7 @@
 
 .author-kicker {
   margin: 0 0 0.5rem;
-  color: #69707c;
+  color: var(--color-muted);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -45,7 +45,7 @@
 
 .author-page-title {
   margin: 0;
-  color: #101114;
+  color: var(--color-text);
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.055em;

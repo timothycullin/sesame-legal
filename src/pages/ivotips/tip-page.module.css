@@ -1,11 +1,11 @@
 .page {
   --ivo-blue: #2f6fed;
-  --ivo-blue-dark: #184fbf;
+  --ivo-blue-dark: var(--color-link);
   --ivo-blue-soft: #eef5fc;
   --ivo-blue-pale: #f7faff;
-  --ivo-text: #101114;
-  --ivo-body: #222831;
-  --ivo-muted: #69707c;
+  --ivo-text: var(--color-text);
+  --ivo-body: var(--color-body);
+  --ivo-muted: var(--color-muted);
   --ivo-border: #dfe5ec;
 }
 
@@ -169,7 +169,7 @@
 .tip-nav-link {
   display: grid;
   padding: 0.875rem 1rem;
-  color: #222831;
+  color: var(--color-body);
   border: 0.0625rem solid var(--ivo-border);
   align-items: center;
   background-color: #fff;

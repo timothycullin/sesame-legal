@@ -35,7 +35,7 @@
 
 .post-meta-label {
   margin: 0 0 0.625rem;
-  color: #69707c;
+  color: var(--color-muted);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -45,7 +45,7 @@
 
 .post-title {
   margin: 0 0 0.75rem;
-  color: #101114;
+  color: var(--color-text);
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -80,13 +80,13 @@
 }
 
 .post-author a:hover {
-  color: #184fbf;
+  color: var(--color-link);
   border-color: rgb(24 79 191 / 28%);
 }
 
 .post-author a:focus-visible {
   border-radius: 0.125rem;
-  outline: 0.125rem solid #101114;
+  outline: 0.125rem solid var(--color-text);
   outline-offset: 0.125rem;
 }
 
@@ -98,7 +98,7 @@
 
 .share-title {
   margin: 0 0 0.875rem;
-  color: #101114;
+  color: var(--color-text);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.02em;
