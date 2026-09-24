@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import Footer from '../../components/Footer';
 import BackButton from '../../components/BackButton';
+import PageShell from '../../components/PageShell';
 import AuthorHeader from '../../components/author/AuthorHeader';
 import AuthorBio from '../../components/author/AuthorBio';
 import PostList from '../../components/blog/PostList';
@@ -71,7 +72,7 @@ export default function AuthorPage({
                 <meta name="twitter:image" content={seoImage} />
             </Head>
 
-            <main className={styles.main}>
+            <PageShell width="content" variant="detail">
                 <div className={styles['back-row']}>
                     <BackButton href={backHref}>Back</BackButton>
                 </div>
@@ -102,7 +103,7 @@ export default function AuthorPage({
 
                     <PostList posts={authorPosts} />
                 </section>
-            </main>
+            </PageShell>
 
             <Footer />
         </div>

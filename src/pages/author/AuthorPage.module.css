@@ -2,13 +2,6 @@
   background-color: #fff;
 }
 
-.main {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 4.5rem;
-  max-width: 58rem;
-}
-
 /* Navigation */
 
 .back-row {
@@ -38,10 +31,6 @@
 /* Tablet and mobile */
 
 @media (max-width: 48rem) {
-  .main {
-    padding: 2rem 1rem 3.5rem;
-  }
-
   .back-row {
     margin-bottom: 1.25rem;
   }
@@ -52,10 +41,6 @@
 }
 
 @media (max-width: 30rem) {
-  .main {
-    padding: 1.5rem 0.875rem 3rem;
-  }
-
   .section-title {
     font-size: 1.375rem;
   }

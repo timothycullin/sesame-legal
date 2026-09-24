@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import Footer from '../../components/Footer';
 import BackButton from '../../components/BackButton';
+import PageShell from '../../components/PageShell';
 import AppImage from '../../components/AppImage';
 import BlogContent from '../../components/blog/BlogContent';
 import ShareButtons from '../../components/blog/ShareButtons';
@@ -47,11 +48,11 @@ export default function BlogPost({ post }) {
     if (!post) {
         return (
             <div className={styles.page}>
-                <main className={styles.main}>
+                <PageShell width="article" variant="detail">
                     <p className={styles.message}>
                         Post not found.
                     </p>
-                </main>
+                </PageShell>
             </div>
         );
     }
@@ -145,7 +146,7 @@ export default function BlogPost({ post }) {
                 />
             </Head>
 
-            <main className={styles.main}>
+            <PageShell width="article" variant="detail">
                 <div className={styles['back-row']}>
                     <BackButton href={backHref}>
                         Back
@@ -237,7 +238,7 @@ export default function BlogPost({ post }) {
                         />
                     </section>
                 </article>
-            </main>
+            </PageShell>
 
             <Footer />
         </div>
