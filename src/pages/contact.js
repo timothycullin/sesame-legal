@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import Head from 'next/head';
 import { useState } from 'react';
 import Footer from '../components/Footer';
+import PageShell from '../components/PageShell';
 import styles from './contact.module.css';
 
 // Logic
@@ -183,7 +184,7 @@ export default function Contact() {
                 <meta name="twitter:image" content={seo.image} />
             </Head>
 
-            <main id="main-content" className={styles.main}>
+            <PageShell id="main-content" width="narrow">
                 <section
                     className={styles.hero}
                     aria-labelledby="contact-heading"
@@ -338,7 +339,7 @@ export default function Contact() {
                         </form>
                     </div>
                 </section>
-            </main>
+            </PageShell>
 
             <Footer />
         </div>
