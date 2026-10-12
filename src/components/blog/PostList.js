@@ -123,6 +123,7 @@ export default function PostList({ posts }) {
                                         <AppImage
                                             src={imageUrl}
                                             alt={`Thumbnail for ${title}`}
+                                            unoptimized
                                             sizes={
                                                 index === 0
                                                     ? '(max-width: 48rem) 6rem, 8rem'
